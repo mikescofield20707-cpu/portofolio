@@ -1,0 +1,201 @@
+.banner {
+    background-image: url(source/images/ppp.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    color: #fff;
+  }
+  
+  .lingkaran {
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    color: rgb(0, 107, 0);
+    background-color: rgb(44, 44, 44);
+  }
+
+  .lingkaran:hover {
+    color: rgb(0, 51, 0);
+    background-color: rgb(0, 0, 0);
+  }
+
+  .pf {
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    color: #4e0000;
+  }
+  
+  .lingkaran i {
+    position: relative;
+    top: 30px;
+  }
+  .lingkaran b {
+    position: relative;
+    top: 30px;
+  }
+
+  .i {
+    border: 2px solid rgb(117, 117, 117);
+    border-radius: 5%;
+    width: 150px;
+    height: auto;
+    margin-top: -155px;
+    margin-left: -50px;
+  }
+  .b {
+    border: 2px solid rgb(117, 117, 117);
+    border-radius: 5%;
+    width: 150px;
+    height: auto;
+    margin-top: -155px;
+    margin-left: -50px;
+  }
+
+.text {
+    color: rgb(255, 255, 255);
+    margin-left: 150px;
+    display: flex;
+    text-align: left;
+    word-spacing: 0%;
+    white-space: nowrap;
+}
+
+.p {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.portfolio-item img {
+  width: 150px;
+  height: auto; 
+}
+  
+  .crop-img {
+    object-fit: cover;
+  }
+  
+  .tim img {
+    width: 250px;
+    border: 10px solid #cccccc;
+  }
+  
+  a.social {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #333;
+    line-height: 40px;
+  }
+  
+  .client img {
+    height: auto;
+    max-height: 50px;
+  }
+  
+  .kontak {
+    background: url("https://wallpaperaccess.com/full/1867010.jpg") no-repeat
+      center center;
+    background-size: cover;
+    padding-bottom: 20%;
+    padding-top: 20%;
+    color: #fff;
+  }
+
+  .btn {
+    margin-top: 5%;
+    color: white;
+    background-color: #333;
+  }
+
+  .btn-custom { 
+    color: #ffffff; 
+    background-color: #5e5e5e; 
+    border-color: #444444; 
+  } 
+
+  .btn-custom:hover {
+    background-color: green;
+    color: whitesmoke;
+    border-color: rgb(0, 107, 0);
+  }
+  .Nama {
+    margin-right: 50px;
+  }
+
+  .aa {
+    align-items: center;
+    height: auto;
+    width: auto;
+    size: 20px;
+  }
+
+  .ono {
+    margin-top: 70px;
+    margin-left: 70px;
+  }
+
+  .oek {
+    border: 1px solid white;
+  }
+
+  .jk {
+    color: white;
+  }
+
+  .c {
+    background-color: #a8a8a8;
+  }
+
+  .a2 {
+    color: rgb(248, 0, 194);
+  }
+  .a2:hover {
+    color: rgb(163, 0, 136);
+  }
+
+  .a1 {
+    color: rgb(255, 0, 0);
+  }
+  .a1:hover {
+    color: rgb(172, 0, 0);
+  }
+  .f1 {
+    color: rgb(0, 107, 0);
+    background-color: rgb(44, 44, 44);
+  }
+  .f1:hover {
+    color: rgb(167, 0, 0);
+    background-color: rgb(0, 0, 0);
+  }
+
+  .a3 {
+    color: rgb(0, 112, 15);
+  }
+  .a3:hover {
+    color: rgb(0, 197, 26);
+  }
+
+  @media screen and (max-width: 412px)   {
+
+
+  .portfolio-item img {
+    width: 150px;
+    height: auto;
+    padding-left: 20px; 
+  }
+    
+    .crop-img {
+      object-fit: cover;
+    }
+
+  }

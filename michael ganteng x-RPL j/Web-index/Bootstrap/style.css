@@ -1,0 +1,61 @@
+.lingkaran {
+    display: inline-block;
+    border: 2px solid rgb(129, 129, 129);
+    border-radius: 50%;
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    color: rgb(0, 107, 0);
+    background-color: rgb(255, 255, 255);
+  }
+
+  .lingkaran:hover {
+    color: rgb(0, 51, 0);
+    background-color: rgb(180, 180, 180);
+  }
+
+  .lingkaran i {
+    position: relative;
+    top: 30px;
+  }
+
+  .i {
+    border: 2px solid rgb(117, 117, 117);
+    border-radius: 5%;
+    width: 150px;
+    height: auto;
+    margin-top: -155px;
+    margin-left: -50px;
+    }
+
+  .jk {
+        color: white;
+    }
+  .jk1 {
+        color: rgb(255, 102, 0);
+    }
+
+    .p1 {
+    color: rgb(255, 102, 0);
+    background-color: rgb(255, 255, 255);
+    }
+    .p1:hover {
+    color: rgb(150, 60, 0);
+    background-color: rgb(180, 180, 180);
+    }
+    .p2 {
+    color: rgb(255, 102, 0);
+    background-color: rgb(255, 255, 255);
+    }
+    .p2:hover {
+    color: rgb(156, 63, 0);
+    background-color: rgb(180, 180, 180);
+    }
+    .p3 {
+    color: rgb(255, 102, 0);
+    background-color: rgb(255, 255, 255);
+    }
+    .p3:hover {
+    color: rgb(156, 63, 0);
+    background-color: rgb(180, 180, 180);
+    }

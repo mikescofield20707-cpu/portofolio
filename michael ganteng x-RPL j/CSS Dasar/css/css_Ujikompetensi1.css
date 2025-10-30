@@ -1,0 +1,10 @@
+*{
+    margin : 0;
+    padding : 0;
+    overflow : 0;
+    font-family : "Courier";
+}
+
+.row {
+    text-align: center;
+}

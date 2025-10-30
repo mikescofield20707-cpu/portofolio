@@ -1,0 +1,81 @@
+
+*{
+    margin : 0;
+    padding : 0;
+    overflow : 0;
+    font-family : "Courier";
+}
+
+
+body{
+    height: 100vh;
+    background-image: url(../../HTML\ Dasar/source/images/Mortal.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1{
+    color:rgb(55, 55, 55);
+
+}
+form{
+    color:rgb(255, 255, 255);
+    text-align: justify;
+   
+}
+
+
+.container {
+    position: absolute;
+    left : 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    background : #000000;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur (10px);
+    width: 300px;
+    border-color: #3c3c3c;
+    padding: 20px;
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+    border-radius: 40px;
+    border-width: 3px;
+}
+
+.container h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #bababa;
+}
+
+.container label {
+    color: rgb(255, 255, 255);
+    text-align: left;
+
+}
+
+
+.container form input {
+    width : 100%;
+    padding:5px 1px;
+    margin-bottom: 10px;
+    background-color: rgb(55, 55, 55);
+    -webkit-text-fill-color: #818181;
+    border-radius: 5px;
+    
+}
+
+.container button {
+    width : 100%;
+    padding: 5px 2px;
+    margin-top: 10px;
+    background-color: rgb(55, 55, 55);
+    border-radius: 20px;
+}
+
+

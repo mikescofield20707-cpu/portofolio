@@ -1,0 +1,145 @@
+.banner {
+    background-image: url(../bsource/1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    color: #fff;
+  }
+  
+  .lingkaran {
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    color: #fff;
+    background-color: #006811;
+  }
+
+  .pf {
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    color: #fff;
+  }
+  
+  .lingkaran i {
+    position: relative;
+    top: 30px;
+  }
+
+  .i {
+    border: 2px solid rgb(117, 117, 117);
+    border-radius: 5%;
+    width: 150px;
+    height: auto;
+    margin-top: -155px;
+    margin-left: -50px;
+}
+
+.text {
+    color: rgb(255, 255, 255);
+    margin-left: 150px;
+    display: flex;
+    text-align: left;
+    word-spacing: 0%;
+    white-space: nowrap;
+}
+
+.p {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+  .portfolio-item img {
+    width: 150px;
+    height: auto; 
+}
+  
+  .crop-img {
+    object-fit: cover;
+  }
+  
+  .tim img {
+    width: 250px;
+    border: 10px solid #cccccc;
+  }
+  
+  a.social {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #333;
+    line-height: 40px;
+  }
+  
+  .client img {
+    height: auto;
+    max-height: 50px;
+  }
+  
+  .kontak {
+    background: url("https://wallpaperaccess.com/full/1867010.jpg") no-repeat
+      center center;
+    background-size: cover;
+    padding-bottom: 20%;
+    padding-top: 20%;
+    color: #fff;
+  }
+
+  .btn {
+    margin-top: 5%;
+  }
+
+  .btn-custom { 
+    color: #ffffff; 
+    background-color: #575757; 
+    border-color: #444444; 
+  } 
+
+  .btn-custom:hover {
+    background-color: green;
+    color: whitesmoke;
+    border-color: rgb(0, 107, 0);
+  }
+
+  .d {
+    color: #001d05;
+  }
+
+  ul li:hover {
+    border-bottom: 2px ;
+    color: white;
+    border-radius: 2px;
+  }
+
+  .aa {
+    margin-left: 20px;
+  }
+
+  .quote {
+    text-align: center;
+    margin-left: -20px;
+  }
+
+  .stf h4 {
+    color: #002707;
+  }
+
+  .baris {
+    padding-bottom: 70px;
+  }
+
+  .client {
+    background-color: #444444;
+  }
+
+  .cl {
+    color: white;
+  }

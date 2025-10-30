@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - Matrix Overload</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Loading Screen */
+    .loading-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      color: #0ff;
+      z-index: 10;
+    }
+
+    /* Intro Container */
+    .intro-container {
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      transition: transform 1.5s ease;
+    }
+
+    .intro-title {
+      font-size: 4em;
+      color: #0ff;
+      font-weight: bold;
+      text-shadow: 0px 0px 20px #0ff, 0px 0px 30px #0ff, 0px 0px 40px #0ff;
+      animation: titleGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    .intro-subtitle {
+      font-size: 1.5em;
+      color: #0ff;
+      margin-top: 10px;
+      opacity: 0.8;
+      animation: subtitleGlow 2s ease-in-out infinite alternate;
+    }
+
+    .enter-btn {
+      margin-top: 50px;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #0ff;
+      background: transparent;
+      border: 2px solid #0ff;
+      border-radius: 8px;
+      cursor: pointer;
+      text-shadow: 0px 0px 10px #0ff;
+      transition: all 0.4s ease;
+    }
+
+    .enter-btn:hover {
+      background-color: #0ff;
+      color: #000;
+      border-color: #0ff;
+      box-shadow: 0px 0px 15px #0ff, 0px 0px 20px #0ff;
+    }
+
+    /* Neon Glow Animation */
+    @keyframes titleGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+      50% {
+        text-shadow: 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff;
+      }
+    }
+
+    @keyframes subtitleGlow {
+      0%, 100% {
+        opacity: 0.8;
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+      50% {
+        opacity: 1;
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+      }
+    }
+
+    /* Fade-In Effect */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: brightness(1.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1);
+      }
+    }
+
+    /* Throw and Fade-out Effect */
+    .fade-out {
+      animation: throwOut 1.5s forwards;
+    }
+
+    @keyframes throwOut {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-500px) scale(0.1) rotate(15deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    Loading...
+  </div>
+
+  <!-- Intro Content -->
+  <div class="intro-container" id="introContainer">
+    <div class="intro-title">MATRIX OVERLOAD</div>
+    <div class="intro-subtitle">The Hard Of Level at limitness!</div>
+    <button class="enter-btn" onclick="enterMainPage()">Enter</button>
+  </div>
+
+  <script>
+    // Hide Loading Screen after 2 seconds
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').style.display = 'none';
+        document.getElementById('introContainer').style.opacity = '1';
+      }, 2000);
+    };
+
+    // Enter Main Page Function
+    function enterMainPage() {
+      document.querySelector('.intro-container').classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = 'home/home.html';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

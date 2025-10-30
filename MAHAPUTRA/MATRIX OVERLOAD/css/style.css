@@ -1,0 +1,197 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: url(Bg.mp4);
+  background-position: center;
+  background-size: cover;
+}
+
+.home-container {
+  z-index: 1 ;
+}
+
+.bg-blk {
+  background-color: rgb(90, 90, 90);
+}
+
+.c-white {
+  color: white;
+}
+
+.rmv {
+  outline: none;
+}
+
+.bdr-wht {
+  border: 5px solid white;
+}
+
+.pd40 {
+  padding: 40px 40px 0px 40px;
+  justify-content: center;
+  display: flex;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.white {
+  color: white;
+}
+
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+.pd16 {
+  padding: 16% 16% 16% 16%;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.pd {
+  padding: 2px 2px 2px 14px;
+}
+
+.pdt130 {
+  padding-top: 130px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.br {
+  border-radius: 10px;
+}
+
+.main-text-area {
+  height: 20%;
+  padding: 16% 20% 0px 20%;
+  align-items: center;
+  text-align: center;
+}
+
+.main-text {
+  color: white;
+}
+
+.play-area {
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.play-area-2 {
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  display: contents;
+}
+
+.play-button {
+  display: block;
+  font-size: medium;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  height: 32px;
+  width: 100px;
+  background-color: black;
+  border: 2px solid white;
+  outline: none;
+  border-radius: 10px;
+  color: white;
+}
+/* 
+.play-text {
+  color: white;
+  text-align: center;
+} */
+
+.play:hover {
+  background-color: white;
+  color: black;
+  transition: opacity 5s ease-in-out;
+}
+
+.box {
+  width: 650px;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin-bottom: 7px;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+img {
+  margin: 20px 0px 20px 0px;
+  border-radius: 10px;
+}
+
+.img-jwb {
+  margin: 0px 0px 20px 20px;
+  justify-content: right;
+  display: block;
+}
+
+.box-pilihan-ganda {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  color: white;
+  width: 100%;
+}
+
+.td {
+  color: white;
+  display: grid;
+  justify-content: right;
+}
+
+.nilai-c {
+  display: block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  color: white;
+}
+
+#leaderboard {
+  border: 4px solid white;
+  padding: 20px;
+  margin: 0px 0px 0px 50px;
+}
+
+#leaderboard h2 {
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  border-bottom: 4px solid white;
+}
+
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}

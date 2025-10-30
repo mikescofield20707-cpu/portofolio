@@ -1,0 +1,61 @@
+*{
+    margin : 0;
+    padding : 0;
+    overflow : 0;
+    font-family : "Courier";
+}
+
+body{
+    background-color: rgb(140, 140, 140);
+}
+.big {
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    border: solid;
+    width: 1330px;
+    height: 630px;
+    transform: translate(0%, 0%);
+    border-color: #3c3c3c41;
+
+}
+
+.kotak {
+    
+    position: absolute;
+    left : 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    background : rgba(0, 255, 8, 0.989);
+    border: 2px solid rgb(8, 83, 0);
+    backdrop-filter: blur (10px);
+    width: 230px;
+    border-color: #3c3c3c7b;
+    padding: 10px;
+    box-shadow: 0 0 0px rgb(0, 0, 0);
+    border-radius: 5px;
+    border-width: 3px;
+    
+}
+
+.kotak h1 {
+    text-align: center;
+    color: white;
+}
+
+.kotak p {
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    position: absolute;
+    text-align: center;
+    margin-top: 40%;
+    margin-left: 19%;
+}
+
+.all {
+    left: 5%;
+}

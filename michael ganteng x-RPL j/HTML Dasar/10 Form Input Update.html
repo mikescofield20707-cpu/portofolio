@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+ <head>
+      <meta charset="utf-8">
+      <title>10 Form Input X RPL Michael</title>
+  </head>
+<body style="background-image: url(../Buat\ Tabel/epep.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+height: 100%;">
+<h1 align="middle";><span style="color:red;  font-family: Arial, Helvetica, sans-serif;">Form Input</span></h1>
+<form>
+    <table>
+          <tr>
+            <td width="500px"><b><label for="Nama">Nama Lengkap</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="text" name="Nama" id="Nama" placeholder="Isi Nama Lengkap"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Pass">Password</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="Password" name="Pass" id="Pass" placeholder="Isi Password"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Email">Masukkan E-Mail</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="email" name="Email" id="Email" placeholder="Ketik Email"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Url">Link</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="url" name="Url" id="Url" placeholder="Ketik Url"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Waktu">Jam</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="time" name="Waktu" id="Waktu"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Tanggal">Tanggal Lahir</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="date" name="Tanggal" id="Tanggal"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Jenis">Jenis Kelamin</label></b></td>
+            <td><b>:</b></td>
+            <td>
+                <input type="radio" name="Jenkel" id="Jenkel" value="l">Laki-Laki
+                <input type="radio" name="Jenkel" id="Jenkel" value="P">Perempuan               
+            </td>
+          </tr>
+          <tr>
+            <td><b><label for="Jurusan">Jurusan</label></b></td>
+            <td><b>:</b></td>
+            <td>
+                <select name="Jurusan">
+                   <option id="Jurusan" value="TSM">Teknik Sepeda Motor</option>
+                   <option id="Jurusan" value="RPL" selected="select">Rekayasa Perangkat Lunak</option>
+                   <option id="Jurusan" value="TKJ">Teknik Komputer Jaringan</option>
+                   <option id="Jurusan" value="FKK">Farmasi Klinis dan Komunitas</option>
+                   <option id="Jurusan" value="AP">Perhotelan</option>
+                   <option id="Jurusan" value="TB">Tata Boga</option>
+                   <option id="Jurusan" value="AKUN">Akuntansi & Keuangan Lembaga</option>
+                   <option id="Jurusan" value="OTKP">Otomatisasi & Tata Kelola Perkantoran</option>
+                </select>  
+            </td>
+          </tr>
+          <tr>
+            <td><b><label for="Wanita">Tipe Wanita Idaman</label></b></td>
+            <td><b>:</b></td>
+            <td>
+                <input type="checkbox" name="Wanita" id="Wanita" value="1">Cantik
+                <input type="checkbox" name="Wanita" id="Wanita" value="2">Solehah
+                <input type="checkbox" name="Wanita" id="Wanita" value="1">Semok
+                <input type="checkbox" name="Wanita" id="Wanita" value="1">Sexy
+            </td>    
+          </tr>
+          <tr>
+            <td><b><label for="Kepribadian">Deskripsi Kepribadian</label></b></td>
+            <td><b>:</b></td>
+            <td><textarea name="Kepribadian" id="Kepribadian"></textarea></td>
+          </tr>
+          <tr>
+            <td><b><label for="math">Nilai Matematika</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="number" name="math" id="Pass" required></td>
+          </tr>
+          <tr>
+            <td><b><label for="Indo">Nilai Bahasa Indonesia</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="number" step="0.01" name="Indo" id="Indo" required></td>
+          </tr>
+          <tr>
+            <td><b><label for="Upload">Upload File</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="file" name="Upload" id="Upload"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Warna">Pilih Warna</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="color" name="Warna" id="Warna"></td>
+          </tr>
+          <tr>
+            <td><b><label for="Range">Input Range</label></b></td>
+            <td><b>:</b></td>
+            <td><input type="range" name="range" id="range"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><button name="input"><span style="color:rgb(0, 235, 0)">Kirim</span></button></td>
+          </tr>
+    </table>
+</form>
+</body>
+</html>

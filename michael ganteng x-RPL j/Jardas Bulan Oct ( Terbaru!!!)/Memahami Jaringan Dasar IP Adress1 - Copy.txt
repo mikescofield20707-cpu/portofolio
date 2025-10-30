@@ -1,0 +1,9 @@
+Menentukan IP Adress																
+Yang Di Lihat Segmen 1																
+ Kelas A	0 s.d 127	1 s.d 126														
+ Kelas B																
+ Kelas C																
+																
+		           Diketahui														
+    Kelas	  Format		 IP Adress		 Network		   First IP		   Last IP		           Broadcast 		      Network Mask		      NID	      HID
+C	168+A.XY.YX.0		168+32.53.35.0		200.53.35.0		200.53.35.1		200.53.35.254		255.53.35.255		255.255.255.0		3	1

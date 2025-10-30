@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>X RPL MICHAEL | Style CSS</title>
+   
+    <style type="text/css">
+            h2{
+                font-family: verdana;
+                font-size : 24px;
+                color : #333;
+            }
+            p{
+                font-family: helvetica;
+                line-height: 1.75em;/*jarak baris*/
+                font-size: 19px;
+            }
+
+            i{
+                font-family : courier;
+                color : orange;
+            }
+            /*idclass*/
+            .contoh{
+                font-family :courier;
+                color :red;
+            }
+            #contoh{
+                font-family :courier;
+                color :blue;
+            }
+            </head>
+<body>
+ <h2>Michael GANTENG CSS</h2>
+
+
+
+
+
+
+ </style>
+</body>
+</html>

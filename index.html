@@ -1,0 +1,505 @@
+<!doctype html>
+<html class="h-100" lang="en">
+
+
+<!-- Mirrored from themewagon.github.io/stride/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 May 2024 01:33:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A growing collection of ready to use components for the CSS framework Bootstrap 5">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.html">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.0">
+  <meta name="HandheldFriendly" content="true">
+  <title>Michael S.MK</title>
+  <link rel="stylesheet" href="css/theme.min.css">
+
+  <style>
+    /* inter-300 - latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-300.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-300.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-500.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-500.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local(''),
+        url('fonts/inter-v12-latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('fonts/inter-v12-latin-700.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    .btn:hover {
+      color: rgb(255, 200, 59);
+    } 
+
+    .well {
+      color: darkcyan;
+    }
+
+    .emot {
+      color: darkcyan;
+    }
+
+    .textwell {
+      color: darkcyan;
+    }
+  </style>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navScroll">
+
+  <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top" tabindex="0">
+    <div class="container">
+      <a class="emot navbar-brand pe-4 fs-4" href="https://themewagon.github.io/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-emoji-grin-fill" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M6.488 7c-.23-.598-.661-1-1.155-1-.493 0-.924.402-1.155 1A2.8 2.8 0 0 1 4 6c0-1.105.597-2 1.333-2 .737 0 1.334.895 1.334 2 0 .364-.065.706-.179 1m5.334 0c-.23-.598-.662-1-1.155-1-.494 0-.925.402-1.155 1a2.8 2.8 0 0 1-.179-1c0-1.105.597-2 1.334-2C11.403 4 12 4.895 12 6c0 .364-.065.706-.178 1M2.696 8.756a.48.48 0 0 1 .382-.118C4.348 8.786 6.448 9 8 9c1.553 0 3.653-.214 4.922-.362a.48.48 0 0 1 .383.118.3.3 0 0 1 .096.29c-.09.47-.242.921-.445 1.342-.263.035-.576.075-.929.115A37 37 0 0 1 8 10.75c-1.475 0-2.934-.123-4.027-.247-.353-.04-.666-.08-.93-.115A5.5 5.5 0 0 1 2.6 9.045a.3.3 0 0 1 .097-.29ZM8 13.5a5.49 5.49 0 0 1-4.256-2.017l.116.014c1.115.126 2.615.253 4.14.253s3.025-.127 4.14-.253l.117-.014A5.49 5.49 0 0 1 8 13.5"/>
+        </svg>
+        <span class="well ms-1 fw-bolder">Kell</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#services" aria-label="Brings you to the frontpage">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutus">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portofolio">
+              Portofolio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">
+              Gallery
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Websites">
+              Kelas X
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">
+              Komentar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="michael ganteng x-RPL j/Bootstrap/09 Billing-Invoice.html">
+              Invoice JS (JAVA SCRIPT)
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="MAHAPUTRA/Mini Web R.A Kartini/index.html">
+              MAHAPUTRA
+            </a>
+          </li>
+
+        </ul>
+        <a class="textwell" href="Template Admin/index.php" data-splitbee-event="Click Download" aria-label="Download this template"
+          class="link-dark pb-1 link-fancy me-2"><b>
+          PHP Dasar</b>
+            <path
+              d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+            <path
+              d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="w-100 overflow-hidden bg-gray-100" id="top">
+
+      <div class="container position-relative">
+        <div class="col-12 col-lg-8 mt-0 h-100 position-absolute top-0 end-0 bg-cover" data-aos="fade-left"
+          style="background-image: url(img/webp/interior11.webp);">
+
+        </div>
+        <div class="row">
+
+          <div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
+            <h1 class="display-1 fw-bold mt-5">Buat Semua yang kau mau menjadi nyata!</h1>
+            <p class="lead">Jadilah orang yang ingin berjuang, bukan orang yang selalu menyerah dengan hati yang gersang</p>
+            <a href="#" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">Start It!</a>
+          </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="py-vh-5 w-100 overflow-hidden" id="aboutus">
+      <div class="container">
+        <div class="row d-flex justify-content-end">
+          <div class="col-lg-8" data-aos="fade-down">
+            <h2 class="display-6">Hi! Nama saya Michael Scofield McKenthayer, Kini saya telah menginjak umur 18 tahun</h2>
+          </div>
+        </div>
+        <div class="row d-flex align-items-center">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <span class="h5 fw-lighter">E-Commerce Pages</span>
+            <h3 class="py-5 border-top border-dark">Website Ini merupakan Website yang dimana saya menjual jasa serta asset" mengedit yang saya buat mengenakan JS dan PHP</p>
+            <a href="https://ngmstore.infinityfreeapp.com" class="link-fancy"><span style="color: rgb(0, 120, 124);">Kunjungi</span>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4 py-vh-4 pb-0" data-aos="fade-up" data-aos-delay="400">
+            <span class="h5 fw-lighter">Games pages</span>
+            <h3 class="py-5 border-top border-dark">AMBATUMATRIX</h3>
+            <p>Berikut adalah website sebuah Games Matematika yang saya buat untuk sebuah projek Matematika</p>
+            <a href="MAHAPUTRA/MATRIX OVERLOAD/index.html" class="link-fancy"><span style="color: rgb(0, 120, 124);">Kunjungi</span>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4 py-vh-6 pb-0" data-aos="fade-up" data-aos-delay="600">
+            <span class="h5 fw-lighter">Take ur times</span>
+            <h3 class="py-5 border-top border-dark">POMODORO</h3>
+            <p>Berikut Adalah proyek yang bernama Pomodoro timer yang digunakan untuk menghitung waktu kerja dengan sangat effisien</p>
+            <a href="MAHAPUTRA/pomodoro.html"><span style="color: rgb(0, 120, 124);">Kunjungi</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="py-vh-4 bg-gray-100 w-100 overflow-hidden" id="portofolio">
+      <div class="container">
+
+        <div class="row d-flex justify-content-between align-items-center">
+          <div class="col-lg-6">
+            <div class="row gx-5 d-flex">
+              <div class="col-md-11">
+                <div class="shadow ratio ratio-16x9 rounded bg-cover bp-center align-self-end" data-aos="fade-right"
+                  style="background-image: url(img/webp/well.webp);--bs-aspect-ratio: 50%;">
+                </div>
+              </div>
+              <div class="col-md-5 offset-md-1">
+                <div class="shadow ratio ratio-1x1 rounded bg-cover mt-5 bp-center float-end" data-aos="fade-up"
+                  style="background-image: url(img/webp/depan.webp);">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="col-12 shadow ratio rounded bg-cover mt-5 bp-center" data-aos="fade-left"
+                  style="background-image: url(img/webp/belakang.webp);--bs-aspect-ratio: 150%;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h3 class="py-5 border-top border-dark" data-aos="fade-left">Completed project</h3>
+            <p data-aos="fade-left" data-aos-delay="200">Is This Was The <b>first</b> Portofolio what i make it for
+            </p>
+            <p>
+              <a href="#" class="link-fancy link-dark" data-aos="fade-left" data-aos-delay="400">Kembali
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="position-relative overflow-hidden w-100 bg-light" id="gallery">
+      <div class="container-fluid">
+        <div class="row overflow-scroll">
+          <h1><i>Gallery</i></h1>
+          <div class="col-12">
+            <div class="row vw-100 px-0 py-vh-5 d-flex align-items-center scrollx">
+              <div class="col-md-2" data-aos="fade-up">
+                <img src="img/webp/figma.jpg" class="rounded shadow img-fluid" alt="nice gallery image"
+                  width="512" height="341">
+              </div>
+
+              <div class="col-md-2" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/webp/Lowpolly.jpg" class="img-fluid rounded shadow" alt="nice gallery image" width="1164"
+                  height="776">
+              </div>
+
+              <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                <img src="img/webp/tt.jpg" class="img-fluid rounded shadow" alt="nice gallery image" width="844"
+                  height="1054">
+              </div>
+
+              <div class="col-md-3" data-aos="fade-up" data-aos-delay="600">
+                <img src="img/webp/kamar.jpg" class="img-fluid rounded shadow" alt="nice gallery image"
+                  width="844" height="562">
+              </div>
+
+              <div class="col-md-2" data-aos="fade-up" data-aos-delay="800">
+                <img src="img/webp/panggung.jpg" class="rounded shadow img-fluid" alt="nice gallery image" width="512"
+                  height="341">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container py-vh-4 w-100 overflow-hidden">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-lg-5">
+          <h3 class="py-5 border-top border-dark" data-aos="fade-right">Pantun Untukmu</h3>
+        </div>
+        <div class="col-md-7" data-aos="fade-left">
+          <blockquote>
+            <div class="fs-4 my-3 fw-light pt-4 border-bottom pb-3"><i><b>"Ganti lah rantai karat dengan rantai yang baru, maka hidupmu akan terasa lebih baik dari masa lalu"</b></i></div>
+            <img src="img/webp/person11.webp" width="64" height="64" class="img-fluid rounded-circle me-3" alt=""
+              data-aos="fade">
+            <span><span class="fw-bold">Michael</span>
+              | Pria Galau</span>
+          </blockquote>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="py-vh-6 bg-gray-900 text-light w-100 overflow-hidden" id="Websites">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8 text-center" data-aos="fade">
+              <p class="text-secondary lead">Website Kelas X</p>
+              <h2 class="display-6 mb-5">Berikut Adalah Website Saya Di Saat Ujian S1</h2>
+            </div>
+            <div class="col-12">
+              <a href="michael ganteng x-RPL j/index.html" class="btn btn-warning btn-xl shadow me-3 mt-4" data-aos="fade-down">Masuk</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-light w-100 overflow-hidden" id="testimonials">
+      <div class="container py-vh-6">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8 text-center">
+            <h2 class="display-6">What did i do on my skills?</h2>
+            <p class="lead">Let Me Show It!</p>
+          </div>
+          <div class="col-12 mt-4">
+            <div class="row row-cols-1 row-cols-md-2 g-5 d-flex align-items-center">
+
+              <div class="col-12 col-lg-6 col-xl-4" data-aos="fade-right">
+                <div class="card p-4 mt-3 border-0">
+                  <div class="card-body">
+                    <div class="text-dark py-2 fs-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                    </div>
+                    <blockquote class="blockquote">
+                      <p>"Saya dapat menggambar sebuah sketsa, saya terlahir dengan hobi menggambar sebuah sketsa, hingga saat ini menggambar masih tetap menjadi hobi saya..."</p>
+                    </blockquote>
+                    <div class="d-flex justify-content-between border-top pt-3">
+                      <div>
+                        <span class="h6 fw-5">Mikeezz</span><br>
+                        <small class="text-muted">Drawing</small>
+                      </div>
+                      <img src="img/webp/ppp.jpg" width="48" height="48" class="rounded-circle" alt=""
+                        data-aos="fade">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6 col-xl-4">
+                <div class="card p-4 shadow mt-3 border-0" data-aos="fade-down">
+                  <div class="card-body">
+                    <div class="text-dark py-2 fs-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                    </div>
+                    <blockquote class="blockquote">
+                      <p>"Selain menggambar, saya memiliki hobi di bidang Editing, dimulai sejak 2017, saya memiliki ketertarikan pada sebuah editing video ataupun foto, hingga saat ini, Editing tetap menjadi hobi saya yang sempat menghasilkan sedikit pendapatan"</p>
+                    </blockquote>
+                    <div class="d-flex justify-content-between border-top pt-3">
+                      <p class="card-text">
+                        <span class="h6 fw-5">Mikeezz</span><br>
+                        <small class="text-muted">Editor</small>
+                      </p>
+                      <img src="img/webp/mee.jpg" width="48" height="48" class="rounded-circle" alt=""
+                        data-aos="fade">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6 col-xl-4">
+                <div class="card p-4 mt-3 border-0" data-aos="fade-left">
+                  <div class="card-body">
+                    <div class="text-dark py-2 fs-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                      </svg>
+                    </div>
+                    <blockquote class="blockquote">
+                      <p>"Disaat saya mulai mengenal apa itu html, css, js, php dan bahasa pemrograman lain lainnya, saya mulai menyukai akan hal tersebut atau yang biasa diebut coding, saya telah membiasakan diri dengan IT sudah sejak saya masih berumur 4 tahun, yang pada akhirnya saya memiliki beberapa proyek yang telah dan sedang saya kerjakan"</p>
+                    </blockquote>
+                    <div class="d-flex justify-content-between border-top pt-3">
+                      <p class="card-text">
+                        <span class="h6 fw-5">Mikeezz</span><br>
+                        <small class="text-muted">Programmer</small>
+                      </p>
+                      <img src="img/webp/meee.jpg" width="48" height="48" class="rounded-circle" alt=""
+                        data-aos="fade">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    <div class="container text-center py-3 small">Made by <a href="http://203.210.87.84:8040/ANGKATAN%202023-2024/2324102573%20Michael%20Scofield%20Mckenthayer/" class="link-fancy"
+        target="_blank">Michael</a> Distributed By <a>Mikeezz</a>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700, // values from 0 to 3000, with step 50ms
+    });
+  </script>
+
+  <script>
+    let scrollpos = window.scrollY;
+    const header = document.querySelector(".navbar");
+    const header_height = header.offsetHeight;
+
+    const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm");
+    const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm");
+
+    window.addEventListener('scroll', function () {
+      scrollpos = window.scrollY;
+
+      if (scrollpos >= header_height) { add_class_on_scroll(); }
+      else { remove_class_on_scroll(); }
+
+      console.log(scrollpos);
+    })
+  </script>
+
+</body>
+
+
+<!-- Mirrored from themewagon.github.io/stride/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 May 2024 01:33:40 GMT -->
+</html>

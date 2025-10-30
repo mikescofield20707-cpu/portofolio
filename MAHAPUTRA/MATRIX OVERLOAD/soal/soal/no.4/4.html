@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATRIX OVERLOAD</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body class="pd40">
+    <div class="box">
+      <div class="nomor-soal"><h3>Soal 4</h3></div>
+      <p>Tentukan determinan dari matriks dibawah ini.</p>
+      <div class="image-area">
+        <img src="soal-4.png" />
+      </div>
+      <div class="box-pilihan-ganda">
+        <table>
+          <tr>
+            <td onclick="jawaban('s')">
+              <p class="jwb">a.</p>
+              <img class="img-jwb" src="jwb-4-a.png" />
+            </td>
+            <td onclick="jawaban('s')" class="p-l-20">
+              <div class="td">
+                <p class="jwb">b.</p>
+                <img class="img-jwb" src="jwb-4-b.png" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td onclick="jawaban('b')">
+              <p class="jwb">c.</p>
+              <img class="img-jwb" src="jwb-4-c.png" />
+            </td>
+            <td onclick="jawaban('s')" class="p-20">
+              <div class="td">
+                <p class="jwb">d.</p>
+                <img class="img-jwb" src="jwb-4-d.png" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      function jawaban(status) {
+        if (status === "b") {
+          let skorBenar = parseInt(localStorage.getItem("skorBenar")) || 0;
+          localStorage.setItem("skorBenar", skorBenar + (1 / 5) * 100);
+        } else {
+          let skorSalah = parseInt(localStorage.getItem("skorSalah")) || 0;
+          localStorage.setItem("skorSalah", skorSalah + (1 / 5) * 100);
+        }
+        // alert("Jawaban diterima!");
+        window.location.href = "../no.5/5.html";
+      }
+    </script>
+  </body>
+</html>

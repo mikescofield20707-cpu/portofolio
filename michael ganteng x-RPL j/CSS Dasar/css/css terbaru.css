@@ -1,0 +1,99 @@
+*{
+    margin : 0;
+    padding : 0;
+    overflow : 0;
+    font-family : "Arial";
+}
+
+
+body{
+    zoom:86%;
+}
+input[type=text], textarea, input[type=email], input[type=file]{
+    resize: vertical;
+    border: 2px solid #acacaccf;
+    background-color: #ffffffaa;
+    padding: 8px;
+    width: 100%;
+}
+h3{
+    color: black;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display:inline-block;
+    text-align: start;
+}
+.container{
+    padding: 10px;
+    background-color: #f1f1f1cf;
+    border-radius: 15px;
+    color: rgb(100, 100, 100);
+    border-color: solid #dfdfdfcf;
+}
+.row::after{
+    display:table;
+    content: "";
+    clear: both;
+}
+.a1{
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+}
+.a2{
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+}
+::placeholder{
+    color: black;
+    text-align: start;
+}
+option{
+    text-align: start;
+}
+input[type=submit]:hover{
+    background-color: #000000;
+}
+.info{
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color:#0077ff ;
+    color: white;
+    float: left;
+}
+.alamat{
+    padding: 10px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    margin:  10px 0 10px 0;
+}
+.link{
+    color: rgb(0, 132, 255);
+}
+.link:hover{
+    text-decoration: underline;
+}
+span{
+    padding: 12px 12px 12px 0;
+    display:inline-block;}
+.logo{
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color:#0fb600 ;
+    color: white;
+    float: left;
+    margin-top:10px ;
+}
+@media screen and (max-width:600px){
+    .judul, .isi, input[type=submit]{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+

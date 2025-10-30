@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATRIX OVERLOAD</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body class="pd40 pdt130">
+    <div class="center">
+      <div class="nilai-c center pd16">
+        <h2>Hasil Jawaban Mu:</h2>
+        <p id="hasilBenar"></p>
+        <p id="namaOutput"></p>
+        <div class="play-area">
+          <div class="play-area-2">
+            <p id="output"></p>
+            <button
+              onclick="window.location.href='../../home/home.html'"
+              class="play-button play"
+            >
+              Kembali
+            </button>
+            <button onclick="reset()" class="play play-button ml10">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <table id="leaderboard">
+        <tr></tr>
+      </table>
+    </div>
+
+    <script>
+      // Ambil nilai benar dan salah dari localStorage
+      var nilaiBenar = localStorage.getItem("skorBenar") || 0;
+      var nilaiSalah = localStorage.getItem("nilaiSalah") || 0;
+
+      var nama = localStorage.getItem("nama");
+      // Tampilkan hasil nilai di halaman
+      document.getElementById("hasilBenar").innerHTML =
+        "Nilai mu: " + nilaiBenar;
+
+      function tampilkanLeaderboard() {
+        const nama = localStorage.getItem("namaPemain");
+        const skorBenar = parseInt(localStorage.getItem("skorBenar")) || 0;
+        const skorSalah = parseInt(localStorage.getItem("skorSalah")) || 0;
+        const leaderboard =
+          JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+        // Tambahkan skor terbaru ke leaderboard
+        leaderboard.push({
+          nama: nama,
+          skorBenar: skorBenar,
+          skorSalah: skorSalah,
+        });
+        localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
+        leaderboard.sort((a, b) => b.skorBenar - a.skorBenar);
+
+        // Tampilkan leaderboard
+        const leaderboardDiv = document.getElementById("leaderboard");
+        leaderboardDiv.innerHTML = "<h2>Leaderboard</h2>";
+        leaderboardDiv.innerHTML = "<table>";
+        leaderboard.forEach((entry) => {
+          leaderboardDiv.innerHTML += `<p>${entry.nama} - ${entry.skorBenar}</p>`;
+        });
+      }
+
+      function reset() {
+        if (confirm("Yakin kah " + nama + " reset Leaderboard?")) {
+          localStorage.removeItem("leaderboard"); // Hapus data leaderboard dari localStorage
+          document.getElementById("leaderboard").innerHTML =
+            "<p>Leaderboard king sudah direset.</p>";
+          alert("Leaderboard king sudah direset!");
+        }
+      }
+
+      tampilkanLeaderboard();
+    </script>
+  </body>
+</html>

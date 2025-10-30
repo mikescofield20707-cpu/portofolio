@@ -1,0 +1,79 @@
+<?php
+// untuk melakukan koneksi ke database
+
+$HOSTNAME = "localhost";
+$DATABASE = "db_rpl2324";
+$USERNAME = "root";
+$PASSWORD = "";
+
+
+$KONEKSI = mysqli_connect($HOSTNAME,$USERNAME,$PASSWORD,$DATABASE);
+
+if (!$KONEKSI) {
+    die("koneksi te bisa broww.....". mysqli_connect_error($KONEKSI));
+}
+
+    function tampil($DATA) : array
+{
+    global $KONEKSI;
+
+    $HASIL = mysqli_query ($KONEKSI, $DATA);
+    $row = [];
+
+    while ($row=mysqli_fetch_assoc($HASIL)){
+        $rows [] =$row;
+    }
+    return $rows;
+}
+
+function OriCrudAdd ($DATA){
+
+}
+
+global $KONEKSI ;
+
+$ID = $_POST['Id'];
+$NAMA = $_POST['Nama'];
+$KELAS = $_POST['Kelas'];
+$JURUSAN = $_POST['Jurusan'];
+$ALAMAT = $_POST['Alamat'];
+
+//echo $NIS."|".$NAMA."|".$JENKEL."|".$JURUSAN."|".$ALAMAT."|".$STATUS;
+
+$SQL ="INSERT INTO tbl_foreach SET
+id = '$ID',
+nama ='$NAMA',
+kelas ='$KELAS',
+kode_jurusan ='$JURUSAN',
+alamat ='$ALAMAT'";
+
+mysqli_query($KONEKSI,$SQL) or die ("gagal maning input data bro...!");
+echo "Data masuk broo..!";
+
+function InnerCrudAdd ($DATA){
+
+}
+
+global $KONEKSI ;
+
+$NIS = $_POST['NIS'];
+$NAMA = $_POST['Nama'];
+$JENKEL = $_POST['Jenkel'];
+$JURUSAN = $_POST['Jurusan'];
+$ALAMAT = $_POST['Alamat'];
+$STATUS = $_POST['Status'];
+
+echo $NIS."|".$NAMA."|".$JENKEL."|".$JURUSAN."|".$ALAMAT."|".$STATUS;
+
+$SQL ="INSERT INTO tbl_siswa SET
+nis = '$NIS',
+nama ='$NAMA',
+jenkel ='$JENKEL',
+alamat ='$ALAMAT',
+kode_jurusan ='$JURUSAN',
+kode_status ='$STATUS' ";
+
+mysqli_query($KONEKSI,$SQL) or die ("gagal maning input data bro...!");
+echo "Data masuk broo..!";
+
+?>

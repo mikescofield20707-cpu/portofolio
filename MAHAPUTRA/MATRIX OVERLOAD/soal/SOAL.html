@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Matriks 3x3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz: Matriks 3x3</h1>
+        <form id="quizForm">
+            <div class="question">
+                <h3>1. Apa determinan matriks berikut? <br>[1 2 3; 4 5 6; 7 8 9]</h3>
+                <label><input type="radio" name="q1" value="0"> 0</label><br>
+                <label><input type="radio" name="q1" value="15"> 15</label><br>
+                <label><input type="radio" name="q1" value="45"> 45</label><br>
+                <label><input type="radio" name="q1" value="120"> 120</label>
+            </div>
+            <div class="question">
+                <h3>2. Jika A = [1 2; 3 4], maka A^T adalah?</h3>
+                <label><input type="radio" name="q2" value="[1 3; 2 4]"> [1 3; 2 4]</label><br>
+                <label><input type="radio" name="q2" value="[1 2; 3 4]"> [1 2; 3 4]</label><br>
+                <label><input type="radio" name="q2" value="[4 3; 2 1]"> [4 3; 2 1]</label><br>
+                <label><input type="radio" name="q2" value="[2 1; 4 3]"> [2 1; 4 3]</label>
+            </div>
+            <div class="question">
+                <h3>3. Jika B = [2 0; 0 3], maka invers dari B adalah?</h3>
+                <label><input type="radio" name="q3" value="[0.5 0; 0 0.33]"> [0.5 0; 0 0.33]</label><br>
+                <label><input type="radio" name="q3" value="[2 0; 0 3]"> [2 0; 0 3]</label><br>
+                <label><input type="radio" name="q3" value="[0.5 0; 0 0.33]"> [0.5 0; 0 0.33]</label><br>
+                <label><input type="radio" name="q3" value="[0.5 0; 0 0.3]"> [0.5 0; 0 0.3]</label>
+            </div>
+            <div class="question">
+                <h3>4. Matriks diagonal adalah?</h3>
+                <label><input type="radio" name="q4" value="Matriks dengan semua elemen diagonal utama nol"> Matriks dengan semua elemen diagonal utama nol</label><br>
+                <label><input type="radio" name="q4" value="Matriks dengan elemen bukan diagonal nol"> Matriks dengan elemen bukan diagonal nol</label><br>
+                <label><input type="radio" name="q4" value="Matriks persegi dengan semua elemen diagonal utama nol"> Matriks persegi dengan semua elemen diagonal utama nol</label><br>
+                <label><input type="radio" name="q4" value="Matriks persegi dengan elemen bukan diagonal nol"> Matriks persegi dengan elemen bukan diagonal nol</label>
+            </div>
+            <div class="question">
+                <h3>5. Apa hasil penjumlahan [1 2; 3 4] + [4 3; 2 1]?</h3>
+                <label><input type="radio" name="q5" value="[5 5; 5 5]"> [5 5; 5 5]</label><br>
+                <label><input type="radio" name="q5" value="[6 5; 7 5]"> [6 5; 7 5]</label><br>
+                <label><input type="radio" name="q5" value="[5 6; 7 5]"> [5 6; 7 5]</label><br>
+                <label><input type="radio" name="q5" value="[5 5; 7 5]"> [5 5; 7 5]</label>
+            </div>
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            const answers = {
+                q1: "0",
+                q2: "[1 3; 2 4]",
+                q3: "[0.5 0; 0 0.33]",
+                q4: "Matriks dengan elemen bukan diagonal nol",
+                q5: "[5 5; 5 5]"
+            };
+            let score = 0;
+            for (const [key, value] of Object.entries(answers)) {
+                const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+                if (userAnswer && userAnswer.value === value) {
+                    score += 20;
+                }
+            }
+            document.getElementById("result").innerText = `Skor Kamu: ${score}/100`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pomodoro Italiano 🇮🇹</title>
+  <style>
+    @font-face {
+      font-family: 'Optimus';
+      src: url('OptimusPrinceps.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'flyer';
+      src: url('flyer.otf') format('truetype');
+    }
+    @font-face {
+      font-family: 'OptimusB';
+      src: url('OptimusPrincepsSemiBold.ttf') format('truetype');
+    }
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #2b2d42;
+      text-align: center;
+      padding: 30px;
+      user-select: none;
+      background: linear-gradient(270deg, #7d51ff, #9cf1fc, #ffdd8f);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body.dark {
+      background: linear-gradient(270deg, #006128, #002f35, #493b19);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
+      color: #eee;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    #timer {
+      font-size: 5em;
+      font-family: flyer;
+      margin: 20px 0;
+    }
+    button {
+      font-family: flyer;
+      padding: 15px 30px;
+      margin: 5px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: #008a508e;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #009744;
+    }
+    .mode {
+      font-family: flyer;
+      margin: 15px 0;
+      font-size: 1.5em;
+    }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #06d69e00;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .show {
+      opacity: 1;
+    }
+    .hourglass {
+      font-family: flyer;
+      font-size: 4em;
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      cursor: grab;
+      user-select: none;
+      z-index: 1000;
+      transition: color 0.5s;
+    }
+    body.dark .hourglass {
+      color: #ef476f;
+    }
+    #darkModeBtn {
+      background-color: #00976f98;
+      color: white;
+      border-radius: 20px;
+    }
+    #darkModeBtn:hover {
+      background-color: #00916a;
+      color: white;
+      border-radius: 20px;
+    }
+    #muteBtn {
+      background-color: #ffbb1d;
+      color: #2b2d42;
+      border-radius: 20px;
+    }
+    #muteBtn:hover {
+      background-color: #b47e00;
+      color: #14151f;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><span style="font-family: Optimus;">Pomodoro Italiano</span></h1>
+  <div class="hourglass" id="hourglass"></div>
+  <div id="timer"><span style="font-family: flyer;">25:00</span></div>
+  <div class="mode"><span style="font-family: flyer;">WORK MODE</span></div>
+  <button onclick="startTimer()" class="start"><span style="font-family: flyer;">START</span></button>
+  <button onclick="pauseTimer()" class="pause"><span style="font-family: flyer;">PAUSE</span></button>
+  <button onclick="resetTimer()" class="reset"><span style="font-family: flyer;">RESET  </button>
+  <button id="darkModeBtn" onclick="toggleDarkMode()">Dark Mode</button>
+
+  <div class="toast" id="toast"></div>
+
+  <audio id="italianMusic" src="me.mp3" loop></audio>
+
+  <script>
+    let timer;
+    let isRunning = false;
+    let mode = "work";  
+    let session = 0;
+    let currentTime = 1500; // 25 minutes
+    let isMuted = false;
+    const audio = document.getElementById("italianMusic");
+
+    function updateDisplay() {
+      const minutes = Math.floor(currentTime / 60).toString().padStart(2, '0');
+      const seconds = (currentTime % 60).toString().padStart(2, '0');
+      document.getElementById("timer").textContent = `${minutes}:${seconds}`;
+    }
+
+    function switchTo(newMode) {
+      mode = newMode;
+      if (newMode === "work") {
+        currentTime = 1500;
+        document.querySelector(".mode").textContent = "WORK MODE!";
+      } else if (newMode === "short") {
+        currentTime = 300;
+        document.querySelector(".mode").textContent = "SHORT BREAK!";
+      } else {
+        currentTime = 900;
+        document.querySelector(".mode").textContent = "LONG BREAK!, TAKE A BREAK, U NEED TO REST BECAUSE U ARE HUMAN";
+      }
+      updateDisplay();
+      showToast(`Mode pindah ke ${document.querySelector(".mode").textContent}`);
+      if (isRunning) {
+        clearInterval(timer);
+        startTimer();
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 3000);
+    }
+
+    function playMusic() {
+      if (!isMuted) {
+        audio.volume = 0.5;
+        audio.play();
+      }
+    }
+
+    function startTimer() {
+      if (isRunning) return;
+      isRunning = true;
+      showToast("Timer dimulai!");
+      playMusic();
+      timer = setInterval(() => {
+        if (currentTime > 0) {
+          currentTime--;
+          updateDisplay();
+        } else {
+          clearInterval(timer);
+          isRunning = false;
+          if (mode === "work") {
+            session++;
+            if (session % 4 === 0) {
+              switchTo("long");
+            } else {
+              switchTo("short");
+            }
+          } else {
+            switchTo("work");
+          }
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timer);
+      isRunning = false;
+      audio.pause();
+      showToast("Timer di-pause yaa");
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      isRunning = false;
+      session = 0;
+      audio.pause();
+      audio.currentTime = 0;
+      switchTo("work");
+      showToast("Timer di-reset");
+    }
+
+    function toggleMute() {
+      isMuted = !isMuted;
+      if (isMuted) {
+        audio.pause();
+        document.getElementById("muteBtn").textContent = "🔇 Unmute";
+        showToast("Musik dimute");
+      } else {
+        audio.play();
+        document.getElementById("muteBtn").textContent = "🔈 Mute";
+        showToast("Musik dimainin");
+      }
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      const btn = document.getElementById('darkModeBtn');
+      if (document.body.classList.contains('dark')) {
+        btn.textContent = "Light Mode";
+        showToast("Dark mode on, cozy bangettt");
+      } else {
+        btn.textContent = "Dark Mode";
+        showToast("Light mode on, cerah bangeet");
+      }
+    }
+
+    // Biar jam pasir bisa dipindah-pindah pake mouse
+    const hourglass = document.getElementById("hourglass");
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    hourglass.addEventListener('mousedown', e => {
+      isDragging = true;
+      hourglass.style.cursor = 'grabbing';
+      offsetX = e.clientX - hourglass.getBoundingClientRect().left;
+      offsetY = e.clientY - hourglass.getBoundingClientRect().top;
+    });
+
+    document.addEventListener('mouseup', e => {
+      if (isDragging) {
+        isDragging = false;
+        hourglass.style.cursor = 'grab';
+      }
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (isDragging) {
+        hourglass.style.left = (e.clientX - offsetX) + 'px';
+        hourglass.style.top = (e.clientY - offsetY) + 'px';
+      }
+    });
+
+    updateDisplay();
+  </script>
+</body>
+
+</html>
