@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Untuk Kamu</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background: #f7efe5;
+  color: #4b3b32;
+}
+
+.page {
+  position: fixed;
+  inset: 0;
+  padding: 24px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f8eadf, #e8d8c4, #d8c3a5);
+  animation: fadeIn .8s ease;
+}
+
+.page.active {
+  display: flex;
+}
+
+.date-live {
+  position: fixed;
+  top: 22px;
+  left: 28px;
+  z-index: 9999;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.12);
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+.landing-card {
+  width: min(850px, 94%);
+  padding: 22px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.85);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 22px;
+  align-items: center;
+  box-shadow: 0 20px 50px rgba(80, 50, 30, .18);
+  animation: pop .45s ease;
+}
+
+.main-photo {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.18);
+}
+
+.landing-text {
+  text-align: left;
+}
+
+.small-text {
+  font-size: 14px;
+  opacity: .75;
+}
+
+h1 {
+  font-size: 44px;
+  margin: 12px 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+button {
+  border: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: #8b5e3c;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(80, 40, 20, .25);
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  background: #6f472b;
+}
+
+.text-box,
+.letter-box,
+.closing-box {
+  width: min(92%, 620px);
+  padding: 28px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(80, 50, 30, .18);
+  text-align: center;
+}
+
+.letter-box,
+.closing-box {
+  max-height: 86vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.letter-box h2,
+.closing-box h2 {
+  text-align: center;
+}
+
+.gallery-page {
+  flex-direction: column;
+  overflow-y: auto;
+  justify-content: flex-start;
+}
+
+.gallery-page.active {
+  display: flex;
+}
+
+.gallery-header {
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+.gallery {
+  width: min(1100px, 94%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  padding-bottom: 60px;
+}
+
+.memory-card {
+  height: 220px;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0,0,0,.18);
+  transition: .35s;
+}
+
+.memory-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.memory-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memory-card span {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  color: white;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  background: rgba(30, 20, 15, .38);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: min(850px, 94%);
+  padding: 22px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.85);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 22px;
+  position: relative;
+  animation: pop .35s ease;
+}
+
+.modal-photo-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.modal-photo-wrap img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.photo-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(0,0,0,.38);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.photo-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: rgba(0,0,0,.55);
+}
+
+.photo-arrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  display: block;
+}
+
+.photo-arrow.left {
+  left: 10px;
+}
+
+.photo-arrow.left::before {
+  transform: rotate(-135deg);
+  margin-left: 4px;
+}
+
+.photo-arrow.right {
+  right: 10px;
+}
+
+.photo-arrow.right::before {
+  transform: rotate(45deg);
+  margin-right: 4px;
+}
+
+.photo-count {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  color: white;
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.modal-info h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.modal-info span {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #8b5e3c;
+  font-weight: 600;
+}
+
+.close-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 13px;
+  opacity: .65;
+  margin: 0;
+}
+
+.shooting-stars {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.star {
+  position: absolute;
+  top: -120px;
+  width: 2px;
+  height: 90px;
+  background: linear-gradient(180deg, white, transparent);
+  opacity: .9;
+  border-radius: 999px;
+  filter: drop-shadow(0 0 8px white);
+  transform: rotate(-260deg);
+  animation: shootingStar linear forwards;
+}
+
+/* LOADING HEART */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(248, 234, 223, .82);
+  backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+
+.page-loader.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.heart {
+  display: inline-grid;
+  grid-template-columns: repeat(13, 9px);
+  grid-template-rows: repeat(11, 9px);
+  gap: 1px;
+  padding: 18px;
+  animation: heartbeat 2s infinite ease-in-out;
+}
+
+.pixel {
+  width: 9px;
+  height: 9px;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.pixel.pink {
+  background: #e63946;
+  animation: pinkPulse 2.5s infinite ease-in-out;
+}
+
+.pixel.soft-pink {
+  background: #f1a1b4;
+  animation: softPinkPulse 2.2s infinite ease-in-out;
+}
+
+.pixel.white {
+  background: #ffeaea;
+  animation: whitePulse 2.8s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes pinkPulse {
+  0%, 100% {
+    background: #ff6b81;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(230, 57, 70, 0);
+  }
+  50% {
+    background: #e63946;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+  }
+}
+
+@keyframes softPinkPulse {
+  0%, 100% {
+    background: #e63946;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(241, 161, 180, 0);
+  }
+  50% {
+    background: #f1a1b4;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(241, 161, 180, 0.6);
+  }
+}
+
+@keyframes whitePulse {
+  0%, 100% {
+    background: #ffe3e3;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 234, 234, 0);
+  }
+  50% {
+    background: #ffeaea;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 234, 234, 0.8);
+  }
+}
+
+@keyframes shootingStar {
+  from {
+    transform: translateY(0) rotate(-200deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(115vh) translateX(50vh) rotate(-210deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(.86) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .date-live {
+    top: 16px;
+    left: 16px;
+    font-size: 12px;
+    padding: 8px 13px;
+  }
+
+  .landing-card {
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    margin-top: -40px;
+  }
+
+  .main-photo {
+    height: 150px;
+  }
+
+  .landing-card h1 {
+    font-size: 28px;
+  }
+
+  .landing-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .memory-card {
+    height: 190px;
+    border-radius: 20px;
+  }
+
+  .modal {
+    padding: 16px;
+    align-items: center;
+  }
+
+  .modal-content {
+    width: min(420px, 94vw);
+    max-height: 88vh;
+    overflow-y: auto;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+    border-radius: 26px;
+    margin-top: 0;
+  }
+
+  .modal-photo-wrap img {
+    height: 330px;
+    border-radius: 22px;
+  }
+
+  .modal-info {
+    text-align: left;
+  }
+
+  .modal-info h3 {
+    font-size: 23px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .modal-info span {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .modal-info p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .close-text {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .photo-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .photo-arrow.left {
+    left: 12px;
+  }
+
+  .photo-arrow.right {
+    right: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="assets/music/music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="shooting-stars"></div>
+<div class="date-live" id="liveDate"></div>
+
+<div class="page-loader" id="pageLoader">
+  <div class="heart" id="heartLoader"></div>
+</div>
+
+<section class="page landing active" id="page1">
+  <div class="landing-card">
+    <img src="assets/img/opening.jpeg" class="main-photo" alt="Foto Utama">
+
+    <div class="landing-text">
+      <p class="small-text">Untuk seseorang yang paaaling akuu sayaangg....</p>
+      <h1>Nezia Azwa Aulia</h1>
+      <p>
+        Aku bikin halaman kecil inii buat kamuu bacaa,
+        dan juga akann aada banyakk hall yang pengenn akuu sampeinn ke kamuu.
+      </p>
+      <button onclick="startExperience()">Mulai</button>
+    </div>
+  </div>
+</section>
+
+<section class="page prepare" id="page2">
+  <div class="text-box">
+    <h2>Sebelumm kamu baca...</h2>
+    <p>
+      Akuu cuma mauu kamuu baca ini pelan pelan ya...
+      Bukan karena aku mau terlihat sempurna,
+      tapi karena aku pengen kamu tahu isi hati aku yang sebenernyaa...
+    </p>
+    <button onclick="goPage(3)">Aku siap baca</button>
+  </div>
+</section>
+
+<section class="page letter" id="page3">
+  <div class="letter-box">
+    <h2>Untuk kamu...</h2>
+
+    <p>baca ini nanti pas kamu udah tenang yaa..., akuu gamau kamu bacanya sambil nangis atau lagi kepikiran banyak hal 😔</p>
+
+    <p>akuu cuma pengenn ngomongg..., kaloo selama inii akuu mintaa maaff yaa??kaloo akuu masihh banyak kurangnyaa buat kamuu..., mungkin akuu emang belum bisa jadi cowok paling sempurna buat kamu, tapi percayaa sayangg..., akuu selalu usahainn semuanya sepenuh hati akuu buatt kamuu</p>
+
+    <p>akuu tauu kadangg akuu bikin kamu cape..., bikin kamu kesel..., bahkan mungkin bikin kamu mikirr ulang tentang akuu..., tapi disinii akuu masihh orangg yang samaa..., yang selalu sayangg sama kamuu, yang selalu naruhh kamuu di pikirann paling atass sebelum hal lainn</p>
+
+    <p>jujurr ajaa..., akuu takuttt kehilangan kamuu... takutt tibaa" kita jadi asingg..., takutt suatu hari nanti cuma bisa liatt kamuu dari jauh tanpa bisa manggil "sayangg" lagii..., akuu ga siappp buat ituu...</p>
+
+    <p>mungkin akuu emangg terlalu banyak mikirr..., terlalu banyakk takut..., tapi semua ituu muncull karenaa akuu bener" sayangg sama kamuu..., akuu ga pernahh main" pas ngomong pengenn bertahan sama kamuu..., bahkan sampai sekarang akuu masihh punya harapan besar kalo suatu hari nanti akuu bisa hidup barengg kamuu, bangun rumah kecil kitaa, cerita tiap malemm, dan bangun pagi masii sama orang yang samaa</p>
+
+    <p>teruss..., makasii yaa??udahh bertahann sejauh inii sama akuu..., makasii karena kamu masihh mau dengerinn semua cerita random akuu..., semua overthinking akuu..., semuaa sisi buruk akuu yang mungkin orang lain aja belum tentu kuat</p>
+
+    <p>akuu jugaa mintaa maafff kaloo selama ini akuu terlalu cemburuan..., terlalu posesif..., atau terlalu takut kehilangan..., akuu cuma gamau orang yang paling akuu sayangg malah pergi pelan" dari hidup akuu</p>
+
+    <p>sayangg..., kalo nanti suatu saat kita lagi cape, lagi banyak masalah, atau lagi ngerasa hubungan kita berattt..., tolongg jangan langsung nyerah yaa??tolongg cerita sama akuu..., marahh sama akuu gapapaa..., nangiss juga gapapaa..., tapi jangan ilangg tanpa penjelasan</p>
+
+    <p>karenaa sejujurnyaa..., akuu selalu usahainn buat jadi rumah buat kamuu..., walaupun kadangg akuu sendiri jugaa lagi hancurr 😕</p>
+
+    <p>dan satu lagii..., akuu ga pernahh nyesel kenall kamuu. malahh akuu bersyukur bangettt karena dari sekian banyak manusia di duniaa..., akuu bisa dipertemukan sama kamuu</p>
+
+    <p>akuu sayanggg bangettt sama kamuu..., banyakk lebihh banyakk dari yang bisa akuu jelasin pake kata"</p>
+
+    <p>jadii..., tolongg jangan pergii dulu yaa sayangg...? 🥺</p>
+
+    <button onclick="goPage(4)">Lanjut</button>
+  </div>
+</section>
+
+<section class="page closing" id="page4">
+  <div class="closing-box">
+    <h2>sedikit penutup dari akuu...</h2>
+
+    <p>sekali lagii..., akuu mintaa maaff yaa sayangg..., maafff kaloo selama inii akuu masihh jadii orangg yang banyakk kurangnyaa buat kamuu</p>
+
+    <p>maafff kaloo akuu masihh seringg bikin kamu cape pikirann..., bikin kamu sedihh..., atau bahkan bikin hati kamuu sakit karena sikapp akuu sendiri...</p>
+
+    <p>akuu jugaa mintaa maafff kaloo kadangg akuu terlalu egois, terlalu takut kehilangan, dan terlalu banyak overthinking sampe akhirnya bikin hubungan kita ikut cape</p>
+
+    <p>tapi percayaa yaa sayangg..., dibalik semuaa sifat buruk akuu, akuu masii punya rasa sayangg yangg tulus buat kamuu..., akuu masii pengenn bertahann dan belajar jadi lebih baikk lagii buat kamuu</p>
+
+    <p>makasii karena kamu udah kuat sejauh inii..., makasii karena masii mau bertahan dan masii mau ada buat akuu walaupun kadangg akuu sendiri susah dimengerti</p>
+
+    <p>dan kalau suatu saat nanti kamu cape..., akuu harapp kamu tetep inget kalo disinii pernah ada seseorang yang sayang bangettt sama kamuu sepenuh hatinyaa 💗🥺😕</p>
+
+    <button onclick="goPage(5)">liat momen / flashback kita yuk</button>
+  </div>
+</section>
+
+<section class="page gallery-page" id="page5">
+  <div class="gallery-header">
+    <h2>Flashback Kita</h2>
+    <p>Pencet salah satu foto, nanti kamu bakal tau kapan foto itu ada.</p>
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="modal-photo-wrap">
+      <button class="photo-arrow left" onclick="prevPhoto(event)" aria-label="Foto sebelumnya"></button>
+      <img id="modalImg" src="" alt="">
+      <button class="photo-arrow right" onclick="nextPhoto(event)" aria-label="Foto selanjutnya"></button>
+      <div class="photo-count" id="photoCount"></div>
+    </div>
+
+    <div class="modal-info">
+      <h3 id="modalTitle"></h3>
+      <span id="modalDate"></span>
+      <p id="modalDesc"></p>
+    </div>
+
+    <p class="close-text">klik dimana aja buat keluar dari foto ini</p>
+  </div>
+</div>
+
+<script>
+    const memories = [
+    {
+      title: "Momen Pertama Kita",
+      date: "18 Agustus 2025",
+      images: [
+        "assets/img/250818.jpg",
+        "assets/img/250818 (2).jpg"
+      ],
+      desc: "difoto ini, pertama kali aku bisa ngerasain gimana rasanya foto sama cewek yang aku mau, dan disini juga aku pertama kali bisa ngerasain gimana rasanya ngasih bunga dan nembak secara langsung tanpa adanya persiapan sama sekali, apalagi rangkulnya, its my first time aku mau ngerangkul cewek yang aku sukaa"
+    },
+    {
+      title: "Hari baik buat momen kedua",
+      date: "24 Agustus 2025",
+      images: [
+        "assets/img/250824 (2).jpg",
+        "assets/img/250824.jpg",
+        "assets/img/250824 (3).jpg",
+        "assets/img/250824 (4).jpg"
+      ],
+      desc: "Hari ini juga bisa disebut pertama atau bahkan ke dua, karena disini juga awal pertama aku deket dan mepet banget sama kamu, awal awal aku bisa deket sama kamu juga disini, awal aku sadar bahwa ada orang sesempurna kamu sayangg..."
+    },
+    {
+      title: "The best first date on ml",
+      date: "30 Agustus 2025",
+      images: [
+        "assets/img/250830.jpg",
+        "assets/img/250830 (2).jpg",
+        "assets/img/250830 (4).jpg"
+      ],
+      desc: "First time date??yes bangett, akuu bisa ngerasain hal yang disebut sangat sangat jatuh cinnta disini, karena aku bisa nemuin orang pertama ya g mau aku ajak dating ke tempat yang bisa mencukupi, aku seneng banget ngeliat kamu seneng, bahagia, dan gak sedih sedih"
+    },
+    {
+      title: "Kita dan awal pendekatan keluargaku",
+      date: "6 September 2025",
+      images: [
+        "assets/img/250906.jpg",
+        "assets/img/250906 (2).jpg",
+        "assets/img/250906 (3).jpg",
+        "assets/img/250906 (4).jpg",
+        "assets/img/250906 (5).jpg"
+      ],
+      desc: "Mungkin bagi orang lain biasa aja, tapi buat akuu, momen ini jadi momen yang bersejarah buat dikenang, karena aku juga udah mau nyoba buat berani bawa kamu ketemu sama keluarga besar aku"
+    },
+    {
+      title: "Satu Hari Bersama",
+      date: "14 September 2025",
+      images: [
+        "assets/img/250914.jpg"
+      ],
+      desc: "Kita tuhh disinii bener bener satuuu harii fullll...., akuu awal bisa nyender dan nyamann bisa di anget angetin sama kamu pas kedinginan, itu ditempat inii..."
+    },
+    {
+      title: "Hug??",
+      date: "10 Oktober 2025",
+      images: [
+        "assets/img/251010.jpg"
+      ],
+      desc: "Masih inget gak??sama hug??itu buat aku bener bener first hug yang bikin aku lebih ngerasa disayang, dicintai, bahkan lebih dari rasa nyaman mana pun, walaupun aku bukan first hug kamu, tapi aku disini yang bakal ngasih kamu hug senyaman mungkinn sayang...."
+    },
+    {
+      title: "MBG Pertama cenah",
+      date: "15 Oktober 2025",
+      images: [
+        "assets/img/251015.jpg"
+      ],
+      desc: "Kamu disini lagi review MBG tauu ahahaha, teruss pas aku elus eluss, aku sempet mikir, aku bertahan lama atau enggak sama kamu, karena aku gamau kehilangan kamu sama sekalii gamauu, akuuu sayangg bangett sama kamuu ayy... ☹☹"
+    },
+    {
+      title: "Double date??",
+      date: "18 Oktober 2025",
+      images: [
+        "assets/img/251018.jpg",
+        "assets/img/251018 (2).jpg",
+        "assets/img/251018 (3).jpg",
+        "assets/img/251018 (4).jpg",
+        "assets/img/251018 (5).jpg",
+        "assets/img/251018 (6).jpg"
+      ],
+      desc: "Kita di dago, nongkronggg, ceritaaa ceritaa jugaa, sharing sharingg pulaa, disini uang aku sempet abiss.., dan kamuu yang traktir sampe nyuapin akuu..., disitu jugaa kok, pertama kali aku ngerasain disuapin sama orang yang aku sayangg..."
+    },
+    {
+      title: "Pertama kalinya kamu kerumah aku",
+      date: "25 Oktober 2025",
+      images: [
+        "assets/img/251025.jpg"
+      ],
+      desc: "Awal awal kamu sekolah dan kamu butuh kayuu, yang aku bongkar mejaa, dann yappp, kamuu tidaa susahh mencarii kayuu lagiii....."
+    }
+    
+  ];
+
+const bgMusic = document.getElementById("bgMusic");
+const gallery = document.getElementById("gallery");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalDate = document.getElementById("modalDate");
+const modalDesc = document.getElementById("modalDesc");
+const photoCount = document.getElementById("photoCount");
+const pageLoader = document.getElementById("pageLoader");
+const heartLoader = document.getElementById("heartLoader");
+
+let currentMemory = null;
+let currentImageIndex = 0;
+let isLoading = false;
+
+bgMusic.volume = 0.45;
+
+const heartPixels = [
+  "", "", "pink", "pink", "pink", "", "", "", "pink", "pink", "pink", "", "",
+  "", "pink", "soft-pink", "soft-pink", "soft-pink", "pink", "", "pink", "soft-pink", "soft-pink", "soft-pink", "pink", "",
+  "pink", "soft-pink", "soft-pink", "white", "white", "soft-pink", "pink", "soft-pink", "white", "white", "soft-pink", "soft-pink", "pink",
+  "pink", "soft-pink", "white", "white", "white", "white", "soft-pink", "white", "white", "white", "white", "soft-pink", "pink",
+  "pink", "soft-pink", "white", "white", "white", "white", "white", "white", "white", "white", "white", "soft-pink", "pink",
+  "", "pink", "soft-pink", "white", "white", "white", "white", "white", "white", "white", "soft-pink", "pink", "",
+  "", "", "pink", "soft-pink", "white", "white", "white", "white", "white", "soft-pink", "pink", "", "",
+  "", "", "", "pink", "soft-pink", "white", "white", "white", "soft-pink", "pink", "", "", "",
+  "", "", "", "", "pink", "soft-pink", "white", "soft-pink", "pink", "", "", "", "",
+  "", "", "", "", "", "pink", "soft-pink", "pink", "", "", "", "", "",
+  "", "", "", "", "", "", "pink", "", "", "", "", "", ""
+];
+
+heartPixels.forEach((color) => {
+  const pixel = document.createElement("div");
+  pixel.className = color ? `pixel ${color}` : "pixel";
+  heartLoader.appendChild(pixel);
+});
+
+function playMusic() {
+  bgMusic.play().catch(() => {});
+}
+
+function startExperience() {
+  playMusic();
+  goPage(2);
+}
+
+function showLoader() {
+  pageLoader.classList.add("show");
+}
+
+function hideLoader() {
+  pageLoader.classList.remove("show");
+}
+
+function nextPage(number) {
+  document.querySelectorAll(".page").forEach((page) => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("page" + number).classList.add("active");
+
+  const liveDate = document.getElementById("liveDate");
+  liveDate.style.display = number === 1 ? "block" : "none";
+}
+
+function goPage(number) {
+  if (isLoading) return;
+
+  isLoading = true;
+  showLoader();
+
+  setTimeout(() => {
+    nextPage(number);
+
+    setTimeout(() => {
+      hideLoader();
+      isLoading = false;
+    }, 250);
+  }, 1000);
+}
+
+memories.forEach((item) => {
+  const card = document.createElement("div");
+  card.className = "memory-card";
+
+  card.innerHTML = `
+    <img src="${item.images[0]}" alt="${item.title}">
+    <span>${item.title}</span>
+  `;
+
+  card.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    currentMemory = item;
+    currentImageIndex = 0;
+
+    modalTitle.textContent = item.title;
+    modalDate.textContent = item.date;
+    modalDesc.textContent = item.desc;
+
+    updateModalImage();
+    modal.classList.add("show");
+  });
+
+  gallery.appendChild(card);
+});
+
+function updateModalImage() {
+  modalImg.src = currentMemory.images[currentImageIndex];
+  photoCount.textContent = `${currentImageIndex + 1} / ${currentMemory.images.length}`;
+
+  const arrows = document.querySelectorAll(".photo-arrow");
+
+  if (currentMemory.images.length <= 1) {
+    arrows.forEach(arrow => arrow.style.display = "none");
+    photoCount.style.display = "none";
+  } else {
+    arrows.forEach(arrow => arrow.style.display = "flex");
+    photoCount.style.display = "block";
+  }
+}
+
+function nextPhoto(e) {
+  e.stopPropagation();
+
+  currentImageIndex++;
+
+  if (currentImageIndex >= currentMemory.images.length) {
+    currentImageIndex = 0;
+  }
+
+  updateModalImage();
+}
+
+function prevPhoto(e) {
+  e.stopPropagation();
+
+  currentImageIndex--;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = currentMemory.images.length - 1;
+  }
+
+  updateModalImage();
+}
+
+modal.addEventListener("click", () => {
+  modal.classList.remove("show");
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modal.classList.remove("show");
+  }
+});
+
+function createShootingStar() {
+  const star = document.createElement("span");
+  star.className = "star";
+
+  star.style.left = Math.random() * window.innerWidth + "px";
+  star.style.animationDuration = Math.random() * 1.6 + 1.4 + "s";
+
+  document.querySelector(".shooting-stars").appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 3500);
+}
+
+setInterval(createShootingStar, 650);
+
+function updateDate() {
+  const liveDate = document.getElementById("liveDate");
+  const now = new Date();
+
+  const date = now.toLocaleDateString("id-ID", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
+  const time = now.toLocaleTimeString("id-ID", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  liveDate.textContent = `${date} • ${time}`;
+}
+
+updateDate();
+setInterval(updateDate, 1000);
+
+window.addEventListener("load", playMusic);
+document.addEventListener("click", playMusic, { once: true });
+document.addEventListener("touchstart", playMusic, { once: true });
+</script>
+
+</body>
+</html>
