@@ -4,2676 +4,212 @@
     <!-- meta utama -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUMI Net | Internet Cepat & Stabil</title>
+    <title>BUMI Net | Dari Bumi Untuk Semua</title>
 
     <!-- favicon -->
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
 
-    <!-- bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- bootstrap icon -->
+    <!-- bootstrap icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- aos css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <style>
-        :root{
-            --bg-main:#07140f;
-            --bg-dark:#020403;
-            --primary:#10e0b4;
-            --text-light:#ffffff;
-            --text-muted:#a7aaa9;
-            --border-soft:rgba(255,255,255,.12);
-        }
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        html{
-            scroll-behavior:smooth;
-        }
-
-        body{
-            font-family:'Inter',sans-serif;
-            background:var(--bg-main);
-            color:var(--text-light);
-            overflow-x:hidden;
-        }
-
-        a{
-            text-decoration:none;
-        }
-
-        /* ==============================
-           hero wrapper
-        ============================== */
-        .hero-wrapper{
-            min-height:100vh;
-            position:relative;
-            overflow:hidden;
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(5,11,8,.78) 0%,
-                    rgba(5,11,8,.84) 45%,
-                    rgba(5,11,8,.92) 70%,
-                    #07140f 100%
-                ),
-                radial-gradient(circle at 90% 45%,rgba(16,224,180,.12),transparent 25%),
-                radial-gradient(circle at 10% 10%,rgba(16,224,180,.08),transparent 25%),
-                url('https://wallpaperaccess.com/full/52271.jpg');
-
-            background-size:cover;
-            background-position:center top;
-            background-repeat:no-repeat;
-        }
-
-        .hero-wrapper::before{
-            content:"";
-            position:absolute;
-            width:1px;
-            height:180px;
-            background:linear-gradient(transparent,rgba(16,224,180,.35),transparent);
-            top:70px;
-            left:115px;
-            transform:rotate(12deg);
-        }
-
-        .hero-wrapper::after{
-            content:"";
-            position:absolute;
-            width:18px;
-            height:18px;
-            background:rgba(16,224,180,.35);
-            border-radius:50%;
-            top:230px;
-            right:105px;
-            box-shadow:0 0 35px rgba(16,224,180,.45);
-        }
-
-        /* ==============================
-           navbar
-        ============================== */
-        .custom-navbar{
-            width:min(1140px,calc(100% - 40px));
-            position:fixed;
-            top:20px;
-            left:0;
-            right:0;
-            margin:auto;
-            padding:16px 24px;
-            background:rgba(3,3,3,0.72);
-            backdrop-filter:blur(18px);
-            -webkit-backdrop-filter:blur(18px);
-            border-radius:999px;
-            z-index:9999;
-            border:1px solid rgba(255,255,255,.06);
-            transition:
-                background .3s ease,
-                top .35s ease,
-                opacity .35s ease,
-                transform .35s ease,
-                box-shadow .3s ease;
-        }
-        
-        .custom-navbar.scrolled{
-            background:rgba(3,3,3,0.88);
-            box-shadow:0 15px 40px rgba(0,0,0,.35);
-            border-color:rgba(16,224,180,.12);
-        }
-        
-        .custom-navbar.nav-hidden{
-            opacity:0 !important;
-            transform:translateY(-140%) !important;
-            pointer-events:none;
-        }
-
-        .navbar-content{
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:25px;
-        }
-
-        .brand-logo{
-            color:var(--text-light);
-            font-size:24px;
-            font-weight:700;
-            letter-spacing:-.8px;
-        }
-
-        .brand-logo span{
-            color:var(--primary);
-        }
-
-        .nav-menu{
-            display:flex;
-            align-items:center;
-            gap:30px;
-            list-style:none;
-            margin:0;
-            padding:0;
-        }
-
-        .nav-menu a{
-            color:#d6d6d6;
-            font-size:15px;
-            font-weight:500;
-            transition:.25s ease;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active{
-            color:var(--primary);
-        }
-
-        .nav-btn{
-            background:var(--primary);
-            color:#03110d;
-            padding:13px 24px;
-            border-radius:999px;
-            font-size:14px;
-            font-weight:600;
-            transition:.25s ease;
-        }
-
-        .nav-btn:hover{
-            transform:translateY(-2px);
-            box-shadow:0 10px 30px rgba(16,224,180,.22);
-            color:#03110d;
-        }
-
-        .menu-toggle{
-            display:none;
-            width:42px;
-            height:42px;
-            border:1px solid var(--border-soft);
-            border-radius:50%;
-            background:transparent;
-            color:var(--text-light);
-            font-size:24px;
-            align-items:center;
-            justify-content:center;
-        }
-
-        /* ==============================
-           hero section
-        ============================== */
-        .hero-section{
-            position:relative;
-            z-index:2;
-            min-height:calc(100vh - 110px);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
-            padding:55px 20px;
-        }
-
-        .hero-content{
-            max-width:850px;
-            margin:auto;
-        }
-
-        .hero-badge{
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            padding:11px 20px;
-            border-radius:5px;
-            background:rgba(16,224,180,.17);
-            color:var(--primary);
-            font-size:13px;
-            font-weight:800;
-            letter-spacing:.7px;
-            text-transform:uppercase;
-            margin-bottom:28px;
-        }
-
-        .hero-title{
-            font-size:clamp(42px,6vw,72px);
-            line-height:1.12;
-            font-weight:800;
-            letter-spacing:-2.5px;
-            margin-bottom:26px;
-        }
-
-        .hero-desc{
-            max-width:650px;
-            margin:0 auto 38px;
-            color:var(--text-muted);
-            font-size:18px;
-            line-height:1.8;
-            font-weight:500;
-        }
-
-        .hero-actions{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            gap:16px;
-            flex-wrap:wrap;
-        }
-
-        .btn-primary-custom,
-        .btn-outline-custom{
-            min-width:190px;
-            padding:16px 24px;
-            border-radius:7px;
-            font-size:15px;
-            font-weight:700;
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            gap:9px;
-            transition:.25s ease;
-        }
-
-        .btn-primary-custom{
-            background:var(--primary);
-            color:#03110d;
-        }
-
-        .btn-primary-custom:hover{
-            color:#03110d;
-            transform:translateY(-3px);
-            box-shadow:0 16px 35px rgba(16,224,180,.22);
-        }
-
-        .btn-outline-custom{
-            color:var(--text-light);
-            border:2px solid rgba(255,255,255,.22);
-        }
-
-        .btn-outline-custom:hover{
-            color:var(--primary);
-            border-color:var(--primary);
-            transform:translateY(-3px);
-        }
-
-        .shape-dot{
-            position:absolute;
-            border-radius:50%;
-            background:rgba(16,224,180,.32);
-            box-shadow:0 0 30px rgba(16,224,180,.25);
-        }
-
-        .dot-1{
-            width:10px;
-            height:10px;
-            left:17%;
-            bottom:18%;
-        }
-
-        .dot-2{
-            width:8px;
-            height:8px;
-            right:24%;
-            top:28%;
-        }
-
-        .dot-3{
-            width:14px;
-            height:14px;
-            right:10%;
-            bottom:22%;
-        }
-
-        /* ==============================
-           promo section
-        ============================== */
-        .promo-section{
-            padding:60px 20px;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .promo-header{
-            text-align:center;
-            margin-bottom:32px;
-        }
-
-        .promo-badge,
-        .about-company-badge,
-        .services-badge{
-            display:inline-block;
-            padding:10px 18px;
-            background:rgba(16,224,180,.12);
-            color:var(--primary);
-            border-radius:999px;
-            font-size:13px;
-            font-weight:700;
-            text-transform:uppercase;
-            letter-spacing:.5px;
-            margin-bottom:18px;
-        }
-
-        .promo-title,
-        .services-title{
-            font-size:clamp(32px,5vw,52px);
-            font-weight:800;
-            margin-bottom:16px;
-            letter-spacing:-2px;
-        }
-
-        .promo-subtitle,
-        .services-desc{
-            color:var(--text-muted);
-            max-width:650px;
-            margin:auto;
-            line-height:1.8;
-            font-size:16px;
-        }
-
-        .promo-slider-wrapper{
-            position:relative;
-            width:min(1200px,100%);
-            margin:auto;
-        }
-
-        .promo-slider{
-            position:relative;
-            overflow:hidden;
-            border-radius:30px;
-        }
-
-        .promo-track{
-            display:flex;
-            transition:transform .55s ease;
-        }
-
-        .promo-card{
-            min-width:100%;
-            border-radius:30px;
-            overflow:hidden;
-            background:
-                radial-gradient(circle at top right,rgba(255,255,255,.08),transparent 25%),
-                linear-gradient(135deg,#10c9e8,#14d7b1);
-        }
-
-        .promo-content{
-            min-height:390px;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:30px;
-            padding:45px 60px;
-        }
-
-        .promo-text{
-            max-width:520px;
-        }
-
-        .promo-label{
-            display:inline-block;
-            background:rgba(255,255,255,.18);
-            color:#fff;
-            padding:8px 15px;
-            border-radius:999px;
-            font-size:12px;
-            font-weight:700;
-            margin-bottom:20px;
-            text-transform:uppercase;
-        }
-
-        .promo-text h3{
-            font-size:clamp(36px,5vw,58px);
-            line-height:1.1;
-            font-weight:800;
-            margin-bottom:20px;
-            color:#fff;
-        }
-
-        .promo-text p{
-            color:rgba(255,255,255,.9);
-            line-height:1.9;
-            margin-bottom:30px;
-            font-size:16px;
-        }
-
-        .promo-btn{
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            padding:15px 28px;
-            border:2px solid rgba(255,255,255,.5);
-            border-radius:12px;
-            color:#fff;
-            font-weight:700;
-            transition:.3s ease;
-        }
-
-        .promo-btn:hover{
-            background:#fff;
-            color:#111;
-        }
-
-        .promo-image img{
-            width:320px;
-            max-width:100%;
-            object-fit:contain;
-            filter:drop-shadow(0 15px 35px rgba(0,0,0,.15));
-        }
-
-        .promo-nav{
-            position:absolute;
-            top:50%;
-            transform:translateY(-50%);
-            width:58px;
-            height:58px;
-            border-radius:50%;
-            border:none;
-            background:#fff;
-            color:#111;
-            font-size:24px;
-            z-index:10;
-            transition:.25s ease;
-        }
-
-        .promo-nav:hover{
-            transform:translateY(-50%) scale(1.08);
-        }
-
-        .prev-btn{
-            left:-28px;
-        }
-
-        .next-btn{
-            right:-28px;
-        }
-
-        .promo-dots{
-            display:flex;
-            justify-content:center;
-            gap:10px;
-            margin-top:24px;
-        }
-
-        .promo-dot{
-            width:10px;
-            height:10px;
-            border-radius:50%;
-            background:rgba(255,255,255,.25);
-            cursor:pointer;
-            transition:.3s ease;
-        }
-
-        .promo-dot.active{
-            width:28px;
-            border-radius:999px;
-            background:var(--primary);
-        }
-
-        /* ==============================
-           about section
-        ============================== */
-        .about-company-section{
-            padding:65px 20px;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .about-company-container{
-            width:min(1200px,100%);
-            margin:auto;
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            align-items:center;
-            gap:55px;
-        }
-
-        .about-company-title{
-            font-size:clamp(38px,5vw,64px);
-            line-height:1.1;
-            font-weight:800;
-            letter-spacing:-2px;
-            margin-bottom:25px;
-        }
-
-        .about-company-desc{
-            color:var(--text-muted);
-            line-height:1.9;
-            font-size:16px;
-            margin-bottom:18px;
-        }
-
-        .about-company-stats{
-            display:flex;
-            flex-wrap:wrap;
-            gap:18px;
-            margin-top:30px;
-        }
-
-        .about-stat-card{
-            min-width:150px;
-            padding:22px;
-            border-radius:18px;
-            background:rgba(255,255,255,.05);
-            border:1px solid rgba(255,255,255,.08);
-            backdrop-filter:blur(10px);
-        }
-
-        .about-stat-card h3{
-            font-size:16px;
-            font-weight:800;
-            color:var(--primary);
-            margin-bottom:6px;
-        }
-
-        .about-stat-card span{
-            color:var(--text-muted);
-            font-size:17px;
-        }
-
-        .about-image-wrapper{
-            position:relative;
-        }
-
-        .about-image-wrapper img{
-            width:100%;
-            height:540px;
-            object-fit:cover;
-            border-radius:30px;
-            border:1px solid rgba(255,255,255,.08);
-        }
-
-        .about-floating-card{
-            position:absolute;
-            left:-30px;
-            bottom:40px;
-            display:flex;
-            align-items:center;
-            gap:16px;
-            padding:18px 22px;
-            border-radius:20px;
-            background:rgba(10,20,15,.82);
-            backdrop-filter:blur(18px);
-            border:1px solid rgba(255,255,255,.08);
-        }
-
-        .about-floating-card i{
-            width:52px;
-            height:52px;
-            border-radius:50%;
-            background:rgba(16,224,180,.12);
-            color:var(--primary);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:24px;
-        }
-
-        .about-floating-card h4{
-            font-size:18px;
-            font-weight:700;
-            margin-bottom:4px;
-        }
-
-        .about-floating-card p{
-            color:var(--text-muted);
-            font-size:14px;
-            margin:0;
-        }
-
-        /* ==============================
-           services section
-        ============================== */
-        .services-section{
-            padding:65px 20px;
-            background:#081611;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .services-header{
-            text-align:center;
-            margin-bottom:38px;
-        }
-
-        .services-grid{
-            width:min(1200px,100%);
-            margin:auto;
-            display:grid;
-            grid-template-columns:repeat(3,1fr);
-            gap:26px;
-        }
-
-        .service-card{
-            background:rgba(255,255,255,.05);
-            border:1px solid rgba(255,255,255,.08);
-            border-radius:22px;
-            overflow:hidden;
-            transition:.3s ease;
-        }
-
-        .service-card:hover{
-            transform:translateY(-8px);
-            border-color:rgba(16,224,180,.4);
-            box-shadow:0 20px 45px rgba(0,0,0,.28);
-        }
-
-        .service-top{
-            height:130px;
-            background:linear-gradient(135deg,#0fc6dd,#10e0b4);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
-
-        .service-top i{
-            font-size:42px;
-            color:#fff;
-            transition:.3s ease;
-            transform-origin:center;
-        }
-
-        .service-body{
-            padding:30px;
-        }
-
-        .service-body h3{
-            font-size:24px;
-            font-weight:800;
-            margin-bottom:16px;
-        }
-
-        .service-body p{
-            color:var(--text-muted);
-            line-height:1.9;
-            font-size:15px;
-            margin:0;
-        }
-
-        .service-card:hover .service-speed i{
-            animation:speedMove .75s ease 1;
-        }
-
-        @keyframes speedMove{
-            0%{transform:rotate(0deg)}
-            25%{transform:rotate(-18deg)}
-            55%{transform:rotate(20deg)}
-            80%{transform:rotate(-8deg)}
-            100%{transform:rotate(0deg)}
-        }
-
-        .service-card:hover .service-lock i{
-            animation:lockOpen .75s ease 1;
-        }
-
-        @keyframes lockOpen{
-            0%{transform:translateY(0) rotate(0deg)}
-            35%{transform:translateY(-6px) rotate(-8deg)}
-            65%{transform:translateY(-6px) rotate(8deg)}
-            100%{transform:translateY(0) rotate(0deg)}
-        }
-
-        .service-card:hover .service-network i{
-            animation:networkPulse .75s ease 1;
-        }
-
-        @keyframes networkPulse{
-            0%{transform:scale(1)}
-            35%{transform:scale(1.18)}
-            65%{transform:scale(.95)}
-            100%{transform:scale(1)}
-        }
-
-        .service-card:hover .service-wifi i{
-            animation:wifiWave .75s ease 1;
-        }
-
-        @keyframes wifiWave{
-            0%{transform:translateY(0) scale(1);opacity:1}
-            35%{transform:translateY(-6px) scale(1.18);opacity:.8}
-            70%{transform:translateY(3px) scale(.95);opacity:1}
-            100%{transform:translateY(0) scale(1)}
-        }
-
-        .service-card:hover .service-server i{
-            animation:serverShake .7s ease 1;
-        }
-
-        @keyframes serverShake{
-            0%{transform:translateX(0)}
-            20%{transform:translateX(-5px)}
-            45%{transform:translateX(5px)}
-            70%{transform:translateX(-3px)}
-            100%{transform:translateX(0)}
-        }
-
-        .service-card:hover .service-lan i{
-            animation:lanConnect .75s ease 1;
-        }
-
-        @keyframes lanConnect{
-            0%{transform:scale(1) rotate(0deg)}
-            30%{transform:scale(1.15) rotate(-6deg)}
-            60%{transform:scale(1.05) rotate(6deg)}
-            100%{transform:scale(1) rotate(0deg)}
-        }
-
-        /* ==============================
-           responsive
-        ============================== */
-        @media(max-width:992px){
-            .custom-navbar{
-                border-radius:28px;
-            }
-
-            .menu-toggle{
-                display:flex;
-            }
-
-            .nav-menu{
-                position:absolute;
-                top:82px;
-                left:0;
-                width:100%;
-                padding:20px;
-                background:#030303;
-                border-radius:24px;
-                flex-direction:column;
-                align-items:flex-start;
-                gap:18px;
-                opacity:0;
-                visibility:hidden;
-                transform:translateY(-12px);
-                transition:.25s ease;
-            }
-
-            .nav-menu.active{
-                opacity:1;
-                visibility:visible;
-                transform:translateY(0);
-            }
-
-            .nav-menu li{
-                width:100%;
-            }
-
-            .nav-menu a{
-                display:block;
-                width:100%;
-                padding:10px 4px;
-            }
-
-            .nav-btn{
-                display:none;
-            }
-
-            .promo-content,
-            .about-company-container{
-                grid-template-columns:1fr;
-            }
-
-            .promo-content{
-                flex-direction:column;
-                text-align:center;
-                padding:45px 35px;
-            }
-
-            .promo-image img{
-                width:250px;
-            }
-
-            .prev-btn{
-                left:10px;
-            }
-
-            .next-btn{
-                right:10px;
-            }
-
-            .about-company-container{
-                gap:40px;
-            }
-
-            .about-company-right{
-                order:-1;
-            }
-
-            .about-image-wrapper img{
-                height:450px;
-            }
-
-            .about-floating-card{
-                left:20px;
-                bottom:20px;
-            }
-
-            .services-grid{
-                grid-template-columns:repeat(2,1fr);
-            }
-        }
-
-        @media(max-width:576px){
-            .custom-navbar{
-                width:calc(100% - 24px);
-                margin-top:12px;
-                padding:13px 16px;
-            }
-
-            .brand-logo{
-                font-size:22px;
-            }
-
-            .hero-section{
-                min-height:calc(100vh - 90px);
-                padding:60px 18px;
-            }
-
-            .hero-title{
-                font-size:40px;
-                line-height:1.15;
-                margin-bottom:20px;
-            }
-
-            .hero-desc{
-                font-size:15px;
-                line-height:1.75;
-                margin-bottom:30px;
-            }
-
-            .hero-actions{
-                flex-direction:column;
-            }
-
-            .btn-primary-custom,
-            .btn-outline-custom{
-                width:100%;
-                min-width:unset;
-            }
-
-            .promo-section,
-            .about-company-section,
-            .services-section{
-                padding:45px 14px;
-            }
-
-            .promo-content{
-                min-height:auto;
-                padding:40px 22px;
-            }
-
-            .promo-text h3{
-                font-size:38px;
-            }
-
-            .promo-text p{
-                font-size:14px;
-            }
-
-            .promo-image img{
-                width:200px;
-            }
-
-            .promo-nav{
-                width:42px;
-                height:42px;
-                font-size:20px;
-            }
-
-            .about-company-title{
-                font-size:42px;
-                line-height:1.15;
-            }
-
-            .about-company-desc{
-                font-size:15px;
-            }
-
-            .about-company-stats{
-                flex-direction:column;
-            }
-
-            .about-stat-card{
-                width:100%;
-            }
-
-            .about-image-wrapper img{
-                height:360px;
-                border-radius:24px;
-            }
-
-            .about-floating-card{
-                left:12px;
-                right:12px;
-                bottom:12px;
-            }
-
-            .services-grid{
-                grid-template-columns:1fr;
-                gap:20px;
-            }
-
-            .service-body{
-                padding:25px 22px;
-            }
-        }
-        /* ========================================
-        section paket harga
-        ======================================== */
-        .pricing-section{
-            padding: 65px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-header{
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .pricing-badge{
-            display: inline-block;
-            padding: 10px 18px;
-            background: rgba(16,224,180,0.12);
-            color: var(--primary);
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            margin-bottom: 18px;
-        }
-
-        .pricing-title{
-            font-size: clamp(34px,5vw,54px);
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 18px;
-        }
-
-        .pricing-desc{
-            max-width: 700px;
-            margin: auto;
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        /* grid */
-        .pricing-grid{
-            width: min(1300px,100%);
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 24px;
-        }
-
-        /* card */
-
-        .plan{
-            border-radius: 26px;
-            padding: 10px;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(255,255,255,0.08),
-                    rgba(255,255,255,0.04)
-                );
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            box-shadow:
-                0 30px 40px -25px rgba(0,0,0,0.45);
-
-            transition: .35s ease;
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* kilap */
-        .plan::before{
-            content: "";
-            position: absolute;
-            top: -80%;
-            left: -90%;
-
-            width: 70%;
-            height: 260%;
-
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255,255,255,0.28),
-                transparent
-            );
-
-            transform: rotate(25deg);
-            transition: .65s ease;
-            opacity: 0;
-            z-index: 5;
-            pointer-events: none;
-        }
-
-        .plan:hover::before{
-            left: 120%;
-            opacity: 1;
-        }
-
-        /* warna level */
-        .plan.bronze-plan{
-            --plan-glow: rgba(205,127,50,0.45);
-            --plan-start: #cd7f32;
-            --plan-end: #f0b36b;
-        }
-
-        .plan.silver-plan{
-            --plan-glow: rgba(192,192,192,0.45);
-            --plan-start: #bfc7d5;
-            --plan-end: #ffffff;
-        }
-
-        .plan.gold-plan{
-            --plan-glow: rgba(255,215,0,0.45);
-            --plan-start: #d6a800;
-            --plan-end: #ffe86b;
-        }
-
-        .plan.platinum-plan{
-            --plan-glow: rgba(120,220,255,0.48);
-            --plan-start: #73e0ff;
-            --plan-end: #d9fbff;
-        }
-
-        .plan:hover{
-            transform: translateY(-10px) scale(1.035);
-            border-color: var(--plan-glow);
-
-            box-shadow:
-                0 35px 70px -28px var(--plan-glow),
-                0 20px 45px rgba(0,0,0,0.35);
-        }
-
-        .plan .pricing-price,
-        .plan .features .icon,
-        .plan .button{
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--plan-start),
-                    var(--plan-end)
-                );
-        }
-
-        .plan .button:hover{
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 15px 35px var(--plan-glow);
-
-            color: #03110d;
-        }
-
-        /* populer */
-        .popular-plan{
-            transform: scale(1.04);
-            border-color: rgba(192,192,192,0.35);
-        }
-
-        .popular-plan:hover{
-            transform: scale(1.065) translateY(-10px);
-        }
-
-        .plan .inner{
-            align-items: center;
-            padding: 24px;
-            padding-top: 58px;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(11,22,18,0.96),
-                    rgba(7,15,12,0.96)
-                );
-
-            border-radius: 20px;
-
-            position: relative;
-
-            height: 100%;
-        }
-
-        /* harga */
-        .plan .pricing-price{
-            position: absolute;
-            top: 0;
-            right: 0;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #10c9e8,
-                    #10e0b4
-                );
-
-            border-radius: 999px 0 0 999px;
-
-            display: flex;
-            align-items: center;
-
-            padding: 12px 18px;
-
-            font-size: 1.2rem;
-            font-weight: 700;
-
-            color: #03110d;
-
-            box-shadow:
-                0 10px 30px rgba(16,224,180,0.18);
-        }
-
-        .plan .pricing-price small{
-            color: rgba(3,17,13,0.7);
-            font-size: .72em;
-            margin-left: .2em;
-        }
-
-        /* title */
-        .plan .title{
-            font-weight: 800;
-            font-size: 1.7rem;
-            color: #fff;
-            margin-bottom: 14px;
-        }
-
-        .plan .info{
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        /* features */
-        .plan .features{
-            display: flex;
-            flex-direction: column;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .plan .features li{
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-            color: #dce3e0;
-        }
-
-        .plan .features li + *{
-            margin-top: 1rem;
-        }
-
-        .plan .features .icon{
-            background:
-                linear-gradient(
-                    135deg,
-                    #10c9e8,
-                    #10e0b4
-                );
-
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            color: #03110d;
-
-            border-radius: 50%;
-
-            width: 24px;
-            height: 24px;
-
-            flex-shrink: 0;
-
-            font-size: 13px;
-            font-weight: 900;
-        }
-
-        .plan .features strong{
-            color: #fff;
-        }
-
-        /* button */
-        .plan .action{
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: end;
-            margin-top: 30px;
-        }
-
-        .plan .button{
-            background:
-                linear-gradient(
-                    135deg,
-                    #10c9e8,
-                    #10e0b4
-                );
-
-            border-radius: 12px;
-
-            color: #03110d;
-
-            font-weight: 800;
-            font-size: 1rem;
-
-            text-align: center;
-
-            width: 100%;
-
-            padding: 14px 18px;
-
-            transition: .3s ease;
-        }
-
-        .plan .button:hover{
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 15px 35px rgba(16,224,180,0.22);
-
-            color: #03110d;
-        }
-
-        /* populer */
-        .popular-plan{
-            transform: scale(1.04);
-            border-color: rgba(16,224,180,0.3);
-        }
-
-        .popular-plan:hover{
-            transform: scale(1.04) translateY(-10px);
-        }
-
-        .popular-badge{
-            position: absolute;
-            top: 13px;
-            left: 18px;
-        
-            background:
-                linear-gradient(
-                    135deg,
-                    #10c9e8,
-                    #10e0b4
-                );
-        
-            color: #03110d;
-        
-            font-size: 11px;
-            font-weight: 800;
-        
-            padding: 7px 14px;
-        
-            border-radius: 999px;
-        
-            text-transform: uppercase;
-            letter-spacing: .5px;
-        
-            z-index: 20;
-        
-            box-shadow:
-                0 10px 25px rgba(16,224,180,0.22);
-        }
-
-        /* responsive */
-        @media(max-width:1200px){
-
-            .pricing-grid{
-                grid-template-columns: repeat(2,1fr);
-            }
-        }
-
-        @media(max-width:768px){
-
-            .pricing-grid{
-                grid-template-columns: 1fr;
-            }
-
-            .popular-plan{
-                transform: scale(1);
-            }
-
-            .popular-plan:hover{
-                transform: translateY(-10px);
-            }
-        }
-
-        @media(max-width:576px){
-
-            .pricing-section{
-                padding: 45px 14px;
-            }
-
-            .plan .inner{
-                padding: 22px;
-                padding-top: 55px;
-            }
-        }
-        /* ========================================
-        section area jangkauan
-        ======================================== */
-        .coverage-section{
-            padding: 75px 20px;
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 15% 20%, rgba(16,224,180,0.10), transparent 28%),
-                radial-gradient(circle at 90% 70%, rgba(16,201,232,0.09), transparent 28%),
-                #07140f;
-        }
-
-        .coverage-bg-grid{
-            position: absolute;
-            inset: 0;
-
-            background-image:
-                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-
-            background-size: 55px 55px;
-
-            mask-image:
-                radial-gradient(circle at center, black, transparent 72%);
-
-            opacity: .55;
-
-            animation: gridMove 18s linear infinite;
-        }
-
-        @keyframes gridMove{
-            from{
-                transform: translateY(0);
-            }
-
-            to{
-                transform: translateY(55px);
-            }
-        }
-
-        .coverage-bg-orbit{
-            position: absolute;
-            width: 520px;
-            height: 520px;
-            border-radius: 50%;
-
-            right: -190px;
-            top: 70px;
-
-            border: 1px solid rgba(16,224,180,0.16);
-
-            animation: bigOrbit 12s linear infinite;
-        }
-
-        .coverage-bg-orbit::before,
-        .coverage-bg-orbit::after{
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-        }
-
-        .coverage-bg-orbit::before{
-            inset: 70px;
-            border: 1px solid rgba(16,201,232,0.14);
-        }
-
-        .coverage-bg-orbit::after{
-            width: 16px;
-            height: 16px;
-            background: var(--primary);
-            top: 60px;
-            left: 80px;
-            box-shadow: 0 0 35px rgba(16,224,180,0.8);
-        }
-
-        @keyframes bigOrbit{
-            from{
-                transform: rotate(0deg);
-            }
-
-            to{
-                transform: rotate(360deg);
-            }
-        }
-
-        .coverage-header{
-            text-align: center;
-            margin-bottom: 45px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .coverage-badge{
-            display: inline-block;
-            padding: 10px 18px;
-            background: rgba(16,224,180,0.12);
-            color: var(--primary);
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            margin-bottom: 18px;
-        }
-
-        .coverage-title{
-            font-size: clamp(34px,5vw,54px);
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 18px;
-        }
-
-        .coverage-desc{
-            max-width: 720px;
-            margin: auto;
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        /* container */
-        .coverage-container{
-            width: min(1200px,100%);
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: .9fr 1.1fr;
-            align-items: center;
-            gap: 50px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        /* left */
-        .coverage-glow-card{
-            padding: 34px;
-            border-radius: 30px;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(255,255,255,0.07),
-                    rgba(255,255,255,0.035)
-                );
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            box-shadow:
-                inset 0 1px 0 rgba(255,255,255,0.08),
-                0 30px 70px rgba(0,0,0,0.22);
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        .coverage-glow-card::before{
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-
-            top: -70px;
-            right: -60px;
-
-            background: rgba(16,224,180,0.20);
-            filter: blur(55px);
-        }
-
-        .coverage-mini-badge{
-            display: inline-block;
-            padding: 8px 14px;
-            border-radius: 999px;
-
-            background: rgba(16,224,180,0.12);
-            color: var(--primary);
-
-            font-size: 12px;
-            font-weight: 800;
-
-            text-transform: uppercase;
-            letter-spacing: .6px;
-
-            margin-bottom: 20px;
-        }
-
-        .coverage-glow-card h3{
-            font-size: clamp(28px,4vw,42px);
-            line-height: 1.15;
-            font-weight: 800;
-            letter-spacing: -1.4px;
-            margin-bottom: 18px;
-        }
-
-        .coverage-glow-card > p{
-            color: var(--text-muted);
-            line-height: 1.9;
-            margin-bottom: 28px;
-        }
-
-        .coverage-location-list{
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .coverage-location-item{
-            display: flex;
-            gap: 15px;
-            padding: 18px;
-            border-radius: 20px;
-
-            background: rgba(255,255,255,0.045);
-            border: 1px solid rgba(255,255,255,0.06);
-
-            transition: .3s ease;
-        }
-
-        .coverage-location-item:hover{
-            transform: translateX(8px);
-            border-color: rgba(16,224,180,0.3);
-            background: rgba(16,224,180,0.07);
-        }
-
-        .coverage-icon{
-            width: 44px;
-            height: 44px;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(135deg,#10c9e8,#10e0b4);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: #03110d;
-            font-size: 20px;
-
-            flex-shrink: 0;
-
-            box-shadow:
-                0 12px 28px rgba(16,224,180,0.2);
-
-            animation: pinPulse 2.2s ease-in-out infinite;
-        }
-
-        @keyframes pinPulse{
-            0%,100%{
-                transform: scale(1);
-                box-shadow: 0 12px 28px rgba(16,224,180,0.2);
-            }
-
-            50%{
-                transform: scale(1.08);
-                box-shadow: 0 12px 35px rgba(16,224,180,0.38);
-            }
-        }
-
-        .coverage-location-item h4{
-            font-size: 18px;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-
-        .coverage-location-item p{
-            color: var(--text-muted);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .coverage-action{
-            margin-top: 28px;
-        }
-
-        .coverage-btn{
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-
-            padding: 15px 24px;
-
-            border-radius: 14px;
-
-            background:
-                linear-gradient(135deg,#10c9e8,#10e0b4);
-
-            color: #03110d;
-            font-weight: 800;
-
-            transition: .3s ease;
-        }
-
-        .coverage-btn:hover{
-            transform: translateY(-4px);
-            box-shadow: 0 18px 35px rgba(16,224,180,0.22);
-            color: #03110d;
-        }
-
-        /* right map */
-        .coverage-map-area{
-            position: relative;
-            min-height: 560px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 1200px;
-        }
-
-        .coverage-map-card{
-            width: 100%;
-
-            border-radius: 30px;
-            overflow: hidden;
-
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-
-            box-shadow:
-                0 35px 90px rgba(0,0,0,0.35),
-                0 0 70px rgba(16,224,180,0.08);
-
-            transform: rotateX(3deg) rotateY(-5deg);
-
-            transition: .5s ease;
-
-            position: relative;
-            z-index: 4;
-        }
-
-        .coverage-map-card:hover{
-            transform: rotateX(0deg) rotateY(0deg) scale(1.02);
-            border-color: rgba(16,224,180,0.35);
-
-            box-shadow:
-                0 40px 100px rgba(0,0,0,0.4),
-                0 0 90px rgba(16,224,180,0.16);
-        }
-
-        .map-topbar{
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 20px;
-
-            background: rgba(3,3,3,0.72);
-            backdrop-filter: blur(16px);
-
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .map-dots{
-            display: flex;
-            gap: 8px;
-        }
-
-        .map-dots span{
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: var(--primary);
-            opacity: .85;
-        }
-
-        .map-dots span:nth-child(2){
-            background: #10c9e8;
-        }
-
-        .map-dots span:nth-child(3){
-            background: #ffffff;
-            opacity: .45;
-        }
-
-        .map-topbar p{
-            color: var(--text-muted);
-            margin: 0;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .map-frame{
-            height: 440px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-frame::before{
-            content: "";
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(16,224,180,0.12),
-                    transparent 35%,
-                    rgba(16,201,232,0.08)
-                );
-
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .map-frame iframe{
-            width: 100%;
-            height: 100%;
-            border: 0;
-
-            filter:
-                grayscale(30%)
-                contrast(1.05)
-                brightness(.88);
-
-            transition: .4s ease;
-        }
-
-        .coverage-map-card:hover iframe{
-            filter:
-                grayscale(0%)
-                contrast(1)
-                brightness(1);
-        }
-
-        /* orbit map */
-        .map-orbit{
-            position: absolute;
-            border-radius: 50%;
-            border: 1px dashed rgba(16,224,180,0.22);
-
-            animation: mapOrbit 10s linear infinite;
-        }
-
-        .orbit-one{
-            width: 520px;
-            height: 520px;
-        }
-
-        .orbit-two{
-            width: 390px;
-            height: 390px;
-            animation-duration: 7s;
-            animation-direction: reverse;
-            border-color: rgba(16,201,232,0.22);
-        }
-
-        @keyframes mapOrbit{
-            from{
-                transform: rotate(0deg);
-            }
-
-            to{
-                transform: rotate(360deg);
-            }
-        }
-
-        .map-floating-pin{
-            position: absolute;
-            z-index: 6;
-
-            width: 58px;
-            height: 58px;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(135deg,#10c9e8,#10e0b4);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: #03110d;
-
-            font-size: 24px;
-
-            box-shadow:
-                0 15px 35px rgba(16,224,180,0.35);
-
-            animation: floatingPin 3s ease-in-out infinite;
-        }
-
-        .pin-one{
-            top: 88px;
-            left: -25px;
-        }
-
-        .pin-two{
-            right: -25px;
-            bottom: 95px;
-            animation-delay: 1.2s;
-        }
-
-        @keyframes floatingPin{
-            0%,100%{
-                transform: translateY(0) scale(1);
-            }
-
-            50%{
-                transform: translateY(-14px) scale(1.07);
-            }
-        }
-
-        /* responsive */
-        @media(max-width:992px){
-
-            .coverage-container{
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .coverage-map-area{
-                min-height: auto;
-            }
-
-            .coverage-map-card{
-                transform: none;
-            }
-
-            .map-orbit{
-                display: none;
-            }
-        }
-
-        @media(max-width:576px){
-
-            .coverage-section{
-                padding: 50px 14px;
-            }
-
-            .coverage-glow-card{
-                padding: 24px;
-                border-radius: 24px;
-            }
-
-            .coverage-location-item{
-                flex-direction: column;
-            }
-
-            .map-frame{
-                height: 340px;
-            }
-
-            .map-floating-pin{
-                display: none;
-            }
-        }
-
-        /* ========================================
-        section hubungi kami
-        ======================================== */
-        .contact-section{
-            padding:70px 20px;
-            position:relative;
-            overflow:hidden;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(16,224,180,0.10), transparent 28%),
-                radial-gradient(circle at 90% 70%, rgba(16,201,232,0.08), transparent 28%),
-                #07140f;
-        }
-
-        .contact-bg{
-            position:absolute;
-            inset:0;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-            background-size:55px 55px;
-            opacity:.35;
-            animation:contactGrid 16s linear infinite;
-        }
-
-        @keyframes contactGrid{
-            from{transform:translateY(0)}
-            to{transform:translateY(55px)}
-        }
-
-        .contact-header{
-            text-align:center;
-            margin-bottom:45px;
-            position:relative;
-            z-index:2;
-        }
-
-        .contact-badge{
-            display:inline-block;
-            padding:10px 18px;
-            background:rgba(16,224,180,0.12);
-            color:var(--primary);
-            border-radius:999px;
-            font-size:13px;
-            font-weight:700;
-            text-transform:uppercase;
-            letter-spacing:.5px;
-            margin-bottom:18px;
-        }
-
-        .contact-title{
-            font-size:clamp(34px,5vw,54px);
-            font-weight:800;
-            letter-spacing:-2px;
-            margin-bottom:18px;
-        }
-
-        .contact-desc{
-            max-width:720px;
-            margin:auto;
-            color:var(--text-muted);
-            line-height:1.8;
-            font-size:16px;
-        }
-
-        .contact-container{
-            width:min(1200px,100%);
-            margin:auto;
-            display:grid;
-            grid-template-columns:.9fr 1.1fr;
-            gap:35px;
-            position:relative;
-            z-index:2;
-        }
-
-        .contact-info{
-            display:grid;
-            gap:18px;
-        }
-
-        .contact-card{
-            display:flex;
-            gap:18px;
-            padding:24px;
-            border-radius:24px;
-            background:rgba(255,255,255,0.055);
-            border:1px solid rgba(255,255,255,0.08);
-            transition:.35s ease;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .contact-card::before{
-            content:"";
-            position:absolute;
-            inset:0;
-            background:linear-gradient(120deg, transparent, rgba(16,224,180,0.12), transparent);
-            transform:translateX(-120%);
-            transition:.65s ease;
-        }
-
-        .contact-card:hover::before{
-            transform:translateX(120%);
-        }
-
-        .contact-card:hover{
-            transform:translateX(8px);
-            border-color:rgba(16,224,180,0.35);
-            box-shadow:0 20px 45px rgba(0,0,0,0.22);
-        }
-
-        .contact-icon{
-            width:48px;
-            height:48px;
-            border-radius:50%;
-            background:linear-gradient(135deg,#10c9e8,#10e0b4);
-            color:#03110d;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:21px;
-            flex-shrink:0;
-            box-shadow:0 12px 28px rgba(16,224,180,0.22);
-        }
-
-        .contact-card h3{
-            font-size:19px;
-            font-weight:800;
-            margin-bottom:8px;
-        }
-
-        .contact-card p{
-            color:var(--text-muted);
-            line-height:1.8;
-            margin:0;
-        }
-
-        .contact-form-card{
-            padding:34px;
-            border-radius:30px;
-            background:linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
-            border:1px solid rgba(255,255,255,0.08);
-            box-shadow:
-                inset 0 1px 0 rgba(255,255,255,0.08),
-                0 30px 70px rgba(0,0,0,0.25);
-        }
-
-        .form-group{
-            margin-bottom:20px;
-        }
-
-        .form-group label{
-            display:block;
-            margin-bottom:9px;
-            font-size:14px;
-            font-weight:700;
-            color:#dfe8e5;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select{
-            width:100%;
-            border:1px solid rgba(255,255,255,0.1);
-            outline:none;
-            border-radius:14px;
-            padding:15px 16px;
-            background:rgba(3,3,3,0.35);
-            color:#fff;
-            font-size:15px;
-            transition:.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder{
-            color:rgba(255,255,255,0.38);
-        }
-
-        .form-group textarea{
-            min-height:120px;
-            resize:vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus{
-            border-color:rgba(16,224,180,0.5);
-            box-shadow:0 0 0 4px rgba(16,224,180,0.08);
-        }
-
-        .form-group select option{
-            color:#111;
-        }
-
-        .contact-submit{
-            border:0;
-            outline:0;
-            padding:15px 26px;
-            border-radius:14px;
-            background:linear-gradient(135deg,#10c9e8,#10e0b4);
-            color:#03110d;
-            font-weight:800;
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            transition:.3s ease;
-        }
-
-        .contact-submit:hover{
-            transform:translateY(-4px);
-            box-shadow:0 18px 35px rgba(16,224,180,0.22);
-        }
-
-        .disabled-btn{
-            background:#4d5552 !important;
-            color:#bfc7c4 !important;
-            cursor:not-allowed;
-            box-shadow:none !important;
-        }
-
-        .disabled-btn:hover{
-            transform:none !important;
-        }
-
-        /* popup whatsapp */
-        .wa-popup{
-            position:fixed;
-            inset:0;
-            z-index:99999;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            padding:20px;
-            background:rgba(0,0,0,0.72);
-            backdrop-filter:blur(14px);
-            opacity:0;
-            visibility:hidden;
-            transition:.3s ease;
-        }
-
-        .wa-popup.active{
-            opacity:1;
-            visibility:visible;
-        }
-
-        .wa-popup-box{
-            width:min(430px,100%);
-            padding:34px;
-            border-radius:28px;
-            background:linear-gradient(180deg, rgba(15,28,23,0.96), rgba(7,15,12,0.96));
-            border:1px solid rgba(255,255,255,0.1);
-            box-shadow:
-                0 30px 90px rgba(0,0,0,0.45),
-                0 0 80px rgba(16,224,180,0.12);
-            position:relative;
-            transform:translateY(25px) scale(.96);
-            transition:.3s ease;
-        }
-
-        .wa-popup.active .wa-popup-box{
-            transform:translateY(0) scale(1);
-        }
-
-        .wa-close{
-            position:absolute;
-            top:18px;
-            right:18px;
-            width:38px;
-            height:38px;
-            border:0;
-            border-radius:50%;
-            background:rgba(255,255,255,0.08);
-            color:#fff;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            transition:.25s ease;
-        }
-
-        .wa-close:hover{
-            background:rgba(16,224,180,0.15);
-            color:var(--primary);
-        }
-
-        .wa-popup-icon{
-            width:64px;
-            height:64px;
-            border-radius:50%;
-            background:linear-gradient(135deg,#10c9e8,#10e0b4);
-            color:#03110d;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:30px;
-            margin-bottom:22px;
-            box-shadow:0 18px 35px rgba(16,224,180,0.25);
-        }
-
-        .wa-popup-box h3{
-            font-size:26px;
-            font-weight:800;
-            margin-bottom:10px;
-        }
-
-        .wa-popup-box p{
-            color:var(--text-muted);
-            line-height:1.8;
-            margin-bottom:24px;
-        }
-
-        .wa-admin-list{
-            display:grid;
-            gap:14px;
-        }
-
-        .wa-admin-btn{
-            width:100%;
-            border:1px solid rgba(255,255,255,0.08);
-            outline:none;
-            padding:16px 18px;
-            border-radius:18px;
-            background:rgba(255,255,255,0.055);
-            color:#fff;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap:16px;
-            transition:.3s ease;
-        }
-
-        .wa-admin-btn span{
-            display:flex;
-            align-items:center;
-            gap:10px;
-            font-weight:800;
-        }
-
-        .wa-admin-btn small{
-            color:var(--text-muted);
-            font-weight:600;
-        }
-
-        .wa-admin-btn:hover{
-            transform:translateX(6px);
-            border-color:rgba(16,224,180,0.35);
-            background:rgba(16,224,180,0.10);
-        }
-
-        .wa-admin-btn:hover small{
-            color:var(--primary);
-        }
-
-        @media(max-width:992px){
-            .contact-container{
-                grid-template-columns:1fr;
-            }
-        }
-
-        @media(max-width:576px){
-            .contact-section{
-                padding:50px 14px;
-            }
-
-            .contact-card{
-                flex-direction:column;
-            }
-
-            .contact-form-card{
-                padding:24px;
-                border-radius:24px;
-            }
-
-            .contact-submit{
-                width:100%;
-                justify-content:center;
-            }
-        }
-        .footer-section{
-            position:relative;
-            overflow:hidden;
-            padding:65px 20px 0;
-            background:
-                radial-gradient(circle at 12% 20%, rgba(16,224,180,0.10), transparent 28%),
-                radial-gradient(circle at 90% 80%, rgba(16,224,180,0.07), transparent 26%),
-                linear-gradient(180deg, #07140f 0%, #020403 100%);
-            border-top:1px solid rgba(255,255,255,0.08);
-        }
-        
-        .footer-bg-grid{
-            position:absolute;
-            inset:0;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size:55px 55px;
-            opacity:.35;
-            pointer-events:none;
-        }
-        
-        .footer-container{
-            width:min(1100px,100%);
-            margin:auto;
-            display:grid;
-            grid-template-columns:1.25fr 1fr 1fr 1fr;
-            gap:42px;
-            position:relative;
-            z-index:2;
-            padding-bottom:45px;
-        }
-        
-        .footer-logo{
-            display:inline-block;
-            color:#fff;
-            font-size:26px;
-            font-weight:800;
-            letter-spacing:-1px;
-            margin-bottom:18px;
-        }
-        
-        .footer-logo span{
-            color:var(--primary);
-        }
-        
-        .footer-col h3{
-            color:#fff;
-            font-size:17px;
-            font-weight:800;
-            margin-bottom:20px;
-            position:relative;
-        }
-        
-        .footer-col h3::after{
-            content:"";
-            display:block;
-            width:34px;
-            height:3px;
-            border-radius:999px;
-            background:var(--primary);
-            margin-top:10px;
-            box-shadow:0 0 18px rgba(16,224,180,0.45);
-        }
-        
-        .footer-col p,
-        .footer-col a{
-            display:block;
-            color:var(--text-muted);
-            font-size:14px;
-            line-height:1.8;
-            margin-bottom:11px;
-            transition:.3s ease;
-        }
-        
-        .footer-about p{
-            max-width:285px;
-        }
-        
-        .footer-col a:hover{
-            color:var(--primary);
-            transform:translateX(6px);
-        }
-        
-        .footer-social{
-            display:flex;
-            align-items:center;
-            gap:12px;
-            margin-top:20px;
-        }
-        
-        .footer-social a{
-            width:40px;
-            height:40px;
-            border-radius:50%;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:rgba(255,255,255,0.055);
-            border:1px solid rgba(255,255,255,0.09);
-            color:#fff;
-            font-size:17px;
-            margin:0;
-            backdrop-filter:blur(12px);
-        }
-        
-        .footer-social a:hover{
-            background:var(--primary);
-            color:#03110d;
-            border-color:var(--primary);
-            transform:translateY(-5px);
-            box-shadow:0 15px 35px rgba(16,224,180,0.25);
-        }
-        
-        .footer-contact p{
-            display:flex;
-            align-items:center;
-            gap:10px;
-        }
-        
-        .footer-contact i{
-            color:var(--primary);
-            font-size:16px;
-            min-width:18px;
-        }
-        
-        .footer-bottom{
-            position:relative;
-            z-index:2;
-            text-align:center;
-            padding:22px 10px;
-            border-top:1px solid rgba(255,255,255,0.08);
-            background:rgba(2,4,3,0.55);
-        }
-        
-        .footer-bottom p{
-            margin:0;
-            color:#7f8784;
-            font-size:12px;
-        }
-        
-        @media(max-width:992px){
-            .footer-container{
-                grid-template-columns:repeat(2,1fr);
-                gap:36px;
-            }
-        }
-        
-        @media(max-width:576px){
-            .footer-section{
-                padding:50px 14px 0;
-            }
-        
-            .footer-container{
-                grid-template-columns:1fr;
-                gap:32px;
-            }
-        
-            .footer-about p{
-                max-width:100%;
-            }
-        }
-        
-    </style>
+    <!-- css utama -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="page-loader" id="pageLoader">
+        <div class="wifi-loader">
+            <span class="wifi-line line-1"></span>
+            <span class="wifi-line line-2"></span>
+            <span class="wifi-line line-3"></span>
+            <span class="wifi-line line-4"></span>
+            <span class="wifi-dot"></span>
+        </div>
+    
+        <p>connecting bumi net<span id="loaderDots"></span></p>
+    </div>
 
     <!-- ==============================
-         hero wrapper
+         navbar
     ============================== -->
-    <main class="hero-wrapper" id="home">
+    <nav class="custom-navbar" id="navbar">
+        <div class="navbar-content">
 
-        <!-- navbar -->
-        <nav class="custom-navbar">
-            <div class="navbar-content">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/img/logo-bumi-net.jpg" alt="BUMI Net Logo">
+            </a>
 
-                <a href="#home" class="brand-logo">
-                    BUMI<span>Net</span>
-                </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#paket">Paket</a></li>
+                <li><a href="#coverage">Coverage</a></li>
+                <li><a href="#partner">Partner</a></li>
+                <li><a href="karir.html">Karir</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
 
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#paket">Paket Internet</a></li>
-                    <li><a href="#coverage">Coverage</a></li>
-                    <li><a href="#promo">Promo</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#services">Pelayanan</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
+            <a href="#contact" class="nav-btn">
+                <i class="bi bi-headset"></i>
+                Hubungi Sales
+            </a>
 
-                <a href="#contact" class="nav-btn">Pasang Sekarang</a>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="menu">
+                <i class="bi bi-list"></i>
+            </button>
 
-                <button class="menu-toggle" id="menuToggle" type="button" aria-label="menu">
-                    <i class="bi bi-list"></i>
-                </button>
+        </div>
+    </nav>
 
-            </div>
-        </nav>
+    <!-- ==============================
+         hero
+    ============================== -->
+    <main class="hero-section" id="home">
 
-        <!-- hero -->
-        <section class="hero-section">
+        <div class="hero-container">
+
             <div class="hero-content">
 
-                <div class="hero-badge" data-aos="fade-up">
+                <span class="hero-badge" data-aos="fade-up">
                     internet service provider
-                </div>
+                </span>
 
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="120">
-                    Internet Cepat Untuk Rumah & Bisnis
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    <span id="typingText"></span>
+                    <span class="typing-cursor">|</span>
                 </h1>
 
-                <p class="hero-desc" data-aos="fade-up" data-aos-delay="220">
-                    Nikmati koneksi internet stabil, unlimited, dan responsif untuk kebutuhan harian, pekerjaan, streaming, meeting online, hingga bisnis anda.
+                <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
+                    BUMI Net menghadirkan layanan internet stabil, cepat, dan terjangkau untuk rumah, bisnis, sekolah, hingga kebutuhan perusahaan.
                 </p>
 
-                <div class="hero-actions" data-aos="fade-up" data-aos-delay="320">
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
                     <a href="#contact" class="btn-primary-custom">
-                        <i class="bi bi-arrow-up-right-circle"></i>
+                        <i class="bi bi-send-fill"></i>
                         Pasang Sekarang
                     </a>
 
                     <a href="#paket" class="btn-outline-custom">
+                        <i class="bi bi-wifi"></i>
                         Lihat Paket
                     </a>
                 </div>
 
-            </div>
-        </section>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
 
-        <span class="shape-dot dot-1"></span>
-        <span class="shape-dot dot-2"></span>
-        <span class="shape-dot dot-3"></span>
+                    <div class="hero-stat-card">
+                        <strong>24/7</strong>
+                        <span>Monitoring</span>
+                    </div>
+
+                    <div class="hero-stat-card">
+                        <strong>100+</strong>
+                        <span>Pelanggan Aktif</span>
+                    </div>
+
+                    <div class="hero-stat-card">
+                        <strong>99%</strong>
+                        <span>Koneksi Stabil</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="250">
+
+                <div class="hero-image-card">
+                    <img src="assets/img/hero-bumi-net.jpg" alt="BUMI Net Internet Service">
+                </div>
+
+            </div>
+
+        </div>
 
     </main>
 
     <!-- ==============================
-         section promo
+         partner quick strip
     ============================== -->
-    <section class="promo-section" id="promo">
+    <section class="partner-strip">
+        <div class="partner-strip-container">
 
-        <div class="promo-header" data-aos="fade-up">
-            <span class="promo-badge">promo & informasi</span>
+            <span>partner & kolaborasi</span>
 
-            <h2 class="promo-title">Promo Terbaru BUMI Net</h2>
-
-            <p class="promo-subtitle">
-                Temukan promo pemasangan, diskon internet, dan informasi terbaru dari BUMI Net.
-            </p>
-        </div>
-
-        <div class="promo-slider-wrapper" data-aos="zoom-in-up" data-aos-delay="150">
-
-            <button class="promo-nav prev-btn" id="prevPromo" type="button">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-
-            <div class="promo-slider">
-                <div class="promo-track" id="promoTrack">
-
-                    <div class="promo-card">
-                        <div class="promo-content">
-                            <div class="promo-text">
-                                <span class="promo-label">promo internet</span>
-                                <h3>Diskon Pemasangan Hingga 50%</h3>
-                                <p>Nikmati promo pemasangan internet rumah dengan harga lebih hemat untuk pelanggan baru.</p>
-                                <a href="#" class="promo-btn">Lihat Promo</a>
-                            </div>
-
-                            <div class="promo-image">
-                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="promo internet">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="promo-card">
-                        <div class="promo-content">
-                            <div class="promo-text">
-                                <span class="promo-label">paket bisnis</span>
-                                <h3>Internet Stabil Untuk Kantor</h3>
-                                <p>Solusi koneksi cepat dan stabil untuk kebutuhan bisnis dan perusahaan anda.</p>
-                                <a href="#" class="promo-btn">Pelajari</a>
-                            </div>
-
-                            <div class="promo-image">
-                                <img src="https://cdn-icons-png.flaticon.com/512/3059/3059518.png" alt="paket bisnis">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="promo-card">
-                        <div class="promo-content">
-                            <div class="promo-text">
-                                <span class="promo-label">maintenance info</span>
-                                <h3>Informasi Maintenance Area</h3>
-                                <p>Update terbaru mengenai maintenance jaringan dan peningkatan kualitas layanan.</p>
-                                <a href="#" class="promo-btn">Detail</a>
-                            </div>
-
-                            <div class="promo-image">
-                                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" alt="maintenance info">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="partner-strip-list">
+                <img src="assets/img/partner/fmi.png" alt="FMI">
+                <img src="assets/img/partner/iforte.png" alt="iForte">
+                <img src="assets/img/partner/telkom.png" alt="Telkom Indonesia">
+                <img src="assets/img/partner/apjii.png" alt="APJII">
+                <img src="assets/img/partner/ism.png" alt="Inti Synergy Mandiri">
+                <img src="assets/img/partner/indocyber.png" alt="Indo Cyber">
             </div>
 
-            <button class="promo-nav next-btn" id="nextPromo" type="button">
-                <i class="bi bi-chevron-right"></i>
-            </button>
-
         </div>
-
-        <div class="promo-dots" id="promoDots"></div>
-
     </section>
 
     <!-- ==============================
-         section tentang kami
+         about
     ============================== -->
-    <section class="about-company-section" id="about">
+    <section class="about-section" id="about">
 
-        <div class="about-company-container">
+        <div class="about-container">
 
-            <div class="about-company-left">
-                <span class="about-company-badge" data-aos="fade-right">tentang kami</span>
+            <div class="about-content" data-aos="fade-right">
 
-                <h2 class="about-company-title" data-aos="fade-right" data-aos-delay="100">
-                    Solusi Konektivitas Terbaik Untuk Pelanggan
+                <span class="section-badge">tentang kami</span>
+
+                <h2 class="section-title">
+                    Solusi Konektivitas Yang Handal dan Terintegrasi
                 </h2>
 
-                <p class="about-company-desc" data-aos="fade-right" data-aos-delay="180">
-                    PT. Bumi Multi Perkasa merupakan perusahaan yang bergerak di bidang teknologi informasi dan komunikasi. Berdiri sejak 23 September 2022, perusahaan ini menjadi penyedia layanan akses internet di bawah merek “BUMI Net” sesuai izin Dirjen Postel No. 164/TEL.04.02/2024.
+                <p>
+                    PT. Bumi Multi Perkasa merupakan perusahaan yang bergerak di bidang teknologi informasi dan komunikasi, khususnya layanan akses internet, infrastruktur jaringan, serta layanan berbasis komunikasi.
                 </p>
 
-                <p class="about-company-desc" data-aos="fade-right" data-aos-delay="240">
-                    Kami juga menjadi anggota resmi APJII dengan Sertifikat Keanggotaan No. 1451/APJII/K-2024.
+                <p>
+                    Bersama mitra strategis, BUMI Net berkomitmen membangun layanan internet yang stabil, reliable, dan siap mendukung kebutuhan konektivitas di era digital.
                 </p>
 
-                <p class="about-company-desc" data-aos="fade-right" data-aos-delay="300">
-                    Dengan tim ahli dan pengalaman luas, kami berkomitmen memberikan solusi konektivitas terbaik untuk pelanggan.
-                </p>
+                <div class="about-check-list">
 
-                <div class="about-company-stats" data-aos="fade-up" data-aos-delay="360">
-
-                    <div class="about-stat-card">
-                        <h3>
-                            <span class="counter" data-target="100">0</span>+
-                        </h3>
-                        <span>Pelanggan Aktif</span>
+                    <div>
+                        <i class="bi bi-patch-check-fill"></i>
+                        Anggota resmi APJII
                     </div>
 
-                    <div class="about-stat-card">
-                        <h3>
-                            <span class="counter" data-target="24">0</span>/7
-                        </h3>
-                        <span>Support Service</span>
+                    <div>
+                        <i class="bi bi-patch-check-fill"></i>
+                        Izin Dirjen Postel No. 164/TEL.04.02/2024
                     </div>
 
-                    <div class="about-stat-card">
-                        <h3>
-                            <span class="counter" data-target="99">0</span>%
-                        </h3>
-                        <span>Jaringan Stabil</span>
+                    <div>
+                        <i class="bi bi-patch-check-fill"></i>
+                        Monitoring jaringan 24/7
                     </div>
 
                 </div>
+
             </div>
 
-            <div class="about-company-right" data-aos="fade-left" data-aos-delay="180">
-                <div class="about-image-wrapper">
+            <div class="about-visual" data-aos="fade-left" data-aos-delay="160">
 
-                    <img src="https://images.unsplash.com/photo-1520869562399-e772f042f422?q=80&w=2070&auto=format&fit=crop" alt="BUMI Net">
+                <img src="assets/img/about-bumi-net.png" alt="Tentang BUMI Net">
 
-                    <div class="about-floating-card" data-aos="fade-up" data-aos-delay="350">
-                        <i class="bi bi-wifi"></i>
-
-                        <div>
-                            <h4>Koneksi Cepat</h4>
-                            <p>Internet stabil & responsif</p>
-                        </div>
+                <div class="about-mini-card">
+                    <i class="bi bi-router-fill"></i>
+                    <div>
+                        <strong>Reliable Network</strong>
+                        <span>stabil, aman, dan terpantau</span>
                     </div>
-
                 </div>
+
             </div>
 
         </div>
@@ -2681,375 +217,297 @@
     </section>
 
     <!-- ==============================
-         section pelayanan kami
+         services
     ============================== -->
     <section class="services-section" id="services">
 
-        <div class="services-header" data-aos="fade-up">
-            <span class="services-badge">pelayanan kami</span>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">layanan kami</span>
 
-            <h2 class="services-title">Layanan BUMI Net</h2>
+            <h2 class="section-title">Layanan Internet & Jaringan</h2>
 
-            <p class="services-desc">
-                Berbagai solusi jaringan dan konektivitas untuk kebutuhan rumah, bisnis, hingga perusahaan.
+            <p class="section-desc">
+                Berbagai pilihan layanan konektivitas untuk rumah, bisnis, perusahaan, dan kebutuhan infrastruktur digital.
             </p>
         </div>
 
         <div class="services-grid">
 
             <div class="service-card" data-aos="fade-up" data-aos-delay="50">
-                <div class="service-top service-speed">
-                    <i class="bi bi-speedometer2"></i>
-                </div>
-
-                <div class="service-body">
-                    <h3>Internet Broadband</h3>
-                    <p>Kecepatan mulai dari 10 Mbps hingga 1 Gbps untuk kebutuhan rumah dan bisnis dengan koneksi stabil.</p>
-                </div>
-            </div>
-
-            <div class="service-card" data-aos="fade-up" data-aos-delay="120">
-                <div class="service-top service-lock">
-                    <i class="bi bi-lock-fill"></i>
-                </div>
-
-                <div class="service-body">
-                    <h3>Virtual Private Network</h3>
-                    <p>Solusi jaringan pribadi yang aman untuk perusahaan dengan enkripsi data end-to-end.</p>
-                </div>
-            </div>
-
-            <div class="service-card" data-aos="fade-up" data-aos-delay="190">
-                <div class="service-top service-network">
-                    <i class="bi bi-diagram-3-fill"></i>
-                </div>
-
-                <div class="service-body">
-                    <h3>Metro Ethernet</h3>
-                    <p>Koneksi dedicated antar kantor dengan bandwidth tinggi dan latency rendah.</p>
-                </div>
-            </div>
-
-            <div class="service-card" data-aos="fade-up" data-aos-delay="260">
-                <div class="service-top service-wifi">
+                <div class="service-icon">
                     <i class="bi bi-wifi"></i>
                 </div>
 
-                <div class="service-body">
-                    <h3>Managed Wi-Fi</h3>
-                    <p>Instalasi dan pengelolaan jaringan Wi-Fi profesional untuk bisnis dan perkantoran.</p>
-                </div>
+                <h3>Internet Broadband</h3>
+                <p>Internet unlimited untuk rumah dan bisnis dengan koneksi stabil, cepat, dan harga terjangkau.</p>
             </div>
 
-            <div class="service-card" data-aos="fade-up" data-aos-delay="330">
-                <div class="service-top service-server">
-                    <i class="bi bi-hdd-stack-fill"></i>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <i class="bi bi-building-check"></i>
                 </div>
 
-                <div class="service-body">
-                    <h3>Colocation Server</h3>
-                    <p>Solusi penyimpanan server dengan infrastruktur data center yang andal dan aman.</p>
-                </div>
+                <h3>Internet Dedicated</h3>
+                <p>Koneksi dedicated untuk perusahaan dengan bandwidth yang lebih konsisten dan performa tinggi.</p>
             </div>
 
-            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-top service-lan">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="service-icon">
+                    <i class="bi bi-diagram-3-fill"></i>
+                </div>
+
+                <h3>Metro Ethernet</h3>
+                <p>Solusi koneksi antar kantor atau cabang dengan bandwidth besar dan latency rendah.</p>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
                     <i class="bi bi-hdd-network-fill"></i>
                 </div>
 
-                <div class="service-body">
-                    <h3>LAN Managed Service</h3>
-                    <p>Desain, implementasi, dan pengelolaan jaringan lokal perusahaan oleh tim ahli kami.</p>
+                <h3>Local Loop</h3>
+                <p>Layanan konektivitas lokal untuk mendukung kebutuhan operasional jaringan pelanggan.</p>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="service-icon">
+                    <i class="bi bi-globe2"></i>
                 </div>
+
+                <h3>IP Transit</h3>
+                <p>Dukungan koneksi IP Transit untuk kebutuhan jaringan profesional dan skala besar.</p>
+            </div>
+
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon">
+                    <i class="bi bi-tools"></i>
+                </div>
+
+                <h3>Managed Service</h3>
+                <p>Pengelolaan jaringan, perangkat, dan infrastruktur IT dengan dukungan tim berpengalaman.</p>
             </div>
 
         </div>
 
     </section>
 
-    <!-- ========================================
-        section paket harga
-    ======================================== -->
+    <!-- ==============================
+         why
+    ============================== -->
+    <section class="why-section" id="why">
+
+        <div class="why-container">
+
+            <div class="why-content" data-aos="fade-right">
+
+                <span class="section-badge">kenapa pilih kami</span>
+
+                <h2 class="section-title">
+                    Internet Stabil Dengan Pelayanan Yang Lebih Dekat
+                </h2>
+
+                <p>
+                    Kami memahami bahwa internet bukan hanya soal kecepatan, tetapi juga soal kestabilan, dukungan teknis, dan kepercayaan jangka panjang.
+                </p>
+
+                <a href="#contact" class="btn-primary-custom">
+                    <i class="bi bi-headset"></i>
+                    Konsultasi Dengan Sales
+                </a>
+
+            </div>
+
+            <div class="why-grid">
+
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="80">
+                    <i class="bi bi-clock-history"></i>
+                    <h3>Monitoring 24/7</h3>
+                    <p>Jaringan dipantau untuk menjaga kualitas layanan tetap stabil.</p>
+                </div>
+
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="140">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>Koneksi Stabil</h3>
+                    <p>Cocok untuk bekerja, belajar, streaming, meeting, dan operasional bisnis.</p>
+                </div>
+
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="bi bi-cash-coin"></i>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Paket fleksibel yang bisa disesuaikan dengan kebutuhan pelanggan.</p>
+                </div>
+
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="260">
+                    <i class="bi bi-people-fill"></i>
+                    <h3>Support Cepat</h3>
+                    <p>Tim siap membantu pemasangan, konsultasi, dan penanganan kendala.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==============================
+         pricing
+    ============================== -->
     <section class="pricing-section" id="paket">
 
-        <div class="pricing-header" data-aos="fade-up">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">paket internet</span>
 
-            <span class="pricing-badge">
-                paket internet
-            </span>
+            <h2 class="section-title">Pilih Paket Sesuai Kebutuhan</h2>
 
-            <h2 class="pricing-title">
-                Paket Harga BUMI Net
-            </h2>
-
-            <p class="pricing-desc">
-                Pilih paket internet sesuai kebutuhan rumah, gaming, streaming, hingga bisnis.
+            <p class="section-desc">
+                Paket internet rumah dan bisnis dengan kuota unlimited, koneksi stabil, dan support yang siap membantu.
             </p>
-
         </div>
 
         <div class="pricing-grid">
 
-            <!-- bronze -->
-            <div class="plan bronze-plan" data-aos="fade-up" data-aos-delay="50">
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="50">
+                <div class="plan-top">
+                    <span>Bronze</span>
+                    <h3>25 Mbps</h3>
+                </div>
 
-                <div class="inner">
+                <div class="plan-price">
+                    Rp167K <small>/bulan</small>
+                </div>
 
-                    <span class="pricing-price">
-                        <span>
-                            167K <small>/ bulan</small>
-                        </span>
-                    </span>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill"></i> Unlimited quota</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Free installation</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Support 24/7</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Cocok untuk rumah</li>
+                </ul>
 
-                    <p class="title">
-                        Bronze
-                    </p>
+                <a href="#contact" class="plan-btn">Pilih Paket</a>
+            </div>
 
-                    <p class="info">
-                        Paket hemat untuk kebutuhan internet rumah sehari-hari.
-                    </p>
+            <div class="plan-card popular-plan" data-aos="fade-up" data-aos-delay="100">
+                <div class="popular-badge">popular</div>
 
-                    <ul class="features">
+                <div class="plan-top">
+                    <span>Silver</span>
+                    <h3>35 Mbps</h3>
+                </div>
 
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
+                <div class="plan-price">
+                    Rp221K <small>/bulan</small>
+                </div>
 
-                            <span>Up to <strong>25 Mbps</strong></span>
-                        </li>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill"></i> Unlimited quota</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Free installation</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Priority support</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Cocok untuk keluarga</li>
+                </ul>
 
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
+                <a href="#contact" class="plan-btn">Pilih Paket</a>
+            </div>
 
-                            <span>Unlimited Quota</span>
-                        </li>
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="plan-top">
+                    <span>Gold</span>
+                    <h3>50 Mbps</h3>
+                </div>
 
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
+                <div class="plan-price">
+                    Rp266K <small>/bulan</small>
+                </div>
 
-                            <span>Free Installation</span>
-                        </li>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill"></i> Unlimited quota</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Free installation</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Priority support</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Cocok untuk bisnis kecil</li>
+                </ul>
 
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
+                <a href="#contact" class="plan-btn">Pilih Paket</a>
+            </div>
 
-                            <span>24/7 Support</span>
-                        </li>
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="plan-top">
+                    <span>Platinum</span>
+                    <h3>100 Mbps</h3>
+                </div>
 
-                    </ul>
+                <div class="plan-price">
+                    Rp350K <small>/bulan</small>
+                </div>
 
-                    <div class="action">
-                        <a class="button" href="#">
-                            Pesan Sekarang
-                        </a>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill"></i> Unlimited quota</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Premium installation</li>
+                    <li><i class="bi bi-check-circle-fill"></i> VIP support</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Cocok untuk kebutuhan besar</li>
+                </ul>
+
+                <a href="#contact" class="plan-btn">Pilih Paket</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==============================
+         coverage
+    ============================== -->
+    <section class="coverage-section" id="coverage">
+
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">coverage area</span>
+
+            <h2 class="section-title">Area Jangkauan BUMI Net</h2>
+
+            <p class="section-desc">
+                Layanan BUMI Net tersedia di beberapa area dan terus dikembangkan agar internet stabil dapat dinikmati lebih banyak pelanggan.
+            </p>
+        </div>
+
+        <div class="coverage-container">
+
+            <div class="coverage-info" data-aos="fade-right">
+
+                <div class="coverage-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <div>
+                        <h3>Jakarta Coverage</h3>
+                        <p>Area Jakarta dan sekitarnya untuk kebutuhan rumah, bisnis, dan perusahaan.</p>
                     </div>
+                </div>
 
+                <div class="coverage-card">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <div>
+                        <h3>Garut Coverage</h3>
+                        <p>Area Garut dan sekitarnya dengan layanan internet stabil dan terjangkau.</p>
+                    </div>
+                </div>
+
+                <div class="coverage-note">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <p>Untuk memastikan area anda sudah tercover, silakan hubungi sales BUMI Net.</p>
                 </div>
 
             </div>
 
-            <!-- silver -->
-            <div class="plan silver-plan popular-plan" data-aos="fade-up" data-aos-delay="140">
+            <div class="coverage-map-card" data-aos="fade-left" data-aos-delay="160">
 
-                <div class="inner">
-
-                    <div class="popular-badge">
-                        populer
+                <div class="map-topbar">
+                    <div class="map-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
 
-                    <span class="pricing-price">
-                        <span>
-                            221K <small>/ bulan</small>
-                        </span>
-                    </span>
-
-                    <p class="title">
-                        Silver
-                    </p>
-
-                    <p class="info">
-                        Pilihan populer dengan koneksi lebih cepat dan stabil.
-                    </p>
-
-                    <ul class="features">
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Up to <strong>35 Mbps</strong></span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Unlimited Quota</span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Free Installation</span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>24/7 Priority Support</span>
-                        </li>
-
-                    </ul>
-
-                    <div class="action">
-                        <a class="button" href="#">
-                            Pesan Sekarang
-                        </a>
-                    </div>
-
+                    <p>BUMI Net Coverage Map</p>
                 </div>
 
-            </div>
-
-            <!-- gold -->
-            <div class="plan gold-plan" data-aos="fade-up" data-aos-delay="230">
-
-                <div class="inner">
-
-                    <span class="pricing-price">
-                        <span>
-                            266K <small>/ bulan</small>
-                        </span>
-                    </span>
-
-                    <p class="title">
-                        Gold
-                    </p>
-
-                    <p class="info">
-                        Cocok untuk streaming, gaming, dan aktivitas online intensif.
-                    </p>
-
-                    <ul class="features">
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Up to <strong>50 Mbps</strong></span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Unlimited Quota</span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Free Installation</span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>24/7 Priority Support</span>
-                        </li>
-
-                    </ul>
-
-                    <div class="action">
-                        <a class="button" href="#">
-                            Pesan Sekarang
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- platinum -->
-            <div class="plan platinum-plan" data-aos="fade-up" data-aos-delay="320">
-
-                <div class="inner">
-
-                    <span class="pricing-price">
-                        <span>
-                            350K <small>/ bulan</small>
-                        </span>
-                    </span>
-
-                    <p class="title">
-                        Platinum
-                    </p>
-
-                    <p class="info">
-                        Paket premium untuk kebutuhan bisnis dan performa maksimal.
-                    </p>
-
-                    <ul class="features">
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Up to <strong>100 Mbps</strong></span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Unlimited Quota</span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>Free Premium Installation</span>
-                        </li>
-
-                        <li>
-                            <span class="icon">
-                                <i class="bi bi-check-lg"></i>
-                            </span>
-
-                            <span>24/7 VIP Support</span>
-                        </li>
-
-                    </ul>
-
-                    <div class="action">
-                        <a class="button" href="#">
-                            Pesan Sekarang
-                        </a>
-                    </div>
-
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps?q=Jakarta&output=embed" loading="lazy"></iframe>
                 </div>
 
             </div>
@@ -3058,654 +516,402 @@
 
     </section>
 
-            <!-- ========================================
-            section area jangkauan
-        ======================================== -->
-        <section class="coverage-section" id="coverage">
+    <!-- ==============================
+         noc
+    ============================== -->
+    <section class="noc-section" id="noc">
 
-            <div class="coverage-bg-orbit"></div>
-            <div class="coverage-bg-grid"></div>
+        <div class="noc-container">
 
-            <div class="coverage-header" data-aos="fade-up">
+            <div class="noc-visual" data-aos="fade-right">
+                <img src="assets/img/noc-bumi-net.png" alt="Network Operation Center">
+            </div>
 
-                <span class="coverage-badge">
-                    area jangkauan
-                </span>
+            <div class="noc-content" data-aos="fade-left" data-aos-delay="160">
 
-                <h2 class="coverage-title">
-                    Coverage Area BUMI Net
-                </h2>
+                <span class="section-badge">monitoring 24/7</span>
 
-                <p class="coverage-desc">
-                    Layanan internet BUMI Net saat ini menjangkau beberapa wilayah operasional dan terus dikembangkan untuk memperluas konektivitas pelanggan.
+                <h2 class="section-title">Network Operation Center</h2>
+
+                <p>
+                    BUMI Net melakukan monitoring jaringan untuk menjaga layanan tetap stabil, cepat terpantau, dan siap ditangani ketika terjadi gangguan.
                 </p>
 
-            </div>
-
-            <div class="coverage-container">
-
-                <!-- kiri -->
-                <div class="coverage-info" data-aos="fade-right" data-aos-delay="120">
-
-                    <div class="coverage-glow-card">
-
-                        <span class="coverage-mini-badge">
-                            available area
-                        </span>
-
-                        <h3>
-                            Kami Melayani Area Jakarta Timur & Kabupaten Garut
-                        </h3>
-
-                        <p>
-                            Tim teknis kami siap membantu proses instalasi, pengecekan jaringan, dan maintenance dengan respon cepat sesuai wilayah jangkauan layanan.
-                        </p>
-
-                        <div class="coverage-location-list">
-
-                            <div class="coverage-location-item">
-                                <div class="coverage-icon">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                </div>
-
-                                <div>
-                                    <h4>Kantor Jakarta</h4>
-                                    <p>Jl. Raya Bekasi KM 23, Cakung Barat, Jakarta Timur 13910</p>
-                                </div>
-                            </div>
-
-                            <div class="coverage-location-item">
-                                <div class="coverage-icon">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                </div>
-
-                                <div>
-                                    <h4>Kantor Garut</h4>
-                                    <p>Jl. Prof. KH. Anwar Musaddad No.19, Tanjung Kamuning, Tarogong Kaler, Garut 44151</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="coverage-action">
-                            <a href="#contact" class="coverage-btn">
-                                <i class="bi bi-send-fill"></i>
-                                Cek Area Saya
-                            </a>
-                        </div>
-
+                <div class="noc-list">
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        Monitoring tools
                     </div>
 
-                </div>
-
-                <!-- kanan -->
-                <div class="coverage-map-area" data-aos="fade-left" data-aos-delay="220">
-
-                    <div class="map-orbit orbit-one"></div>
-                    <div class="map-orbit orbit-two"></div>
-
-                    <div class="coverage-map-card">
-
-                        <div class="map-floating-pin pin-one">
-                            <i class="bi bi-wifi"></i>
-                        </div>
-
-                        <div class="map-floating-pin pin-two">
-                            <i class="bi bi-router-fill"></i>
-                        </div>
-
-                        <div class="map-topbar">
-                            <div class="map-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-
-                            <p>coverage-map.buminet</p>
-                        </div>
-
-                        <div class="map-frame">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6134945947665!2d106.94229657039754!3d-6.182454646860231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b1aa628c08d%3A0xa27ecf7444f7c367!2sJl.%20H.%20Abdurrahman!5e0!3m2!1sid!2sid!4v1779474770949!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-                                loading="lazy"
-                                allowfullscreen=""
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        SOP dan eskalasi gangguan
                     </div>
 
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        Pantauan layanan 24/7
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check2-circle"></i>
+                        Backup system dan redundansi
+                    </div>
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
-        <!-- ========================================
-            section hubungi kami
-        ======================================== -->
-        <section class="contact-section" id="contact">
+    </section>
 
-            <div class="contact-bg"></div>
+    <!-- ==============================
+         partner section full
+    ============================== -->
+    <section class="partner-section" id="partner">
 
-            <div class="contact-header" data-aos="fade-up">
-                <span class="contact-badge">hubungi kami</span>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">partner</span>
 
-                <h2 class="contact-title">
-                    Tertarik Pasang Internet?
-                </h2>
+            <h2 class="section-title">Partner dan Kerjasama</h2>
 
-                <p class="contact-desc">
-                    Kirim data anda melalui form berikut, lalu pilih admin WhatsApp yang ingin dihubungi.
+            <p class="section-desc">
+                BUMI Net berkolaborasi dengan berbagai mitra untuk memperkuat infrastruktur, layanan, dan dukungan konektivitas.
+            </p>
+        </div>
+
+        <div class="partner-grid">
+
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="50">
+                <img src="assets/img/partner/fmi.png" alt="Fiber Media Indonesia">
+                <h3>FMI</h3>
+                <p>Fiber Media Indonesia</p>
+            </div>
+
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/img/partner/iforte.png" alt="iForte">
+                <h3>iForte</h3>
+                <p>Infrastructure partner</p>
+            </div>
+
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="150">
+                <img src="assets/img/partner/telkom.png" alt="Telkom Indonesia">
+                <h3>Telkom Indonesia</h3>
+                <p>Telecommunication partner</p>
+            </div>
+
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/img/partner/apjii.png" alt="APJII">
+                <h3>APJII</h3>
+                <p>Asosiasi Penyelenggara Jasa Internet Indonesia</p>
+            </div>
+
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="250">
+                <img src="assets/img/partner/ism.png" alt="Inti Synergy Mandiri">
+                <h3>ISM</h3>
+                <p>Inti Synergy Mandiri Managed Service</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==============================
+         career preview
+    ============================== -->
+    <section class="career-preview-section" id="career-preview">
+
+        <div class="career-preview-container" data-aos="fade-up">
+
+            <div>
+                <span class="section-badge">karir</span>
+
+                <h2>Bangun Karir Bersama BUMI Net</h2>
+
+                <p>
+                    Kami membuka kesempatan untuk talenta terbaik yang ingin berkembang di bidang internet service provider, jaringan, dan teknologi informasi.
                 </p>
             </div>
 
-            <div class="contact-container">
+            <a href="karir.html" class="btn-primary-custom">
+                <i class="bi bi-briefcase-fill"></i>
+                Lihat Karir
+            </a>
 
-                <div class="contact-info" data-aos="fade-right" data-aos-delay="120">
+        </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                        <div>
-                            <h3>Lokasi</h3>
-                            <p>Jl. Prof. KH. Anwar Musaddad No.19, Tanjung Kamuning, Tarogong Kaler, Garut 44151</p>
-                        </div>
+    </section>
+
+    <!-- ==============================
+         contact
+    ============================== -->
+    <section class="contact-section" id="contact">
+
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">hubungi kami</span>
+
+            <h2 class="section-title">Siap Berlangganan BUMI Net?</h2>
+
+            <p class="section-desc">
+                Isi form berikut untuk pemasangan internet, pengecekan coverage, atau konsultasi paket. Pesan akan diarahkan ke sales/admin BUMI Net melalui WhatsApp.
+            </p>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info" data-aos="fade-right">
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-headset"></i>
                     </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
-                        <div>
-                            <h3>Telepon</h3>
-                            <p>0878-8202-8188<br>0812-1685-3470</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>admin@bumi.net.id</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon"><i class="bi bi-clock-fill"></i></div>
-                        <div>
-                            <h3>Jam Operasional</h3>
-                            <p>Senin - Jumat: 08:00 - 17:00 WIB<br>Sabtu: 08:00 - 14:00 WIB</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="contact-form-card" data-aos="fade-left" data-aos-delay="220">
-
-                    <form id="contactForm">
-
-                        <div class="form-group">
-                            <label>Nama Lengkap</label>
-                            <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" id="email" placeholder="Masukkan email aktif" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Nomor Telepon</label>
-                            <input type="text" id="telepon" placeholder="Contoh: 081234567890" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Alamat Lengkap</label>
-                            <textarea id="alamat" placeholder="Masukkan alamat lengkap pemasangan" required></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Paket Yang Dipilih</label>
-                            <select id="paketInternet" required>
-                                <option value="">Pilih paket internet</option>
-                                <option value="Bronze - 25 Mbps">Bronze - 25 Mbps</option>
-                                <option value="Silver - 35 Mbps">Silver - 35 Mbps</option>
-                                <option value="Gold - 50 Mbps">Gold - 50 Mbps</option>
-                                <option value="Platinum - 100 Mbps">Platinum - 100 Mbps</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Pesan</label>
-                            <textarea id="pesan" placeholder="Tulis kebutuhan internet anda" required></textarea>
-                        </div>
-
-                        <button type="submit" class="contact-submit disabled-btn" id="submitBtn" disabled>
-                            <i class="bi bi-send-fill"></i>
-                            Kirim Pesan
-                        </button>
-
-                    </form>
-
-                    <!-- popup pilih admin whatsapp -->
-                    <div class="wa-popup" id="waPopup">
-
-                        <div class="wa-popup-box">
-
-                            <button class="wa-close" id="waClose" type="button">
-                                <i class="bi bi-x-lg"></i>
-                            </button>
-
-                            <div class="wa-popup-icon">
-                                <i class="bi bi-whatsapp"></i>
-                            </div>
-
-                            <h3>Pilih Admin WhatsApp</h3>
-
-                            <p>
-                                Pilih admin yang ingin dihubungi untuk melanjutkan pemasangan internet.
-                            </p>
-
-                            <div class="wa-admin-list">
-
-                                <button class="wa-admin-btn" type="button" data-wa="6287882028188">
-                                    <span><i class="bi bi-person-fill"></i>Admin 1</span>
-                                    <small>0878-8202-8188</small>
-                                </button>
-
-                                <button class="wa-admin-btn" type="button" data-wa="6281216853470">
-                                    <span><i class="bi bi-person-fill"></i>Admin 2</span>
-                                    <small>0812-1685-3470</small>
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-        <footer class="footer-section">
-
-            <div class="footer-bg-grid"></div>
-        
-            <div class="footer-container">
-        
-                <div class="footer-col footer-about">
-                    <a href="#home" class="footer-logo">
-                        BUMI<span>Net</span>
-                    </a>
-        
-                    <p>
-                        PT. Bumi Multi Perkasa adalah penyedia layanan internet dan solusi jaringan profesional dengan izin resmi dari Dirjen Postel.
-                    </p>
-        
-                    <div class="footer-social">
-                        <a href="#" aria-label="Facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-        
-                        <a href="#" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-        
-                        <a href="#" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-        
-                        <a href="#" aria-label="YouTube">
-                            <i class="bi bi-youtube"></i>
-                        </a>
+                    <div>
+                        <h3>Call Center</h3>
+                        <p>Hubungi sales untuk informasi pemasangan dan pilihan paket internet.</p>
                     </div>
                 </div>
-        
-                <div class="footer-col">
-                    <h3>Layanan</h3>
-                    <a href="#services">Internet Broadband</a>
-                    <a href="#services">VPN Perusahaan</a>
-                    <a href="#services">Metro Ethernet</a>
-                    <a href="#services">Managed Wi-Fi</a>
-                    <a href="#services">Colocation Server</a>
-                </div>
-        
-                <div class="footer-col">
-                    <h3>Dukungan</h3>
-                    <a href="#">Pusat Bantuan</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Syarat & Ketentuan</a>
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Status Jaringan</a>
-                </div>
-        
-                <div class="footer-col footer-contact">
-                    <h3>Kontak</h3>
-        
-                    <p>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="bi bi-telephone-fill"></i>
-                        0878-8202-8188
-                    </p>
-        
-                    <p>
-                        <i class="bi bi-envelope-fill"></i>
-                        admin@bumi.net.id
-                    </p>
-        
-                    <p>
-                        <i class="bi bi-geo-alt-fill"></i>
-                        Jakarta & Garut
-                    </p>
+                    </div>
+
+                    <div>
+                        <h3>Telepon</h3>
+                        <p>+62-81115-99992</p>
+                    </div>
                 </div>
-        
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope-fill"></i>
+                    </div>
+
+                    <div>
+                        <h3>Email</h3>
+                        <p>Admin@bumi.net.id</p>
+                        <p>Hello@intisynergymandiri.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+
+                    <div>
+                        <h3>Alamat</h3>
+                        <p>Jln Raya Bekasi Km 23 RT 02 RW 05 Blok A No. 44, Cakung Barat, Jakarta Timur.</p>
+                    </div>
+                </div>
+
             </div>
-        
-            <div class="footer-bottom">
-                <p>© 2025 PT. Bumi Multi Perkasa. Seluruh hak cipta dilindungi.</p>
+
+            <div class="contact-form-card" data-aos="fade-left" data-aos-delay="160">
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Masukkan email aktif">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon">No Telepon</label>
+                        <input type="text" id="telepon" placeholder="Masukkan nomor telepon">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat Pemasangan</label>
+                        <textarea id="alamat" placeholder="Masukkan alamat lengkap pemasangan"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paketInternet">Paket Yang Dipilih</label>
+
+                        <select id="paketInternet">
+                            <option value="">Pilih paket internet</option>
+                            <option value="Bronze - 25 Mbps">Bronze - 25 Mbps</option>
+                            <option value="Silver - 35 Mbps">Silver - 35 Mbps</option>
+                            <option value="Gold - 50 Mbps">Gold - 50 Mbps</option>
+                            <option value="Platinum - 100 Mbps">Platinum - 100 Mbps</option>
+                            <option value="Konsultasi Paket Bisnis">Konsultasi Paket Bisnis</option>
+                            <option value="Cek Coverage Area">Cek Coverage Area</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pesan">Pesan</label>
+                        <textarea id="pesan" placeholder="Tulis kebutuhan internet anda"></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="contact-submit disabled-btn" disabled>
+                        <i class="bi bi-whatsapp"></i>
+                        Kirim Pesan
+                    </button>
+
+                </form>
+
             </div>
-        
-        </footer>
-    <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        </div>
+
+    </section>
+
+    <!-- ==============================
+         footer
+    ============================== -->
+    <footer class="footer-section">
+
+        <div class="footer-container">
+
+            <div class="footer-col footer-about">
+                <a href="#home" class="footer-logo">
+                    <img src="assets/img/logo-bumi-net.jpg" alt="BUMI Net Logo">
+                    <span>BUMI Net</span>
+                </a>
+
+                <p>
+                    Dari Bumi Untuk Semua. Internet stabil, reliable, dan affordable untuk rumah, bisnis, dan perusahaan.
+                </p>
+
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Layanan</h3>
+                <a href="#services">Internet Broadband</a>
+                <a href="#services">Internet Dedicated</a>
+                <a href="#services">Metro Ethernet</a>
+                <a href="#services">Local Loop</a>
+                <a href="#services">IP Transit</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Menu</h3>
+                <a href="#about">Tentang Kami</a>
+                <a href="#coverage">Coverage</a>
+                <a href="#partner">Partner</a>
+                <a href="karir.html">Karir</a>
+                <a href="#contact">Kontak</a>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h3>Kontak</h3>
+
+                <p>
+                    <i class="bi bi-telephone-fill"></i>
+                    +62-81115-99992
+                </p>
+
+                <p>
+                    <i class="bi bi-envelope-fill"></i>
+                    Admin@bumi.net.id
+                </p>
+
+                <p>
+                    <i class="bi bi-envelope-fill"></i>
+                    Hello@intisynergymandiri.com
+                </p>
+
+                <p>
+                    <i class="bi bi-geo-alt-fill"></i>
+                    Jakarta & Garut
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 PT. Bumi Multi Perkasa. Seluruh hak cipta dilindungi.</p>
+        </div>
+
+    </footer>
+
+    <!-- ==============================
+         floating call center
+    ============================== -->
+    <button class="floating-call" id="floatingCall" type="button">
+        <i class="bi bi-headset"></i>
+
+        <span>
+            <strong>Hubungi Sales</strong>
+            <small>Berlangganan BUMI Net</small>
+        </span>
+    </button>
+
+    <!-- ==============================
+         whatsapp popup
+    ============================== -->
+    <div class="wa-popup" id="waPopup">
+
+        <div class="wa-popup-box">
+
+            <button class="wa-close" id="waClose" type="button">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="wa-popup-icon">
+                <i class="bi bi-whatsapp"></i>
+            </div>
+
+            <h3>Pilih Admin</h3>
+
+            <p>
+                Silakan pilih admin atau sales BUMI Net untuk melanjutkan pesan melalui WhatsApp.
+            </p>
+
+            <div class="wa-admin-list">
+
+                <button class="wa-admin-btn" type="button" data-wa="6287882028188">
+                    <span>
+                        <i class="bi bi-person-headset"></i>
+                        Admin 1
+                    </span>
+
+                    <small>0878-8202-8188</small>
+                </button>
+
+                <button class="wa-admin-btn" type="button" data-wa="6281216853470">
+                    <span>
+                        <i class="bi bi-person-headset"></i>
+                        Admin 2
+                    </span>
+
+                    <small>0812-1685-3470</small>
+                </button>
+
+                <button class="wa-admin-btn" type="button" data-wa="628111599992">
+                    <span>
+                        <i class="bi bi-headset"></i>
+                        Sales
+                    </span>
+
+                    <small>+62-81115-99992</small>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- aos js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script>
-        /* ==============================
-           aos init
-        ============================== */
-        AOS.init({
-            duration: 850,
-            easing: 'ease-out-cubic',
-            once: false,
-            mirror: true,
-            offset: 90
-        });
+    <!-- js utama -->
+    <script src="assets/js/script.js"></script>
 
-        /* ==============================
-           mobile navbar
-        ============================== */
-        const navbar = document.querySelector('.custom-navbar');
-        const promoSection = document.querySelector('#promo');
-
-        let lastScrollY = window.scrollY;
-
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-            const promoTop = promoSection.offsetTop - 120;
-
-            if(currentScrollY > 40){
-                navbar.classList.add('scrolled');
-            }else{
-                navbar.classList.remove('scrolled');
-            }
-
-            if(
-                currentScrollY > lastScrollY &&
-                currentScrollY >= promoTop
-            ){
-                navbar.classList.add('nav-hidden');
-            }else{
-                navbar.classList.remove('nav-hidden');
-            }
-
-            lastScrollY = currentScrollY;
-        });
-
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        menuToggle.addEventListener('click', function(){
-            navMenu.classList.toggle('active');
-
-            const icon = menuToggle.querySelector('i');
-
-            if(navMenu.classList.contains('active')){
-                icon.classList.remove('bi-list');
-                icon.classList.add('bi-x');
-            }else{
-                icon.classList.remove('bi-x');
-                icon.classList.add('bi-list');
-            }
-        });
-
-        const navLinks = document.querySelectorAll('.nav-menu a');
-
-        navLinks.forEach(function(link){
-            link.addEventListener('click', function(){
-                navMenu.classList.remove('active');
-
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('bi-x');
-                icon.classList.add('bi-list');
-            });
-        });
-
-        /* ==============================
-           promo slider
-        ============================== */
-        const promoTrack = document.getElementById('promoTrack');
-        const promoCards = document.querySelectorAll('.promo-card');
-        const nextPromo = document.getElementById('nextPromo');
-        const prevPromo = document.getElementById('prevPromo');
-        const promoDots = document.getElementById('promoDots');
-
-        let currentPromo = 0;
-
-        promoCards.forEach((card, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('promo-dot');
-
-            if(index === 0){
-                dot.classList.add('active');
-            }
-
-            dot.addEventListener('click', () => {
-                showPromo(index);
-            });
-
-            promoDots.appendChild(dot);
-        });
-
-        const dots = document.querySelectorAll('.promo-dot');
-
-        function showPromo(index){
-            currentPromo = index;
-            promoTrack.style.transform = `translateX(-${currentPromo * 100}%)`;
-
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-            });
-
-            dots[currentPromo].classList.add('active');
-        }
-
-        nextPromo.addEventListener('click', () => {
-            currentPromo++;
-
-            if(currentPromo >= promoCards.length){
-                currentPromo = 0;
-            }
-
-            showPromo(currentPromo);
-        });
-
-        prevPromo.addEventListener('click', () => {
-            currentPromo--;
-
-            if(currentPromo < 0){
-                currentPromo = promoCards.length - 1;
-            }
-
-            showPromo(currentPromo);
-        });
-
-        setInterval(() => {
-            currentPromo++;
-
-            if(currentPromo >= promoCards.length){
-                currentPromo = 0;
-            }
-
-            showPromo(currentPromo);
-        }, 5000);
-
-        /* ==============================
-           counter animation
-        ============================== */
-        const counters = document.querySelectorAll('.counter');
-
-        function animateCounter(counter){
-            const target = Number(counter.dataset.target);
-            const duration = 1300;
-            const startTime = performance.now();
-
-            function update(currentTime){
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                let bounce = progress;
-
-                if(progress < 0.55){
-                    bounce = progress * 1.18;
-                }else if(progress < 0.78){
-                    bounce = 1.08 - ((progress - 0.55) / 0.23) * 0.14;
-                }else{
-                    bounce = 0.94 + ((progress - 0.78) / 0.22) * 0.06;
-                }
-
-                const value = Math.round(target * Math.min(bounce, 1.12));
-
-                if(progress >= 1){
-                    counter.textContent = target;
-                    return;
-                }
-
-                counter.textContent = value;
-                requestAnimationFrame(update);
-            }
-
-            counter.textContent = 0;
-            requestAnimationFrame(update);
-        }
-
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    animateCounter(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.65
-        });
-
-        counters.forEach(counter => {
-            counterObserver.observe(counter);
-        });
-    </script>
-        <script>
-            /* ========================================
-            contact form whatsapp popup
-            ======================================== */
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            const waPopup = document.getElementById('waPopup');
-            const waClose = document.getElementById('waClose');
-            const waAdminBtns = document.querySelectorAll('.wa-admin-btn');
-            
-            const formInputs = [
-                document.getElementById('nama'),
-                document.getElementById('email'),
-                document.getElementById('telepon'),
-                document.getElementById('alamat'),
-                document.getElementById('paketInternet'),
-                document.getElementById('pesan')
-            ];
-            
-            let finalWhatsappMessage = '';
-            
-            function validateForm(){
-                const allFilled = formInputs.every(input => {
-                    return input && input.value.trim() !== '';
-                });
-            
-                submitBtn.disabled = !allFilled;
-                submitBtn.classList.toggle('disabled-btn', !allFilled);
-            }
-            
-            formInputs.forEach(input => {
-                if(input){
-                    input.addEventListener('input', validateForm);
-                    input.addEventListener('change', validateForm);
-                }
-            });
-            
-            validateForm();
-            
-            contactForm.addEventListener('submit', function(e){
-                e.preventDefault();
-            
-                if(submitBtn.disabled){
-                    return;
-                }
-            
-                finalWhatsappMessage =
-                `Halo BUMI Net 
-
-                Saya ingin melakukan pemasangan internet dengan data berikut:
-
-                ━━━━━━━━━━━━━━━
-
-                *Nama Lengkap :* 
-                ${document.getElementById('nama').value.trim()}
-
-                *Email :* 
-                ${document.getElementById('email').value.trim()}
-
-                *No Telepon :* 
-                ${document.getElementById('telepon').value.trim()}
-
-                *Alamat :* 
-                ${document.getElementById('alamat').value.trim()}
-
-                *Paket Yang Dipilih :* 
-                ${document.getElementById('paketInternet').value.trim()}
-
-                *Pesan :* 
-                ${document.getElementById('pesan').value.trim()}
-
-                ━━━━━━━━━━━━━━━
-
-                Mohon informasi lebih lanjut yaa, terima kasih 🙏`;
-            
-                waPopup.classList.add('active');
-            });
-            
-            waAdminBtns.forEach(btn => {
-                btn.addEventListener('click', function(){
-                    const waNumber = this.dataset.wa;
-                    const encodedMessage = encodeURIComponent(finalWhatsappMessage);
-            
-                    window.open(
-                        `https://wa.me/${waNumber}?text=${encodedMessage}`,
-                        '_blank'
-                    );
-            
-                    waPopup.classList.remove('active');
-                });
-            });
-            
-            waClose.addEventListener('click', function(){
-                waPopup.classList.remove('active');
-            });
-            
-            waPopup.addEventListener('click', function(e){
-                if(e.target === waPopup){
-                    waPopup.classList.remove('active');
-                }
-            });
-            </script>
 </body>
 </html>
