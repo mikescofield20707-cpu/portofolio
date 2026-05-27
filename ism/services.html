@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Layanan | Inti Synergy Mandiri</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animation.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <div class="page-transition" id="pageTransition"></div>
+
+  <div class="background-grid"></div>
+  <div class="mesh mesh-one"></div>
+  <div class="mesh mesh-two"></div>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="toggle theme">
+    <i data-lucide="moon"></i>
+  </button>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="brand">
+        <span class="brand-mark">
+          <img src="assets/img/logo.png" alt="Inti Synergy Mandiri Logo">
+        </span>
+
+        <span class="brand-name">
+          <strong>ISM</strong>
+          <small>Inti Synergy Mandiri</small>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">Tentang Kami</a>
+        <a href="services.html" class="active">Layanan</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Kontak</a>
+      </nav>
+
+      <a href="contact.html" class="nav-button">
+        Konsultasi
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="services-hero">
+      <div class="container services-hero-layout">
+
+        <div class="services-hero-copy reveal-up">
+          <a href="index.html" class="back-button">
+            <i data-lucide="arrow-left"></i>
+            Kembali ke Home
+          </a>
+
+          <span class="section-kicker">Layanan ISM</span>
+
+          <h1>Solusi Teknologi untuk Operasional Perusahaan</h1>
+
+          <p>
+            ISM membantu perusahaan mengelola kebutuhan IT secara terstruktur,
+            mulai dari infrastruktur jaringan, server, cloud, keamanan sistem,
+            integrasi teknologi, hingga dukungan teknis operasional.
+          </p>
+
+          <div class="services-hero-actions">
+            <a href="contact.html" class="btn btn-dark">
+              Diskusikan Kebutuhan
+              <i data-lucide="arrow-right"></i>
+            </a>
+
+            <a href="#solutions" class="btn btn-soft">
+              Lihat Solusi
+            </a>
+          </div>
+        </div>
+
+        <div class="services-hero-visual reveal-up delay-one">
+          <div class="solution-orbit">
+            <span class="solution-ring ring-one"></span>
+            <span class="solution-ring ring-two"></span>
+            <span class="solution-ring ring-three"></span>
+
+            <div class="solution-core">
+              <i data-lucide="layers-3"></i>
+              <strong>ISM Solution Hub</strong>
+              <span>Plan • Build • Manage • Support</span>
+            </div>
+
+            <div class="solution-node node-one">
+              <i data-lucide="server-cog"></i>
+            </div>
+
+            <div class="solution-node node-two">
+              <i data-lucide="shield-check"></i>
+            </div>
+
+            <div class="solution-node node-three">
+              <i data-lucide="network"></i>
+            </div>
+
+            <div class="solution-node node-four">
+              <i data-lucide="cloud-cog"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="solution-marquee">
+      <div class="solution-marquee-track">
+        <span>Managed IT Service</span>
+        <span>Network Infrastructure</span>
+        <span>Cloud & Server</span>
+        <span>IT Security</span>
+        <span>System Integration</span>
+        <span>Technical Support</span>
+        <span>IT Consulting</span>
+        <span>Managed IT Service</span>
+        <span>Network Infrastructure</span>
+      </div>
+    </section>
+
+    <section class="solutions-section" id="solutions">
+      <div class="container solutions-layout">
+
+        <div class="solutions-sticky reveal-up">
+          <span class="section-kicker">Solution Stack</span>
+
+          <h2>Layanan Disusun Sesuai Kebutuhan Bisnis</h2>
+
+          <p>
+            Setiap layanan bisa digunakan secara mandiri atau dikombinasikan
+            menjadi solusi IT yang lebih lengkap untuk perusahaan.
+          </p>
+
+          <div class="stack-visual">
+            <div class="stack-screen">
+              <div class="stack-header">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="stack-lines">
+                <span class="line-long"></span>
+                <span class="line-mid"></span>
+                <span class="line-short"></span>
+              </div>
+
+              <div class="stack-pulse">
+                <i data-lucide="activity"></i>
+                <strong>System Running</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="solutions-list">
+
+          <article class="solution-card reveal-up active-solution">
+            <div class="solution-number">01</div>
+
+            <div class="solution-icon">
+              <i data-lucide="monitor-cog"></i>
+            </div>
+
+            <div class="solution-content">
+              <h3>Managed IT Service</h3>
+              <p>
+                Pengelolaan perangkat, sistem, monitoring, maintenance, troubleshooting,
+                dan support harian agar operasional teknologi berjalan lebih stabil.
+              </p>
+
+              <ul>
+                <li>Monitoring sistem dan perangkat</li>
+                <li>Maintenance berkala</li>
+                <li>Remote dan onsite support</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="solution-card reveal-up">
+            <div class="solution-number">02</div>
+
+            <div class="solution-icon">
+              <i data-lucide="router"></i>
+            </div>
+
+            <div class="solution-content">
+              <h3>Network Infrastructure</h3>
+              <p>
+                Perancangan, instalasi, konfigurasi, dan optimasi jaringan untuk
+                kebutuhan kantor, operasional bisnis, dan konektivitas internal.
+              </p>
+
+              <ul>
+                <li>Setup jaringan kantor</li>
+                <li>Konfigurasi router dan access point</li>
+                <li>Optimasi koneksi dan segmentasi jaringan</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="solution-card reveal-up">
+            <div class="solution-number">03</div>
+
+            <div class="solution-icon">
+              <i data-lucide="cloud-cog"></i>
+            </div>
+
+            <div class="solution-content">
+              <h3>Cloud & Server Management</h3>
+              <p>
+                Pengelolaan server, cloud environment, backup, deployment, resource,
+                dan kebutuhan infrastruktur digital yang mudah dikembangkan.
+              </p>
+
+              <ul>
+                <li>Setup server dan cloud</li>
+                <li>Backup dan recovery planning</li>
+                <li>Deployment sistem bisnis</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="solution-card reveal-up">
+            <div class="solution-number">04</div>
+
+            <div class="solution-icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+
+            <div class="solution-content">
+              <h3>IT Security & Protection</h3>
+              <p>
+                Perlindungan akses, endpoint, jaringan, data, dan sistem operasional
+                agar risiko gangguan dan kebocoran data bisa diminimalkan.
+              </p>
+
+              <ul>
+                <li>Security hardening</li>
+                <li>Access control</li>
+                <li>Proteksi endpoint dan jaringan</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="solution-card reveal-up">
+            <div class="solution-number">05</div>
+
+            <div class="solution-icon">
+              <i data-lucide="workflow"></i>
+            </div>
+
+            <div class="solution-content">
+              <h3>System Integration</h3>
+              <p>
+                Integrasi sistem, tools, dan alur kerja digital agar proses bisnis
+                lebih rapi, efisien, dan mudah dipantau oleh tim internal.
+              </p>
+
+              <ul>
+                <li>Integrasi sistem operasional</li>
+                <li>Workflow digital</li>
+                <li>Penyesuaian kebutuhan client</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="solution-card reveal-up">
+            <div class="solution-number">06</div>
+
+            <div class="solution-icon">
+              <i data-lucide="messages-square"></i>
+            </div>
+
+            <div class="solution-content">
+              <h3>IT Consulting & Support</h3>
+              <p>
+                Konsultasi kebutuhan teknologi, penyusunan solusi, rekomendasi
+                infrastruktur, dan pendampingan teknis untuk pengembangan bisnis.
+              </p>
+
+              <ul>
+                <li>Analisa kebutuhan IT</li>
+                <li>Rekomendasi solusi</li>
+                <li>Pendampingan implementasi</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section service-benefit-section">
+      <div class="container">
+        <div class="section-heading reveal-up">
+          <span class="section-kicker">Keunggulan</span>
+          <h2>Kenapa Memilih ISM sebagai Partner Teknologi?</h2>
+          <p>
+            Kami mengutamakan solusi yang jelas, mudah dipahami, dan bisa
+            disesuaikan dengan kondisi operasional perusahaan.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+
+          <div class="benefit-card reveal-up">
+            <i data-lucide="scan-search"></i>
+            <h3>Analisa Kebutuhan</h3>
+            <p>Solusi dimulai dari memahami kondisi, masalah, dan target bisnis.</p>
+          </div>
+
+          <div class="benefit-card reveal-up delay-one">
+            <i data-lucide="settings-2"></i>
+            <h3>Implementasi Terarah</h3>
+            <p>Setiap tahap disusun agar proses pengerjaan lebih rapi dan terukur.</p>
+          </div>
+
+          <div class="benefit-card reveal-up delay-two">
+            <i data-lucide="headphones"></i>
+            <h3>Support Berkelanjutan</h3>
+            <p>Dukungan teknis disiapkan agar sistem tetap berjalan dengan baik.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-box reveal-up">
+          <h2>Butuh Solusi IT yang Lebih Terstruktur?</h2>
+          <p>
+            Diskusikan kebutuhan perusahaan Anda, lalu kami bantu susun layanan
+            yang paling sesuai.
+          </p>
+
+          <a href="contact.html" class="btn btn-light-solid">
+            Hubungi ISM
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="Inti Synergy Mandiri Logo">
+
+        <div>
+          <strong>Inti Synergy Mandiri</strong>
+          <span>IT Service & Digital Solution</span>
+        </div>
+      </div>
+
+      <p>Modern Technology Partner for Business Growth</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

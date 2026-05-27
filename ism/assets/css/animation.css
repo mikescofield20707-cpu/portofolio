@@ -1,0 +1,476 @@
+.reveal-up {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: revealUp 0.9s ease forwards;
+  }
+  
+  .delay-one {
+    animation-delay: 0.12s;
+  }
+  
+  .delay-two {
+    animation-delay: 0.24s;
+  }
+  
+  .delay-three {
+    animation-delay: 0.36s;
+  }
+  
+  .delay-four {
+    animation-delay: 0.48s;
+  }
+  
+  .mesh-one {
+    animation: meshOne 12s ease-in-out infinite;
+  }
+  
+  .mesh-two {
+    animation: meshTwo 14s ease-in-out infinite;
+  }
+  
+  .orbit-large {
+    animation: rotateForward 28s linear infinite;
+  }
+  
+  .orbit-small {
+    animation: rotateReverse 20s linear infinite;
+  }
+  
+  .scanner-card {
+    animation: floatMain 5.5s ease-in-out infinite;
+  }
+  
+  .scan-line {
+    animation: scanMove 3.2s ease-in-out infinite;
+  }
+  
+  .scanner-bars span {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scanner-bars span::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 55%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, transparent, var(--dark), transparent);
+    animation: barMove 2.8s ease-in-out infinite;
+  }
+  
+  .scanner-bars span:nth-child(2)::after {
+    animation-delay: 0.35s;
+  }
+  
+  .scanner-bars span:nth-child(3)::after {
+    animation-delay: 0.7s;
+  }
+  
+  .box-one {
+    animation: floatBoxOne 5s ease-in-out infinite;
+  }
+  
+  .box-two {
+    animation: floatBoxTwo 5.8s ease-in-out infinite;
+  }
+  
+  .box-three {
+    animation: floatBoxThree 6.4s ease-in-out infinite;
+  }
+  
+  .marquee-track {
+    animation: marqueeMove 24s linear infinite;
+  }
+  
+  .vertical-card {
+    animation: cardBreath 5.6s ease-in-out infinite;
+  }
+  
+  .card-offset {
+    animation-delay: 0.7s;
+  }
+  
+  .service-panel {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background 0.3s ease;
+  }
+  
+  .service-panel:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: var(--shadow);
+  }
+  
+  .theme-toggle {
+    animation: themeFloat 4s ease-in-out infinite;
+  }
+  
+  @keyframes revealUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes meshOne {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  
+    50% {
+      transform: translate(44px, 35px) scale(1.08);
+    }
+  }
+  
+  @keyframes meshTwo {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  
+    50% {
+      transform: translate(-55px, -30px) scale(1.1);
+    }
+  }
+  
+  @keyframes rotateForward {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotateReverse {
+    from {
+      transform: rotate(360deg);
+    }
+  
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes floatMain {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  
+    50% {
+      transform: translateY(-16px) rotate(1deg);
+    }
+  }
+  
+  @keyframes scanMove {
+    0% {
+      top: -45%;
+    }
+  
+    55% {
+      top: 82%;
+    }
+  
+    100% {
+      top: 82%;
+    }
+  }
+  
+  @keyframes barMove {
+    0% {
+      transform: translateX(-110%);
+    }
+  
+    100% {
+      transform: translateX(210%);
+    }
+  }
+  
+  @keyframes floatBoxOne {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(-12px, -14px);
+    }
+  }
+  
+  @keyframes floatBoxTwo {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(12px, 14px);
+    }
+  }
+  
+  @keyframes floatBoxThree {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(14px, -12px);
+    }
+  }
+  
+  @keyframes marqueeMove {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes cardBreath {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  
+    50% {
+      transform: translateY(-12px) rotate(1deg);
+    }
+  }
+  
+  @keyframes themeFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+
+  body.page-loaded .page-transition {
+    animation: pageOpen 0.75s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+  
+  body.page-leave .page-transition {
+    transform-origin: top;
+    animation: pageClose 0.65s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+  
+  .contact-orbit-card .orbit-a {
+    animation: rotateForward 18s linear infinite;
+  }
+  
+  .contact-orbit-card .orbit-b {
+    animation: rotateReverse 14s linear infinite;
+  }
+  
+  .orbit-center {
+    animation: softPulse 4s ease-in-out infinite;
+  }
+  
+  .contact-card-icon {
+    animation: softFloatContact 4.8s ease-in-out infinite;
+  }
+  
+  @keyframes pageOpen {
+    0% {
+      transform: scaleY(1);
+    }
+  
+    100% {
+      transform: scaleY(0);
+    }
+  }
+  
+  @keyframes pageClose {
+    0% {
+      transform: scaleY(0);
+    }
+  
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  
+  @keyframes softPulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes softFloatContact {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .solution-marquee-track {
+    animation: marqueeMove 26s linear infinite;
+  }
+  
+  .ring-one {
+    animation: rotateForward 26s linear infinite;
+  }
+  
+  .ring-two {
+    animation: rotateReverse 20s linear infinite;
+  }
+  
+  .ring-three {
+    animation: rotateForward 16s linear infinite;
+  }
+  
+  .solution-core {
+    animation: serviceCoreFloat 5.4s ease-in-out infinite;
+  }
+  
+  .node-one {
+    animation: solutionNodeOne 5s ease-in-out infinite;
+  }
+  
+  .node-two {
+    animation: solutionNodeTwo 5.6s ease-in-out infinite;
+  }
+  
+  .node-three {
+    animation: solutionNodeThree 6s ease-in-out infinite;
+  }
+  
+  .node-four {
+    animation: solutionNodeFour 6.4s ease-in-out infinite;
+  }
+  
+  .stack-screen::after {
+    content: "";
+    position: absolute;
+    inset: -40% 0 auto;
+    height: 160px;
+    background: linear-gradient(to bottom, transparent, var(--silver-soft), transparent);
+    animation: stackScan 3.4s ease-in-out infinite;
+  }
+  
+  .stack-lines span {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .stack-lines span::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 54%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, transparent, var(--dark), transparent);
+    animation: barMove 2.7s ease-in-out infinite;
+  }
+  
+  .stack-lines span:nth-child(2)::after {
+    animation-delay: 0.3s;
+  }
+  
+  .stack-lines span:nth-child(3)::after {
+    animation-delay: 0.6s;
+  }
+  
+  .stack-pulse {
+    animation: stackPulse 3.2s ease-in-out infinite;
+  }
+  
+  @keyframes serviceCoreFloat {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  
+    50% {
+      transform: translateY(-14px) rotate(1deg);
+    }
+  }
+  
+  @keyframes solutionNodeOne {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(-12px, -12px);
+    }
+  }
+  
+  @keyframes solutionNodeTwo {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(12px, -10px);
+    }
+  }
+  
+  @keyframes solutionNodeThree {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(-10px, 12px);
+    }
+  }
+  
+  @keyframes solutionNodeFour {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(14px, 12px);
+    }
+  }
+  
+  @keyframes stackScan {
+    0% {
+      top: -45%;
+    }
+  
+    55% {
+      top: 90%;
+    }
+  
+    100% {
+      top: 90%;
+    }
+  }
+  
+  @keyframes stackPulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.04);
+    }
+  }
