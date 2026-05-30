@@ -1,3 +1,76 @@
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    transition: opacity .4s ease, visibility .4s ease;
+    animation: loaderBgSwitch 1,4s ease-in-out infinite;
+  }
+  
+  .page-loader.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .pl {
+    width: 7em;
+    height: 7em;
+    filter: drop-shadow(0 18px 35px rgba(15, 23, 42, .18));
+  }
+  
+  .pl circle {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+  }
+  
+  .pl__ring1 { animation: ring1_ 4.5s 0s ease-in-out infinite; }
+  .pl__ring2 { animation: ring2_ 4.5s .04s ease-in-out infinite; }
+  .pl__ring3 { animation: ring3_ 4.5s .08s ease-in-out infinite; }
+  .pl__ring4 { animation: ring4_ 4.5s .12s ease-in-out infinite; }
+  .pl__ring5 { animation: ring5_ 4.5s .16s ease-in-out infinite; }
+  .pl__ring6 { animation: ring6_ 4.5s .2s ease-in-out infinite; }
+
+
+  @keyframes ring1_ {
+    from { stroke-dashoffset: -376.237129776; transform: rotate(-0.25turn); }
+    50% { stroke-dashoffset: -94.247778; transform: rotate(2.25turn); }
+    to { stroke-dashoffset: -376.237129776; transform: rotate(4.75turn); }
+  }
+  
+  @keyframes ring2_ {
+    from { stroke-dashoffset: -329.207488554; transform: rotate(-0.25turn); }
+    50% { stroke-dashoffset: -82.46680575; transform: rotate(2.25turn); }
+    to { stroke-dashoffset: -329.207488554; transform: rotate(4.75turn); }
+  }
+  
+  @keyframes ring3_ {
+    from { stroke-dashoffset: -288.4484661616; transform: rotate(-0.25turn); }
+    50% { stroke-dashoffset: -72.2566298; transform: rotate(2.25turn); }
+    to { stroke-dashoffset: -288.4484661616; transform: rotate(4.75turn); }
+  }
+  
+  @keyframes ring4_ {
+    from { stroke-dashoffset: -253.9600625988; transform: rotate(-0.25turn); }
+    50% { stroke-dashoffset: -63.61725015; transform: rotate(2.25turn); }
+    to { stroke-dashoffset: -253.9600625988; transform: rotate(4.75turn); }
+  }
+  
+  @keyframes ring5_ {
+    from { stroke-dashoffset: -225.7422778656; transform: rotate(-0.25turn); }
+    50% { stroke-dashoffset: -56.5486668; transform: rotate(2.25turn); }
+    to { stroke-dashoffset: -225.7422778656; transform: rotate(4.75turn); }
+  }
+  
+  @keyframes ring6_ {
+    from { stroke-dashoffset: -203.795111962; transform: rotate(-0.25turn); }
+    50% { stroke-dashoffset: -51.05087975; transform: rotate(2.25turn); }
+    to { stroke-dashoffset: -203.795111962; transform: rotate(4.75turn); }
+  }
+
 .reveal-up {
     opacity: 0;
     transform: translateY(28px);
