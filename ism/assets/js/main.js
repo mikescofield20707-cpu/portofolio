@@ -4,18 +4,6 @@ const navbar = document.getElementById("navbar");
 const themeToggle = document.getElementById("themeToggle");
 const contactForm = document.getElementById("contactForm");
 
-
-
-window.addEventListener("load", () => {
-    const pageLoader = document.getElementById("pageLoader");
-  
-    if (pageLoader) {
-      setTimeout(() => {
-        pageLoader.classList.add("hide");
-      }, 4000);
-    }
-  });
-
 if (hamburger && navMenu) {
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
