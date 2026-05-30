@@ -11,7 +11,16 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 <body>
-
+<div class="page-loader" id="pageLoader">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" class="pl">
+    <circle stroke-dashoffset="-376.4" stroke-dasharray="377 377" stroke-linecap="round" transform="rotate(-90,64,64)" stroke-width="8" stroke="#111827" fill="none" r="60" cy="64" cx="64" class="pl__ring1"></circle>
+    <circle stroke-dashoffset="-329.3" stroke-dasharray="329.9 329.9" stroke-linecap="round" transform="rotate(-90,64,64)" stroke-width="7" stroke="#1f2937" fill="none" r="52.5" cy="64" cx="64" class="pl__ring2"></circle>
+    <circle stroke-dashoffset="-288.6" stroke-dasharray="289 289" stroke-linecap="round" transform="rotate(-90,64,64)" stroke-width="6" stroke="#374151" fill="none" r="46" cy="64" cx="64" class="pl__ring3"></circle>
+    <circle stroke-dashoffset="-254" stroke-dasharray="254.5 254.5" stroke-linecap="round" transform="rotate(-90,64,64)" stroke-width="5" stroke="#6b7280" fill="none" r="40.5" cy="64" cx="64" class="pl__ring4"></circle>
+    <circle stroke-dashoffset="-225.8" stroke-dasharray="226.2 226.2" stroke-linecap="round" transform="rotate(-90,64,64)" stroke-width="4" stroke="#d1d5db" fill="none" r="36" cy="64" cx="64" class="pl__ring5"></circle>
+    <circle stroke-dashoffset="-203.9" stroke-dasharray="204.2 204.2" stroke-linecap="round" transform="rotate(-90,64,64)" stroke-width="3" stroke="#f8fafc" fill="none" r="32.5" cy="64" cx="64" class="pl__ring6"></circle>
+  </svg>
+</div>
   <div class="background-grid"></div>
   <div class="mesh mesh-one"></div>
   <div class="mesh mesh-two"></div>
@@ -169,13 +178,13 @@
         <span>Managed Service</span>
         <span>Network Solution</span>
         <span>Cloud Infrastructure</span>
-        <span>IT Security</span>
+        <span>Monitoring System</span>
         <span>System Integration</span>
         <span>Technical Support</span>
         <span>Managed Service</span>
         <span>Network Solution</span>
         <span>Cloud Infrastructure</span>
-        <span>IT Security</span>
+        <span>Monitoring System</span>
       </div>
     </section>
 
@@ -270,9 +279,9 @@
 
           <article class="service-panel wide reveal-up delay-three">
             <span>04</span>
-            <i data-lucide="shield"></i>
-            <h3>IT Security & System Protection</h3>
-            <p>Perlindungan akses, endpoint, jaringan, data, dan sistem operasional perusahaan.</p>
+            <i data-lucide="shield-check"></i>
+            <h3>Monitoring System</h3>
+            <p>Terintegrasi dengan sistem yang termonitor</p>
           </article>
 
         </div>
@@ -344,17 +353,52 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/img/logo.png" alt="Inti Synergy Mandiri Logo">
-
-        <div>
-          <strong>Inti Synergy Mandiri</strong>
-          <span>IT Service & Digital Solution</span>
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="Inti Synergy Mandiri Logo">
+  
+          <div>
+            <strong>Inti Synergy Mandiri</strong>
+            <span>IT Service & Digital Solution</span>
+          </div>
         </div>
+  
+        <p>
+          Partner teknologi untuk membantu bisnis mengelola infrastruktur IT,
+          jaringan, server, keamanan sistem, dan solusi digital secara profesional
+        </p>
       </div>
-
-      <p>Modern Technology Partner for Business Growth</p>
+  
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">Tentang Kami</a>
+        <a href="services.html">Layanan</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Kontak</a>
+      </div>
+  
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <a href="services.html">Managed IT Service</a>
+        <a href="services.html">Network Solution</a>
+        <a href="services.html">Cloud & Server</a>
+        <a href="services.html">Monitoring System</a>
+      </div>
+  
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p>Bandung, Indonesia</p>
+        <p>WhatsApp: 0811-1599-992</p>
+        <p>Email: info@intisynergymandiri.co.id</p>
+        <a href="contact.html" class="footer-cta">Konsultasi Sekarang</a>
+      </div>
+    </div>
+  
+    <div class="container footer-bottom">
+      <p>© 2026 Inti Synergy Mandiri. All rights reserved.</p>
+      <span>Built for modern business technology</span>
     </div>
   </footer>
 
