@@ -730,22 +730,22 @@ img {
 
 .service-layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 250px;
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .service-panel {
-  min-height: 300px;
+  min-height: 280px;
   position: relative;
   padding: 28px;
   border-radius: 32px;
-  overflow: visible;
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--line);
   backdrop-filter: blur(20px);
   box-shadow: var(--shadow-soft);
 }
+
 
 .service-panel::after {
   content: "";
@@ -795,14 +795,14 @@ img {
 }
 
 .service-panel.tall {
-  grid-row: span 2;
-  min-height: 420px;
+  grid-row: auto;
+  min-height: 280px;
 }
 
 .service-panel.wide {
-  grid-column: span 2;
+  grid-column: auto;
+  margin-top: 0;
   background: var(--dark);
-  margin-top: 40px;
 }
 
 .service-panel.wide h3,
