@@ -730,8 +730,9 @@ img {
 
 .service-layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  align-items: stretch;
 }
 
 .service-panel {
@@ -746,7 +747,6 @@ img {
   box-shadow: var(--shadow-soft);
 }
 
-
 .service-panel::after {
   content: "";
   position: absolute;
@@ -758,9 +758,15 @@ img {
   background: var(--silver-soft);
 }
 
-.service-panel span {
+.service-panel span,
+.service-panel svg,
+.service-panel h3,
+.service-panel p {
   position: relative;
   z-index: 2;
+}
+
+.service-panel span {
   display: block;
   color: var(--silver-dark);
   font-size: 14px;
@@ -769,8 +775,6 @@ img {
 }
 
 .service-panel svg {
-  position: relative;
-  z-index: 2;
   width: 36px;
   height: 36px;
   color: var(--dark);
@@ -778,8 +782,6 @@ img {
 }
 
 .service-panel h3 {
-  position: relative;
-  z-index: 2;
   color: var(--dark);
   font-size: 23px;
   line-height: 1.2;
@@ -788,20 +790,27 @@ img {
 }
 
 .service-panel p {
-  position: relative;
-  z-index: 2;
   color: var(--muted);
   line-height: 1.75;
 }
 
-.service-panel.tall {
-  grid-row: auto;
+.service-panel.tall,
+.service-panel.wide {
   min-height: 280px;
+  grid-row: auto;
+  grid-column: auto;
+  margin-top: 0;
+}
+
+.service-panel:nth-child(5) {
+  grid-column: 1 / span 2;
+}
+
+.service-panel:nth-child(6) {
+  grid-column: 3 / span 2;
 }
 
 .service-panel.wide {
-  grid-column: auto;
-  margin-top: 0;
   background: var(--dark);
 }
 
@@ -812,6 +821,23 @@ img {
 
 .service-panel.wide p {
   color: color-mix(in srgb, var(--bg) 74%, transparent);
+}
+
+@media (max-width: 1120px) {
+  .service-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-panel:nth-child(5),
+  .service-panel:nth-child(6) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* process */
