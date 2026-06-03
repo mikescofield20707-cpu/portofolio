@@ -1,0 +1,437 @@
+.sky-blue {
+  animation: skyBlueMove 16s ease-in-out infinite alternate;
+}
+
+.sky-red {
+  animation: skyRedMove 18s ease-in-out infinite alternate;
+}
+
+.stars-one {
+  animation: starsDriftOne 32s linear infinite, starsBlink 3.8s ease-in-out infinite;
+}
+
+.stars-two {
+  animation: starsDriftTwo 46s linear infinite, starsBlinkTwo 5.2s ease-in-out infinite;
+}
+
+.moon-wrap {
+  animation: moonFloat 9s ease-in-out infinite;
+}
+
+.moon {
+  animation: moonGlow 4.8s ease-in-out infinite;
+}
+
+.lost-card {
+  animation: cardReveal 0.9s ease forwards;
+}
+
+.lost-brand {
+  animation: revealDown 0.85s ease forwards;
+}
+
+.error-number {
+  animation: numberReveal 0.95s ease forwards;
+}
+
+.error-number span {
+  animation: numberGlow 3.8s ease-in-out infinite;
+}
+
+.error-number span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.error-number span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.earth-wrap {
+  animation: earthReveal 1s ease forwards, earthFloat 6s ease-in-out infinite 1s;
+}
+
+.earth {
+  animation: earthBreath 5.5s ease-in-out infinite;
+}
+
+.earth::before {
+  animation: earthGridMove 10s linear infinite;
+}
+
+.earth-line {
+  animation: earthLineMove 4.5s ease-in-out infinite;
+}
+
+.line-b {
+  animation-delay: 0.35s;
+}
+
+.line-c {
+  animation-delay: 0.7s;
+}
+
+.line-d {
+  animation-delay: 1.05s;
+}
+
+.earth-orbit {
+  animation: orbitRotate 16s linear infinite;
+}
+
+.orbit-b {
+  animation: orbitRotateReverse 12s linear infinite;
+}
+
+.orbit-c {
+  animation: orbitRotate 9s linear infinite;
+}
+
+.dot-a {
+  animation: dotPulse 2.8s ease-in-out infinite;
+}
+
+.dot-b {
+  animation: dotPulse 3.2s ease-in-out infinite 0.3s;
+}
+
+.dot-c {
+  animation: dotPulseRed 3s ease-in-out infinite 0.6s;
+}
+
+.earth-glow {
+  animation: earthGlow 4.4s ease-in-out infinite;
+}
+
+.lost-copy {
+  animation: revealUp 0.9s ease forwards;
+}
+
+.go-back-btn {
+  position: relative;
+  overflow: hidden;
+  animation: buttonReveal 0.9s ease forwards;
+}
+
+.go-back-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 46%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.42),
+    transparent
+  );
+  transform: translateX(-130%);
+  transition: 0.4s ease;
+}
+
+.go-back-btn:hover::after {
+  transform: translateX(260%);
+}
+
+@keyframes skyBlueMove {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+    opacity: 0.92;
+  }
+
+  100% {
+    transform: translate3d(3%, 2%, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes skyRedMove {
+  0% {
+    transform: translate3d(3%, -2%, 0) scale(1);
+    opacity: 0.72;
+  }
+
+  100% {
+    transform: translate3d(-4%, 3%, 0) scale(1.12);
+    opacity: 0.9;
+  }
+}
+
+@keyframes starsDriftOne {
+  from {
+    background-position: 0 0, 28px 46px;
+  }
+
+  to {
+    background-position: 420px 260px, 310px 420px;
+  }
+}
+
+@keyframes starsDriftTwo {
+  from {
+    background-position: 44px 20px, 92px 76px;
+  }
+
+  to {
+    background-position: -360px 420px, -460px 260px;
+  }
+}
+
+@keyframes starsBlink {
+  0%, 100% {
+    opacity: 0.52;
+  }
+
+  45% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.62;
+  }
+}
+
+@keyframes starsBlinkTwo {
+  0%, 100% {
+    opacity: 0.34;
+  }
+
+  50% {
+    opacity: 0.68;
+  }
+}
+
+@keyframes moonFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(-22px, 18px) rotate(4deg);
+  }
+}
+
+@keyframes moonGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 42px rgba(255,255,255,.55),
+      0 0 90px rgba(125,211,252,.34),
+      inset -18px -16px 30px rgba(37,99,235,.16);
+  }
+
+  50% {
+    box-shadow:
+      0 0 62px rgba(255,255,255,.72),
+      0 0 120px rgba(125,211,252,.48),
+      inset -18px -16px 30px rgba(37,99,235,.20);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes revealDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes numberReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes numberGlow {
+  0%, 100% {
+    text-shadow:
+      0 10px 0 rgba(30,64,175,.18),
+      0 0 34px rgba(125,211,252,.22);
+  }
+
+  50% {
+    text-shadow:
+      0 10px 0 rgba(30,64,175,.18),
+      0 0 46px rgba(125,211,252,.38),
+      0 0 24px rgba(239,68,68,.12);
+  }
+}
+
+@keyframes earthReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes earthFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes earthBreath {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 34px 90px rgba(37,99,235,.34),
+      0 0 70px rgba(125,211,252,.20),
+      inset 0 0 40px rgba(125,211,252,.12);
+  }
+
+  50% {
+    transform: scale(1.025);
+    box-shadow:
+      0 44px 110px rgba(37,99,235,.42),
+      0 0 92px rgba(125,211,252,.30),
+      inset 0 0 48px rgba(125,211,252,.18);
+  }
+}
+
+@keyframes earthGridMove {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 72px 36px, 36px 72px;
+  }
+}
+
+@keyframes earthLineMove {
+  0% {
+    transform: translateX(-18%) scaleX(0.7);
+    opacity: 0.28;
+  }
+
+  50% {
+    transform: translateX(10%) scaleX(1);
+    opacity: 0.78;
+  }
+
+  100% {
+    transform: translateX(22%) scaleX(0.75);
+    opacity: 0.36;
+  }
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.72;
+    box-shadow: 0 0 18px rgba(255,255,255,.65);
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+    box-shadow: 0 0 28px rgba(125,211,252,.85);
+  }
+}
+
+@keyframes dotPulseRed {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.76;
+    box-shadow: 0 0 18px rgba(239,68,68,.48);
+  }
+
+  50% {
+    transform: scale(1.38);
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(239,68,68,.82);
+  }
+}
+
+@keyframes earthGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.74;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
