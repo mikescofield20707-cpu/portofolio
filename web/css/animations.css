@@ -1,0 +1,291 @@
+
+/* ========================================
+   MICHAEL & NEZIA — ANIMATIONS
+   ======================================== */
+
+/* Scroll reveal */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.fade-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.fade-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered animation delays */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* Floating decorations */
+.float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+.float-y-slow {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+.float-y-fast {
+  animation: float-y 3.5s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Gentle pulse */
+.pulse {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 0.85;
+  }
+}
+
+/* Hero entrance */
+.hero-animate {
+  animation: hero-entrance 0.9s ease both;
+}
+
+.hero-animate-delay-1 {
+  animation: hero-entrance 0.9s ease 0.15s both;
+}
+
+.hero-animate-delay-2 {
+  animation: hero-entrance 0.9s ease 0.3s both;
+}
+
+.hero-animate-delay-3 {
+  animation: hero-entrance 0.9s ease 0.45s both;
+}
+
+@keyframes hero-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image hover */
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.image-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Card hover */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Button interaction */
+.btn,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active,
+button:active {
+  transform: scale(0.98);
+}
+
+/* Modal entrance */
+.modal.is-open .modal-content {
+  animation: modal-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Toast entrance */
+.toast {
+  animation: toast-in 0.35s ease both;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast.is-leaving {
+  animation: toast-out 0.25s ease forwards;
+}
+
+@keyframes toast-out {
+  to {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* Navigation underline */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 7px;
+  left: 12px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Music player */
+.music-playing .music-disc {
+  animation: disc-rotate 8s linear infinite;
+}
+
+@keyframes disc-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Secret content reveal */
+.secret-content.is-revealed {
+  animation: secret-reveal 0.6s ease both;
+}
+
+@keyframes secret-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-up,
+  .fade-left,
+  .fade-right {
+    opacity: 1;
+    transform: none;
+  }
+}

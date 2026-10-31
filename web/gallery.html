@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100c12">
+  <meta name="description" content="A little collection of moments worth keeping.">
+  <title>Our Gallery — Michael &amp; Nezia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery-page.css">
+</head>
+<body class="gallery-page">
+  <div class="gallery-loader" id="galleryLoader" aria-live="polite">
+    <div class="loader-inner">
+      <span class="loader-mark"><i class="fa-regular fa-images"></i></span>
+      <span class="loader-line"></span>
+      <p>Gathering little memories<span class="loader-dots">...</span></p>
+    </div>
+  </div>
+
+  <header class="gallery-topbar">
+    <a class="back-link" href="index.html">
+      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      <span>Back to our universe</span>
+    </a>
+    <span class="topbar-mark">M <span>&amp;</span> N</span>
+    <span class="topbar-caption">A little archive of us</span>
+  </header>
+
+  <main class="gallery-main">
+    <section class="gallery-intro">
+      <span class="gallery-eyebrow">THE MEMORY ARCHIVE</span>
+      <h1>Every picture holds<br><em>a little piece of us</em></h1>
+      <p>Some moments pass, some moments stay. Here's a place for the ones worth keeping.</p>
+      <div class="gallery-stats">
+        <span class="stats-icon"><i class="fa-regular fa-image"></i></span>
+        <span><strong id="photoCount">0</strong> memories collected</span>
+        <span class="stats-divider"></span>
+        <span class="stats-caption">scroll slowly, stay awhile</span>
+      </div>
+    </section>
+
+    <section class="gallery-content" aria-label="Photo collection">
+      <div class="gallery-section-heading">
+        <div>
+          <span class="gallery-eyebrow">THE COLLECTION</span>
+          <h2>Little <span>moments</span></h2>
+        </div>
+        <div class="gallery-view-label"><i class="fa-solid fa-grip"></i> ALL PHOTOS</div>
+      </div>
+
+      <div class="gallery-grid-page" id="galleryGrid" aria-live="polite"></div>
+
+      <div class="gallery-empty" id="galleryEmpty" hidden>
+        <i class="fa-regular fa-folder-open"></i>
+        <h3>No photos found just yet</h3>
+        <p>Add your pictures to <code>assets/gallery/</code>, then run the gallery generator.</p>
+      </div>
+
+      <p class="gallery-footer-note"><i class="fa-regular fa-heart"></i> made of moments, kept with love</p>
+    </section>
+  </main>
+
+  <footer class="gallery-page-footer">
+    <span>MICHAEL <span class="footer-heart">✦</span> NEZIA</span>
+    <span>OUR LITTLE UNIVERSE</span>
+  </footer>
+
+  <div class="photo-modal" id="photoModal" aria-hidden="true">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Close photo viewer">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button class="modal-arrow modal-prev" id="modalPrev" type="button" aria-label="Previous photo">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <figure class="modal-figure" id="modalFigure">
+      <img id="modalImage" src="" alt="">
+      <figcaption id="modalCaption"></figcaption>
+    </figure>
+    <button class="modal-arrow modal-next" id="modalNext" type="button" aria-label="Next photo">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="modal-counter" id="modalCounter">01 / 01</div>
+  </div>
+
+  <script src="js/gallery-page.js" defer></script>
+</body>
+</html>

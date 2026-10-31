@@ -1,0 +1,64 @@
+{
+  "photos": [
+    {
+      "src": "assets/gallery/a.jpg",
+      "alt": "a",
+      "caption": "a"
+    },
+    {
+      "src": "assets/gallery/b.jpg",
+      "alt": "b",
+      "caption": "b"
+    },
+    {
+      "src": "assets/gallery/c.jpg",
+      "alt": "c",
+      "caption": "c"
+    },
+    {
+      "src": "assets/gallery/d.jpg",
+      "alt": "d",
+      "caption": "d"
+    },
+    {
+      "src": "assets/gallery/e.jpg",
+      "alt": "e",
+      "caption": "e"
+    },
+    {
+      "src": "assets/gallery/f.jpg",
+      "alt": "f",
+      "caption": "f"
+    },
+    {
+      "src": "assets/gallery/g.jpg",
+      "alt": "g",
+      "caption": "g"
+    },
+    {
+      "src": "assets/gallery/h.jpg",
+      "alt": "h",
+      "caption": "h"
+    },
+    {
+      "src": "assets/gallery/i.jpg",
+      "alt": "i",
+      "caption": "i"
+    },
+    {
+      "src": "assets/gallery/j.jpg",
+      "alt": "j",
+      "caption": "j"
+    },
+    {
+      "src": "assets/gallery/k.jpg",
+      "alt": "k",
+      "caption": "k"
+    },
+    {
+      "src": "assets/gallery/l.jpg",
+      "alt": "l",
+      "caption": "l"
+    }
+  ]
+}

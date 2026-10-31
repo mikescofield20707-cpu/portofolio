@@ -1,0 +1,442 @@
+
+/* ========================================
+   MICHAEL & NEZIA — RESPONSIVE STYLES
+   ======================================== */
+
+@media (max-width: 1100px) {
+  .container {
+    width: min(100% - 40px, 100%);
+  }
+
+  .hero-content {
+    gap: 36px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+
+  .hero-image-wrapper {
+    max-width: 440px;
+  }
+
+  .story-grid {
+    gap: 40px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .songs-layout {
+    gap: 32px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  :root {
+    --section-space: 90px;
+  }
+
+  .navbar {
+    padding: 16px 0;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 140px;
+    padding-bottom: 90px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-image-wrapper {
+    order: 0;
+    width: min(100%, 380px);
+    margin-inline: auto;
+  }
+
+  .hero-description {
+    margin-inline: auto;
+  }
+
+  .hero-actions,
+  .hero-meta {
+    justify-content: center;
+  }
+
+  .hero-decoration {
+    display: none;
+  }
+
+  .counter-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .counter-card {
+    padding: 22px 10px;
+  }
+
+  .counter-value {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-image-wrapper {
+    width: min(100%, 520px);
+    margin-inline: auto;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 58px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 11px;
+    right: auto;
+  }
+
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 11px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-card {
+    margin-left: 0;
+  }
+
+  .timeline-item:nth-child(even) .timeline-date {
+    justify-content: flex-start;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .letters-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .songs-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .song-cover-wrapper {
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  .dates-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .secret-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Mobile navigation and layout */
+@media (max-width: 680px) {
+  :root {
+    --section-space: 72px;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .navbar-inner {
+    gap: 12px;
+  }
+
+  .nav-brand {
+    font-size: 1rem;
+  }
+
+  .nav-brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--surface-color);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 13px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.92rem;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: var(--surface-hover);
+  }
+
+  .hero {
+    padding-top: 115px;
+    padding-bottom: 72px;
+  }
+
+  .hero-image-wrapper {
+    width: min(100%, 300px);
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+    letter-spacing: -0.05em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-meta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .section-description {
+    font-size: 0.92rem;
+  }
+
+  .counter-section {
+    padding-top: 30px;
+  }
+
+  .counter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .counter-card {
+    padding: 20px 10px;
+  }
+
+  .counter-value {
+    font-size: 2.2rem;
+  }
+
+  .counter-label {
+    font-size: 0.72rem;
+  }
+
+  .story-image-wrapper {
+    width: 100%;
+  }
+
+  .story-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    padding-left: 42px;
+  }
+
+  .timeline::before {
+    left: 13px;
+  }
+
+  .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 4px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .timeline-card {
+    padding: 20px;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-item {
+    border-radius: var(--radius-md);
+  }
+
+  .gallery-caption {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+
+  .letters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-card {
+    min-height: 180px;
+  }
+
+  .song-player {
+    padding: 22px;
+  }
+
+  .song-title {
+    font-size: 1.4rem;
+  }
+
+  .dates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .date-card {
+    padding: 22px;
+  }
+
+  .secret-card {
+    padding: 26px 20px;
+  }
+
+  .settings-panel {
+    padding: 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 36px 0;
+  }
+
+  .modal-content {
+    width: calc(100% - 24px);
+    max-height: 90vh;
+    padding: 22px;
+  }
+
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .toast {
+    width: 100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .hero-title {
+    font-size: 2.45rem;
+  }
+
+  .counter-grid {
+    gap: 8px;
+  }
+
+  .counter-card {
+    padding: 16px 8px;
+  }
+
+  .counter-value {
+    font-size: 1.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 12px 16px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
