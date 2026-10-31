@@ -1,0 +1,1051 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100c12">
+  <meta name="description" content="Michael and Nezia — a private little universe made of memories, letters, music, and moments together.">
+  <title>Michael &amp; Nezia — Our Little Universe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header class="navbar" id="navbar">
+    <nav class="container nav-inner" aria-label="Main navigation">
+      <a href="#home" class="brand" aria-label="Michael and Nezia home">
+        <span class="brand-mark">M<span></span>N</span>
+        <span class="brand-text">our little <span>universe</span></span>
+      </a>
+
+      <button class="icon-btn nav-toggle" id="navToggle"
+        type="button" aria-label="Open navigation menu"
+        aria-controls="navLinks" aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link active" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#story">Our Story</a></li>
+        <li><a class="nav-link" href="#timeline">Timeline</a></li>
+        <li><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li><a class="nav-link" href="#letters">Letters</a></li>
+        <li><a class="nav-link" href="#songs">Our Songs</a></li>
+        <li><a class="nav-link" href="#dates">Special Dates</a></li>
+        <li><a class="nav-link" href="#secret">Secret Space</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero section" id="home">
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">A place made just for us</span>
+
+          <h1>Michael <span class="accent"></span><br>Nezia</h1>
+
+          <p class="hero-subtitle">
+            A little universe of two, filled with memories,
+            little moments, and stories worth keeping.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#story" class="btn btn-primary">
+              Explore our world
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+
+            <a href="#gallery" class="btn btn-outline">
+              <i class="fa-regular fa-images" aria-hidden="true"></i>
+              View memories
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <i class="fa-regular fa-heart" aria-hidden="true"></i>
+            <span>A small corner of the universe, belonging to us</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-frame">
+            <img
+              id="heroImage"
+              src="assets/images/a.jpg"
+              alt="A favorite photo of Michael and Nezia"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+            <div class="image-placeholder" style="display:none">
+              <i class="fa-regular fa-image" aria-hidden="true"></i>
+              <span>Add your favorite photo</span>
+              <small>assets/images/hero.jpg</small>
+            </div>
+
+            <div class="photo-caption">
+              <span class="caption-label">OUR LITTLE WORLD</span>
+              <span class="caption-title">You, me, and our memories</span>
+            </div>
+          </div>
+
+          <div class="hero-decoration decoration-one" aria-hidden="true">
+            <i class="fa-solid fa-sparkles"></i>
+          </div>
+          <div class="hero-decoration decoration-two" aria-hidden="true">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+        </div>
+      </div>
+
+      <a href="#counter" class="scroll-indicator" aria-label="Scroll to relationship counter">
+        <span>Scroll to discover</span>
+        <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- Relationship Counter -->
+    <section class="counter-section section" id="counter">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Setiap momen juga penting</span>
+          <h2>Waktu yang kita habiskan?, <span class="accent">BERSAMA?</span></h2>
+          <p class="section-description">
+            Satu detik waktu yang kita habiskan juga sudah sangat bermakna
+          </p>
+        </div>
+
+        <div class="counter-card">
+          <p class="counter-label">Gak kerasa ay, kita udah selama ini ya?</p>
+
+          <div class="counter-grid" id="loveCounter"
+            data-start-date="2025-08-18T00:00:00">
+            <div class="counter-item">
+              <strong id="counterDays">--</strong>
+              <span>Days</span>
+            </div>
+            <div class="counter-item">
+              <strong id="counterHours">--</strong>
+              <span>Hours</span>
+            </div>
+            <div class="counter-item">
+              <strong id="counterMinutes">--</strong>
+              <span>Minutes</span>
+            </div>
+            <div class="counter-item">
+              <strong id="counterSeconds">--</strong>
+              <span>Seconds</span>
+            </div>
+          </div>
+
+          <p class="counter-duration" id="counterDuration">
+            Menghitung waktu kita...
+          </p>
+
+          <p class="counter-footnote">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            Waktu yang kita jalani
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section story-section" id="story">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Chapter one</span>
+          <h2>Setiap cerita diketik dari <span class="accent">awal</span></h2>
+          <p class="section-description">
+            Ini cerita kita yaaa..., dimana semua dimulai dengan baik sampai dimana kita berjalan bersama untuk melawan ego masing" sayangg..
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-image">
+            <img
+              src="assets/images/c.jpg"
+              alt="A meaningful memory from our story"
+              loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            >
+            <div class="image-placeholder" style="display:none">
+              <i class="fa-regular fa-image" aria-hidden="true"></i>
+              <span>Your story photo</span>
+              <small>assets/images/story.jpg</small>
+            </div>
+          </div>
+
+          <div class="story-content">
+            <span class="story-kicker">MICHAEL &amp; NEZIA</span>
+            <h3>Aku yang bangga memilikimu</h3>
+            <p>
+              Semua cerita yang aku tulis ini, bukan hanya mimpi, namun salah satu cerita yang dimana aku sendiri tidak bisa melepasnya dan merubahnya ke arah genggaman orang lain
+            </p>
+            <p>
+              Dan website ini, adalah satu tempat spesial dimana kita bisa melihat seberapa jauh hubungan kita beserta jejak dan kenangan nya
+            </p>
+
+            <a href="#timeline" class="text-link">
+              Explore our timeline
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="story-chapters" id="storyChapters">
+          <article class="chapter-card">
+            <span class="chapter-number">01</span>
+            <h3>The Beginning</h3>
+            <p>Dimulai sejak dimana perawalan organisasi, ketika tatapanku hanya menatap seorang wanita cantik bernama Nezia</p>
+          </article>
+
+          <article class="chapter-card">
+            <span class="chapter-number">02</span>
+            <h3>Little Moments</h3>
+            <p>Sangat kebetulan, mungkin tuhan juga memberi kesempatan, dimana aku dapat langsung bertugas bersamanya tanpa harus berkenalan terlebih dahulu</p>
+          </article>
+
+          <article class="chapter-card">
+            <span class="chapter-number">03</span>
+            <h3>Our Memories</h3>
+            <p>Dan yap, dimana sampai akhirnya di 18 Agustus 2025, hubungan kita dimulai dan banyak membuat momen serta banyak pengalaman pertama yang baru dilalui</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+
+<section class="section timeline-section" id="timeline">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Chapter two</span>
+      <h2>A wishlist for <span class="accent">us</span></h2>
+      <p class="section-description">
+        Little dreams, quiet wishes, and a future I'd love to share with you.
+      </p>
+    </div>
+
+    <div class="timeline-list" id="timelineList">
+
+      <article class="timeline-entry">
+        <div class="timeline-marker">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        </div>
+        <div class="timeline-card">
+          <span class="timeline-date">01 · MY LITTLE WISH</span>
+          <h3>More Days sama kamuu...</h3>
+          <p>
+            Aku berharap banget, buat bisa ngabisin semua hidup aku sama kamu, karena apa yang aku rasain selama aku ngabisin waktu sama kamu, dari pikiran yang enggak" sampai masalah yang aku hadapi, semua disitu bener" hilang banget, nothin stress out...
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-entry">
+        <div class="timeline-marker">
+          <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+        </div>
+        <div class="timeline-card">
+          <span class="timeline-date">02 · PLACES TO GO</span>
+          <h3>Adventure with bubuuu</h3>
+          <p>
+            Seumur hidup dimana aku merasakan apa yang disebut "ngapel" atau ngedate, dan pertama kalinya pergi ke Braga itu dengannmu sayangkuu..., first time photobooth, bonceng cewek jalan jauh, beuh, madep pokona mah
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-entry">
+        <div class="timeline-marker">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+        </div>
+        <div class="timeline-card">
+          <span class="timeline-date">03 · SOMEDAY</span>
+          <h3>Tempat dimana aku bisa memanggilmu <i>Rumah</i></h3>
+          <p>
+            Aku juga berharap, diwaktu selanjutnya, kamu yang nyambut aku, kamu yang masakin aku, kamu juga yang mijitin aku, di setiap waktu dalam keterusan hari...
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-entry">
+        <div class="timeline-marker">
+          <i class="fa-solid fa-star" aria-hidden="true"></i>
+        </div>
+        <div class="timeline-card">
+          <span class="timeline-date">04 · MY HOPE FOR US</span>
+          <h3>Tumbuh bersama</h3>
+          <p>
+            Aku juga berharap, kita bisa mengubah apa yang kita benci di hidup kita bareng bareng, dengan cara yang pelan, tida terburu buru, karena setiap momen perjuangan yang kita perjuangkan untuk hubungan, itulah salah satu sejarah hidup yang bisa kita tulis dalam buku kehidupan kita berdua
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-entry">
+        <div class="timeline-marker">
+          <i class="fa-regular fa-moon" aria-hidden="true"></i>
+        </div>
+        <div class="timeline-card">
+          <span class="timeline-date">05 · A QUIET WISH</span>
+          <h3>Happiness in the Little Things</h3>
+          <p>
+            Cantikmu, Senyumu, Tawa mu, semua bagai mimpi yang baru aku lihat, kamu sayang.., kamuu lah satuu" nyaa yang palingg sempurnaa buat aku sayangg... 
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Gallery -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Chapter three</span>
+          <h2>Captured <span class="accent">moments</span></h2>
+          <p class="section-description">
+            Galleri ini akan memunculkan beberapa kengan yang sempat tergambarkan
+          </p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <p id="galleryCount">Our photo collection</p>
+          <button class="btn btn-outline btn-small" id="addPhotoBtn" type="button">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            Add photos
+          </button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="gallery-card" type="button"
+            data-image="assets/images/a.jpg"
+            data-caption="A memory worth keeping"
+            aria-label="Open gallery photo one">
+            <img src="assets/images/a.jpg"
+              alt="Memory one" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <span class="gallery-placeholder" style="display:none">
+              <i class="fa-regular fa-image" aria-hidden="true"></i>
+              Add gallery-1.jpg
+            </span>
+            <span class="gallery-overlay">
+              <i class="fa-solid fa-expand" aria-hidden="true"></i>
+              <span>first minutes & first second</span>
+            </span>
+          </button>
+
+          <button class="gallery-card" type="button"
+            data-image="assets/images/b.jpg"
+            data-caption="One of our favorite days"
+            aria-label="Open gallery photo two">
+            <img src="assets/images/b.jpg"
+              alt="Memory two" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <span class="gallery-placeholder" style="display:none">
+              <i class="fa-regular fa-image" aria-hidden="true"></i>
+              Add gallery-2.jpg
+            </span>
+            <span class="gallery-overlay">
+              <i class="fa-solid fa-expand" aria-hidden="true"></i>
+              <span>My unyu unyu after ondangan</span>
+            </span>
+          </button>
+
+          <button class="gallery-card" type="button"
+            data-image="assets/images/d.jpg"
+            data-caption="Little things, big memories"
+            aria-label="Open gallery photo three">
+            <img src="assets/images/d.jpg"
+              alt="Memory three" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <span class="gallery-placeholder" style="display:none">
+              <i class="fa-regular fa-image" aria-hidden="true"></i>
+              Add gallery-3.jpg
+            </span>
+            <span class="gallery-overlay">
+              <i class="fa-solid fa-expand" aria-hidden="true"></i>
+              <span>My unyu unyu kepanasan</span>
+            </span>
+          </button>
+
+          <button class="gallery-card" type="button"
+            data-image="assets/images/e.jpg"
+            data-caption="A moment just for us"
+            aria-label="Open gallery photo four">
+            <img src="assets/images/e.jpg"
+              alt="Memory four" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <span class="gallery-placeholder" style="display:none">
+              <i class="fa-regular fa-image" aria-hidden="true"></i>
+              Add gallery-4.jpg
+            </span>
+            <span class="gallery-overlay">
+              <i class="fa-solid fa-expand" aria-hidden="true"></i>
+              <span>My unyu unyu cantik bangett aww
+            </span>
+          </button>
+        </div>
+
+        <!-- More Gallery Folder -->
+        <a href="gallery.html" class="gallery-more-folder" aria-label="Open more gallery photos">
+          <div class="gallery-folder-icon">
+            <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
+          </div>
+
+          <div class="gallery-folder-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="gallery-folder-text">
+            <span class="gallery-folder-title">more?</span>
+            <span class="gallery-folder-subtitle">click here</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square gallery-folder-arrow"
+            aria-hidden="true"></i>
+        </a>
+
+        <p class="gallery-note">
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          Fitur hiasann yahh ini mah mwehehehe
+        </p>
+      </div>
+    </section>
+
+    <!-- Letters -->
+    <section class="section letters-section" id="letters">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Chapter four</span>
+          <h2>Sedikit kata dari <span class="accent">hati</span></h2>
+          <p class="section-description">
+            Kalimat ini ditulis untuk kamu baca disituasi yang tepat sayangg
+          </p>
+        </div>
+
+        <div class="letters-toolbar">
+          <p id="letterCount">Collection of letters</p>
+          <button class="btn btn-primary btn-small" id="addLetterBtn" type="button">
+            <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+            Tulis kata hatimu
+          </button>
+        </div>
+
+        <div class="letters-grid" id="lettersGrid">
+          <article class="letter-card">
+            <div class="letter-icon">
+              <i class="fa-regular fa-envelope-open" aria-hidden="true"></i>
+            </div>
+            <span class="letter-date">Baca ini?kapanpun juga bisa</span>
+            <h3>Tapi buka ya kalo kamu lagi banyak pikiran...</h3>
+            <p>A space for words you choose to write to each other</p>
+            <button class="text-link letter-open-btn" type="button"
+              data-letter-id="welcome-letter">
+              Open letter
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Songs -->
+    <section class="section songs-section" id="songs">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Chapter five</span>
+          <h2>The soundtrack of <span class="accent">us</span></h2>
+          <p class="section-description">
+            Songs that remind us of a moment, a feeling, or a memoryy...
+          </p>
+        </div>
+
+        <div class="music-artwork" id="musicArtwork">
+        <i class="fa-solid fa-music" aria-hidden="true"></i>
+        </div>
+
+          <div class="music-details">
+            <audio id="audioPlayer" preload="metadata"></audio>
+            <span class="music-label">NOW PLAYING</span>
+            <h3 id="musicTitle">Choose our first song</h3>
+            <p id="musicArtist">Add a song to begin</p>
+
+
+            <div class="music-progress">
+              <span id="musicCurrentTime">0:00</span>
+              <input id="musicSeek" type="range" min="0" max="100"
+                value="0" step="0.1" aria-label="Seek through song">
+              <span id="musicDuration">0:00</span>
+            </div>
+
+            <div class="music-controls">
+              <button class="icon-btn" id="musicPrev" type="button" aria-label="Previous song">
+                <i class="fa-solid fa-backward-step" aria-hidden="true"></i>
+              </button>
+              <button class="music-play-btn" id="musicPlay" type="button" aria-label="Play song">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+              <button class="icon-btn" id="musicNext" type="button" aria-label="Next song">
+                <i class="fa-solid fa-forward-step" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="music-volume">
+              <i class="fa-solid fa-volume-low" aria-hidden="true"></i>
+              <input id="musicVolume" type="range" min="0" max="1"
+                value="0.8" step="0.05" aria-label="Volume">
+              <span id="musicStatus" aria-live="polite">Ready when you are</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="songs-toolbar">
+          <h3>Our playlist</h3>
+          <button class="btn btn-outline btn-small" id="addSongBtn" type="button">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            Add a song
+          </button>
+        </div>
+
+        <div class="song-list" id="songList">
+          <div class="empty-state">
+            <i class="fa-solid fa-compact-disc" aria-hidden="true"></i>
+            <h3>Your playlist starts here</h3>
+            <p>Fitur hiasann jugaaww, bisa setel kokk musiknyahh</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Dates -->
+    <section class="section dates-section" id="dates">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Chapter six</span>
+          <h2>Dates to <span class="accent">remember</span></h2>
+          <p class="section-description">
+            Tetap berbalik apa yang aku bilangg..., it was best exp dan first exp for me going take a date pretty much girl...
+          </p>
+        </div>
+
+        <div class="dates-toolbar">
+          <p id="dateCount">Our meaningful dates</p>
+          <button class="btn btn-outline btn-small" id="addDateBtn" type="button">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            Add a date
+          </button>
+        </div>
+
+        <div class="dates-grid" id="datesGrid">
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+              </div>
+
+              <div class="date-icon">
+                <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+              </div>
+
+               <div class="date-icon">
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+              </div>
+
+               <div class="date-icon">
+                <i class="fa-solid fa-city" aria-hidden="true"></i>
+              </div>
+            </div>
+            <span class="date-category">BRAGA!</span>
+            <h3>Our first date</h3>
+            <p>30 August 2025</p>
+            <span class="date-countdown">PLISSS FIRST BANGET DISITU AKUU ASA SENENG BANGETT SUMPAHH!
+              pokonyaa lebih dari senengg tauu ihh sayangg... hummm pengen lagiii photobooth
+            </span>
+          </article>
+      
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-camera" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">ONDANGAN DATE</span>
+            <h3>Our second date</h3>
+            <p>06 Sept 2025</p>
+            <span class="date-countdown">forr the first time keluarga besarr aku tauu akuu punya cewekkk bubbb, makasii udah mauu ikut yaa sayangkuuu cintakuuuuu</span>
+          </article>
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-cloud" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">PANGALENGAN DATE</span>
+            <h3>Our third date</h3>
+            <p>14-15 Sept 2025</p>
+            <span class="date-countdown">Sehariann berduaann, pertamaa kalinyaa akuu di kekeup samaa cewee, pas dinginn dinginnn kamuu angettinn akuu, makasiii bangettt tayangggg</span>
+          </article>
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">ONDANGAN DATES AGAINN</span>
+            <h3>Our fourth date</h3>
+            <p>04 Okt 2025</p>
+            <span class="date-countdown">First timee jugaa ke ondangann cewekk sendirii, lovee uuu banyakk banyakkk sayangg yaa udahh mauu ajakk akuu dan nerimaa aku baikk baikk sayanggg... </span>
+          </article>
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-city" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-mountain-city" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">DAGO DATE!?</span>
+            <h3>Our fifth date</h3>
+            <p>18 Okt 2025</p>
+            <span class="date-countdown">First timee ada yang nemeninn aku makann di resto, firstt timee juga ke dagoo sama cewekk sendirii, untungg kitaa fotoo fotoo yakk, seruu bangettt tapii bbubuuu banyakk diemnyaaa... humm</span>
+          </article>
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-film" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">ALFA DATES KESEKIAN KALINYAH</span>
+            <h3>Our sixth date</h3>
+            <p>13 Jan 2026</p>
+            <span class="date-countdown">Seruu bett kitaa date di alfaa modall 10-20 ribuu anjoyyy, serunyaa tuh kitaa bisaa deeptalkknyaa samaa nobarrnyaaa</span>
+          </article>
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-cloud-sun" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-person-walking" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">DAGO DATES AGAIN!</span>
+            <h3>Our seventh date</h3>
+            <p>18 Feb 2026</p>
+            <span class="date-countdown">Ke dago pelangi, tempatt dimana aku dulu sering kesitu sendiri dan ngelamun sendiri, tapii sekarangg udah bisa ditemeninn kamuu...</span>
+          </article>
+
+           <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-shirt" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-wallet" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">KOPINAKO DATE</span>
+            <h3>Our eighth date</h3>
+            <p>17 Mar 2026</p>
+            <span class="date-countdown">Ngopii ngopii, outfitt coupleee, beuhh, sayangg bangett yaa gadaa hp IP njirr, umm, aku juga dibayarin kamu, mana pas ditempat uang juga sempet kurang anjir, inget gak??ngakak mun diingett" huhuuu</span>
+          </article>
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon"><i class="fa-solid fa-umbrella-beach" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-water" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></div>
+              <div class="date-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
+            </div>
+            <span class="date-category">PANGANDARAN DATE</span>
+            <h3>Our nineth date</h3>
+            <p>29 August 2026</p>
+            <span class="date-countdown">Falling love banget bisa ke pantai bareng kamu..., that momentt..., aku gaakan pernah bisa lupainn sayangg... :"(</span>
+          </article>
+
+          <article class="date-card">
+            <div class="date-icons">
+              <div class="date-icon">
+                <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+              </div>
+
+              <div class="date-icon">
+                <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+              </div>
+
+              <div class="date-icon">
+                <i class="fa-solid fa-heart" aria-hidden="true"></i>
+              </div>
+
+              <div class="date-icon">
+                <i class="fa-solid fa-face-laugh-beam" aria-hidden="true"></i>
+              </div>
+            </div>
+            <span class="date-category">GAJELAS AND MIE AYAM DATE</span>
+            <h3>Our tenth date</h3>
+            <p>29 Okt 2026</p>
+            <span class="date-countdown">Kukurilingan, marah" an, but our love's never be die bub, makasiii traktiran mie ayamnyaaa..., maaf yaa kukurilingann gajelasss...</span>
+          </article>
+        </div>
+      </div>
+    </section>
+   <!-- Secret Space -->
+    <section class="section secret-section" id="secret">
+      <div class="container">
+        <div class="secret-card">
+          <div class="secret-symbol">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+          </div>
+
+          <span class="eyebrow">Just between us</span>
+          <h2>A little <span class="accent">secret space</span></h2>
+          <p>
+            A private-feeling corner for personal notes, special messages,
+            and things you want to keep away from the main page.
+          </p>
+
+          <form id="secretForm" class="secret-form">
+            <label for="secretPassword">Enter your passphrase</label>
+            <div class="secret-input-wrap">
+              <input id="secretPassword" name="password" type="password"
+                placeholder="Enter passphrase" autocomplete="off"
+                required>
+              <button class="icon-btn" id="toggleSecretPassword" type="button"
+                aria-label="Show passphrase">
+                <i class="fa-regular fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-key" aria-hidden="true"></i>
+              Unlock space
+            </button>
+            <p id="secretMessage" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <div id="secretContent" class="secret-content hidden">
+            <h3>Welcome to your secret space</h3>
+            <p id="secretNote">
+happy 1st anniversary, neziiaaa, my favorite person, my sweetest girl, and someone who once became a very special part of my life :")
+
+<br><br>
+
+i don't really know where should i start, because there's so many things that i wanna sayyy, so many memories that i wanna bring backkk, and so many feelings that sometimes i can't even explain with words, but today, i just wanna say thank youuu, thank you for everythinggg, for every little thing that you've given to meee, for every moment that we've spent togetherrr, and for every experience that i might never get twice in my lifeee
+
+<br>
+
+18 august 2025, siapa sangka yaaaaa, dari sebuah pertemuan sederhanaaa, dari sebuah komunitas kecilll, dari dua orang yang awalnya cuma saling mengenalll, akhirnya bisa sampai di titik iniii, i still remember how everything starteddd, how nervous i was when i wanted to tell you about my feelingsss, how i bought those flowers for the first timeee, how i prepared my little letterrr, and how scared i was about the possibility of being rejecteddd, but somehow, you accepted meee, and that little moment became one of the happiest moments i've ever had.....
+
+<br>
+
+i still remember our first date at Braga, 30 august 2025, HAHAHAHA, bahkan first date kita aja harus diwarnai sama kesasarr, muter-muterrr, buka google mapsss, dan kebingungan nyari jalan yang benarr, mungkin bagi orang lain itu hal kecilll, tapi buat aku, itu salah satu kenangan yang selalu punya tempat sendiriii, karena untuk pertama kalinya, aku bisa pergi ke suatu tempat dengan seseorang yang aku sayanggg, bukan cuma berjalan sendirian seperti biasanyaaa
+<br><br><br>
+happy 1st anniversary, neziiaaa, my favorite person, my sweetest girl, and someone who once became a very special part of my life :")
+
+<br>
+
+i don't really know where should i start, because there's so many things that i wanna sayyy, so many memories that i wanna bring backkk, and so many feelings that sometimes i can't even explain with words, but today, i just wanna say thank youuu, thank you for everythinggg, for every little thing that you've given to meee, for every moment that we've spent togetherrr, and for every experience that i might never get twice in my lifeee
+
+<br><br>
+
+18 august 2025, siapa sangka yaaaaa, dari sebuah pertemuan sederhanaaa, dari sebuah komunitas kecilll, dari dua orang yang awalnya cuma saling mengenalll, akhirnya bisa sampai di titik iniii, i still remember how everything starteddd, how nervous i was when i wanted to tell you about my feelingsss, how i bought those flowers for the first timeee, how i prepared my little letterrr, and how scared i was about the possibility of being rejecteddd, but somehow, you accepted meee, and that little moment became one of the happiest moments i've ever had.....
+
+<br>
+
+i still remember our first date at Braga, 30 august 2025, HAHAHAHA, bahkan first date kita aja harus diwarnai sama kesasarr, muter-muterrr, buka google mapsss, dan kebingungan nyari jalan yang benarr, mungkin bagi orang lain itu hal kecilll, tapi buat aku, itu salah satu kenangan yang selalu punya tempat sendiriii, karena untuk pertama kalinya, aku bisa pergi ke suatu tempat dengan seseorang yang aku sayanggg, bukan cuma berjalan sendirian seperti biasanyaaa
+
+<br>
+
+i remember the cold weather in Bandunggg, our little conversationsss, our first huggg, the first time i held your handdd, the first time i got to accompany youuu, and all those little moments that might look ordinary to other peopleee, but meant so much to meee, you gave me so many first experiencesss, and honestly, i don't think i'll ever be able to describe how grateful i was to experience all of those things with youuu
+
+<br>
+
+terima kasih yaaaaa, udah pernah menjadi bagian dari hari-harikuuu, udah pernah membuat hal-hal sederhana terasa begitu istimewaaa, udah pernah menjadi tempat aku berceritaaa, tempat aku mencari semangattt, dan seseorang yang bisa membuat hari beratku terasa sedikit lebih ringannn, mungkin kamu nggak selalu sadarr, tapi ada banyak hari ketika kehadiranmu benar-benar membantu aku melewati keadaan yang nggak mudah.....
+
+<br><br>
+
+and i'm sorryyy, really sorryyy
+
+<br>
+
+maaf yaaaaa, di anniversary pertama kita ini aku belum bisa memberikan perayaan yang baikkk, belum bisa mengajakmu ke tempat yang mungkin kamu inginkannn, belum bisa memberikan hadiah yang mungkin ingin kamu terimaaa, bahkan belum bisa membuat hari spesial ini terasa semeriah yang seharusnyaaa, bukan karena aku nggak mauuu, bukan karena aku nggak menganggap hari ini pentinggg, tapi ada banyak keadaan yang masih harus aku hadapi dan banyak hal yang sedang aku usahakan satu per satuuu
+
+<br><br>
+
+sometimes i really want to give you everythinggg, but my circumstances don't always allow me to do thattt, ada banyak keinginan yang cuma bisa aku simpan duluuu, ada banyak rencana yang harus aku tundaaa, dan ada banyak hal yang harus aku pertimbangkan sebelum bisa mewujudkannyaa, aku tahuuu, mungkin kata maaf nggak cukup untuk menggantikan sesuatu yang seharusnya bisa aku berikannn, but please know that i never wanted this day to pass without making you feel appreciated.....
+
+<br>
+
+aku juga minta maaf untuk segala sikapku selama perjalanan iniii, maaf kalau pernah terlalu egoisss, terlalu banyak berpikirrr, terlalu sulit dimengertiii, atau justru membuatmu merasa sendirian ketika seharusnya aku bisa menjadi seseorang yang menemanimuuu, maaf kalau ada perkataan atau perbuatanku yang masih meninggalkan lukaaa, i know that love isn't always about saying sorryyy, but also about understanding what went wrong and learning from ittt
+
+<br>
+
+aku sadar bahwa selama satu tahun ini kita nggak selalu berada dalam keadaan yang baik-baik sajaaa, ada tawaaa, ada bahagiaaa, ada salah pahammm, ada tangisss, ada rasa takut kehilangannn, ada overthinkinggg, dan ada banyak hal yang mungkin nggak bisa kita ceritakan kepada orang lainnn, but somehow, all of those things became part of our storyyy
+
+<br><br>
+
+i hope you never think that all those little moments were meaningless to meee, because they weren'ttt, setiap fotooo, setiap percakapannn, setiap perjalanannn, setiap tempat yang pernah kita kunjungi, bahkan hal-hal random yang mungkin sudah kamu lupakan, pernah menjadi sesuatu yang sangat berarti buat akuuu.....
+
+<br>
+
+and one more thinggg, thank you for being yourselffff, terima kasih karena pernah memperlihatkan sisi kuatmuuu, sisi lucumuuu, sisi manjamuuu, bahkan sisi dirimu yang mungkin nggak selalu kamu tunjukkan kepada semua oranggg, aku harap kamu nggak pernah merasa harus menjadi sempurna untuk bisa dicintaiii, you deserve to be appreciateddd, you deserve to be understooddd, and you deserve to be happy without having to pretend that everything is okayyy
+
+<br><br>
+
+aku juga berharap kamu selalu bisa menyayangiii dirimu sendiriii, menjaga kesehatanmuuu, mengejar semua hal yang kamu inginkannn, dan nggak pernah meragukan kemampuanmu sendiriii, jangan terlalu keras sama diri sendiri yaaaaa, kamu juga manusia yang boleh capekkk, boleh sedihhh, boleh istirahattt, dan boleh meminta pertolongan ketika keadaan terasa berattt
+
+<br>
+
+i don't know how beautiful the future will beeee, and i don't know what life has prepared for usss, but i know that this chapter has taught me so many things about loveee, patienceee, understandinggg, and growing up, aku belajar bahwa mencintai seseorang bukan hanya tentang ingin selalu bersamaaa, tetapi juga tentang belajar memahami, menghargai, dan bertanggung jawab atas perasaan yang pernah kita jagaaa
+
+<br><br>
+
+sekali lagi, happy 1st anniversary, neziiaaaa, thank you for every little thinggg, for every first experienceee, for every laughhh, for every huggg, and for every memory that we created togetherrr
+
+<br>
+
+maaf kalau anniversary pertama ini belum bisa akuu rayakan dengan baikkk, maaf kalau yang bisa aku berikan sekarang masih sebatas kata-kata dan ketulusan yang aku coba sampaikan melalui tulisan iniii, but at least, i want you to know that i haven't forgotten how meaningful this day isss
+
+<br>
+
+semoga kamu selalu menemukannn kebahagiaan dalam hal-hal sederhanaaa, semoga semua urusanmu dipermudahhh, semoga semua impianmu satu per satu bisa terwujuddd, dan semoga kamu selalu punya alasan untuk tersenyum setiap harinyaaa
+
+<br>
+
+thank you for beingg partt of my 365 days of memoriesss
+
+<br>
+
+once again, happyy first anniversary, my dearest neziiaaaa, take care of yourselffff, okay? and please, never forget that you are someone worth appreciatinggg
+
+<br><br>
+
+with all the words thatt i couldn't say directlyyy...,
+michaelll... (ur duduuu) :")
+</p>
+            <button class="btn btn-outline btn-small" id="lockSecretBtn" type="button">
+              <i class="fa-solid fa-lock" aria-hidden="true"></i>
+              Lock again
+            </button>
+          </div>
+
+          <p class="secret-disclaimer">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            A front-end passphrase is only a visual barrier, not secure authentication.
+            Do not store sensitive information here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personalization / Settings -->
+    <section class="section settings-section" id="settings">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Make it yours</span>
+          <h2>Our little <span class="accent">settings</span></h2>
+          <p class="section-description">
+            Personalize the names, dates, appearance, and content of this website.
+          </p>
+        </div>
+
+        <div class="settings-card">
+          <div class="settings-heading">
+            <div>
+              <h3>Personalization</h3>
+              <p>Changes are stored in this browser when supported.</p>
+            </div>
+            <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+          </div>
+
+          <form id="settingsForm" class="settings-form">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="settingsNameOne">First name</label>
+                <input id="settingsNameOne" name="nameOne"
+                  type="text" value="Michael" maxlength="40" required>
+              </div>
+
+              <div class="form-field">
+                <label for="settingsNameTwo">Second name</label>
+                <input id="settingsNameTwo" name="nameTwo"
+                  type="text" value="Nezia" maxlength="40" required>
+              </div>
+
+              <div class="form-field">
+                <label for="settingsStartDate">Relationship start date</label>
+                <input id="settingsStartDate" name="startDate"
+                  type="date" value="2025-08-18" required>
+              </div>
+
+              <div class="form-field">
+                <label for="settingsTheme">Theme</label>
+                <select id="settingsTheme" name="theme">
+                  <option value="romantic">Romantic plum</option>
+                  <option value="midnight">Midnight blue</option>
+                  <option value="rose">Soft rose</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="settings-toggles">
+              <label class="toggle-row" for="settingsAnimations">
+                <span>
+                  <strong>Animations</strong>
+                  <small>Enable decorative motion effects</small>
+                </span>
+                <input id="settingsAnimations" name="animations" type="checkbox" checked>
+              </label>
+
+              <label class="toggle-row" for="settingsReducedMotion">
+                <span>
+                  <strong>Reduced motion</strong>
+                  <small>Limit motion for a calmer experience</small>
+                </span>
+                <input id="settingsReducedMotion" name="reducedMotion" type="checkbox">
+              </label>
+            </div>
+
+            <div class="settings-actions">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                Save settings
+              </button>
+              <button class="btn btn-outline" id="resetSettingsBtn" type="button">
+                Reset settings
+              </button>
+            </div>
+
+            <p id="settingsMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">M<span></span>N</span>
+        <span class="brand-text">our little <span>universe</span></span>
+      </a>
+
+      <p>Made with care, for the memories worth keeping.</p>
+
+      <a href="#home" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="container footer-bottom">
+      <span> <span id="currentYear"></span> Michael  Nezia</span>
+      <span>Our story, our little universe.</span>
+    </div>
+  </footer>
+
+  <!-- Timeline / Letter / Song / Date Form Modal -->
+  <div class="modal hidden" id="editorModal" role="dialog"
+    aria-modal="true" aria-labelledby="editorModalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h2 id="editorModalTitle">Add an item</h2>
+        <button class="icon-btn" type="button" data-close-modal aria-label="Close dialog">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <form id="editorForm">
+        <div id="editorFields" class="modal-body"></div>
+        <div class="modal-actions">
+          <button class="btn btn-outline" type="button" data-close-modal>Cancel</button>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gallery Lightbox -->
+  <div class="lightbox hidden" id="galleryLightbox"
+    role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="icon-btn lightbox-close" id="lightboxClose"
+      type="button" aria-label="Close photo viewer">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+    <button class="icon-btn lightbox-prev" id="lightboxPrev"
+      type="button" aria-label="Previous photo">
+      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+    </button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImage" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="icon-btn lightbox-next" id="lightboxNext"
+      type="button" aria-label="Next photo">
+      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <!-- Letter Viewer -->
+  <div class="modal hidden" id="letterModal" role="dialog"
+    aria-modal="true" aria-labelledby="letterModalTitle">
+    <div class="modal-backdrop" data-close-letter></div>
+    <article class="modal-panel letter-modal-panel">
+      <div class="modal-header">
+        <span class="letter-modal-icon">
+          <i class="fa-regular fa-envelope-open" aria-hidden="true"></i>
+        </span>
+        <button class="icon-btn" type="button" data-close-letter aria-label="Close letter">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="letter-modal-content">
+        <span class="letter-date" id="letterModalDate"></span>
+        <h2 id="letterModalTitle">A letter for you</h2>
+        <p id="letterModalBody"></p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-outline" type="button" data-close-letter>Close letter</button>
+      </div>
+    </article>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"
+    aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top floating-top" id="floatingTop"
+    type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/counter.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+  <script src="js/timeline.js" defer></script>
+  <script src="js/letters.js" defer></script>
+  <script src="js/music.js" defer></script>
+  <script src="js/secret.js" defer></script>
+  <script src="js/settings.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
