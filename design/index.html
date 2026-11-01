@@ -1,0 +1,406 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#302e35">
+    <meta name="description" content="Arsip desain apparel dan artwork kaos oleh Michael Scofield McKenthayer.">
+
+    <title>Design Archive — Michael Scofield</title>
+
+    <!-- Font Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        referrerpolicy="no-referrer"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <!-- Navbar -->
+    <header class="navbar" data-aos="fade-down">
+
+        <a class="brand" href="./">
+            <span class="brand-mark">M</span>
+
+            <span>
+                MIKE<span class="brand-accent">DESIGN</span>
+            </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigasi utama">
+            <a class="active" href="#gallery">Designs</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="nav-cta hover-scale" href="#gallery">
+            Explore work
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <p class="eyebrow" data-aos="fade-up" data-aos-delay="200">
+                <span class="eyebrow-dot"></span>
+                CREATIVE DESIGN ARCHIVE
+            </p>
+
+            <!-- Animated Hero Title -->
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                <span class="typing-line">
+                    Life with
+                </span>
+
+                <br>
+
+                <span class="typing-highlight">
+                    VISUAL
+                </span>
+            </h1>
+
+            <p
+                class="hero-copy"
+                data-aos="fade-up"
+                data-aos-delay="600"
+            >
+                Arsip desain apparel, artwork kaos, dan eksperimen visual yang aku kerjakan dengan menggunakan segala Design tools.
+            </p>
+
+            <!-- Main CTA -->
+            <a
+                class="gradient-button hover-scale"
+                href="#gallery"
+                data-aos="fade-up"
+                data-aos-delay="800"
+            >
+                Lihat karyaku
+
+                <i
+                    class="fa-solid fa-arrow-down scroll-arrow"
+                    aria-hidden="true"
+                ></i>
+            </a>
+
+            <!-- Hero Metadata -->
+            <div
+                class="hero-meta"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+            >
+                <span>APPAREL DESIGN</span>
+                <span>VISUAL ART</span>
+                <span>MADE WITH INTENTION</span>
+            </div>
+
+            <!-- Decorative Orbit -->
+            <div class="hero-orbit" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </section>
+
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow" data-aos="fade-up">
+                        SELECTED WORKS
+                    </p>
+
+                    <h2 data-aos="fade-up" data-aos-delay="100">
+                        Design <span>archive</span>
+                    </h2>
+
+                    <p
+                        class="section-copy"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        Karya-karya ini aku buat dan rancang dengan berencana agar dapat diperjualbelikan secara online.
+                    </p>
+                </div>
+
+                <div
+                    class="result-count"
+                    id="resultCount"
+                    data-aos="fade-left"
+                >
+                    0 karya
+                </div>
+
+            </div>
+
+
+            <!-- Gallery Toolbar -->
+            <div class="toolbar" data-aos="fade-up">
+
+                <label class="search-box">
+
+                    <i
+                        class="fa-solid fa-magnifying-glass"
+                        aria-hidden="true"
+                    ></i>
+
+                    <input
+                        id="searchInput"
+                        type="search"
+                        placeholder="Cari nama desain..."
+                        autocomplete="off"
+                        aria-label="Cari desain"
+                    >
+
+                    <button
+                        id="clearSearch"
+                        class="clear-search hover-scale"
+                        type="button"
+                        aria-label="Hapus pencarian"
+                        hidden
+                    >
+                        <i
+                            class="fa-solid fa-xmark"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+
+                </label>
+
+                <div class="toolbar-note">
+                    <span class="live-dot"></span>
+                    VISUAL CATALOG
+                </div>
+
+            </div>
+
+
+            <!-- Gallery Grid -->
+            <div
+                id="galleryGrid"
+                class="gallery-grid"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" hidden>
+
+                <span class="empty-icon">
+                    <i
+                        class="fa-regular fa-image"
+                        aria-hidden="true"
+                    ></i>
+                </span>
+
+                <h3>Belum ada desain yang cocok</h3>
+
+                <p>
+                    Tambahkan karya di js/gallery.js atau ubah kata kunci pencarian.
+                </p>
+
+            </div>
+
+
+            <!-- Pagination -->
+            <div class="pagination-wrap">
+
+                <p id="pageInfo" class="page-info">
+                    Halaman 1
+                </p>
+
+                <nav
+                    id="pagination"
+                    class="pagination"
+                    aria-label="Navigasi halaman galeri"
+                ></nav>
+
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="about-strip">
+
+            <div
+                class="about-symbol"
+                aria-hidden="true"
+                data-aos="zoom-in"
+            >
+                <i class="fa-solid fa-asterisk"></i>
+            </div>
+
+            <div>
+
+                <p class="eyebrow" data-aos="fade-up">
+                    THE CREATIVE PROCESS
+                </p>
+
+                <h2 data-aos="fade-up" data-aos-delay="150">
+                    Every design has<br>
+                    <span>a story.</span>
+                </h2>
+
+            </div>
+
+            <p data-aos="fade-up" data-aos-delay="300">
+                Ruang untuk menyimpan proses, ide, dan hasil karya. Koleksi ini akan terus bertambah seiring proyek baru.
+            </p>
+
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-strip">
+
+            <div>
+
+                <p class="eyebrow" data-aos="fade-up">
+                    HAVE A PROJECT IN MIND?
+                </p>
+
+                <h2 data-aos="fade-up" data-aos-delay="150">
+                    Let's make something<br>
+                    <span>stand out.</span>
+                </h2>
+
+            </div>
+
+            <a
+                class="gradient-button hover-scale"
+                href="mailto:hello@example.com"
+                data-aos="fade-left"
+            >
+                Hubungi aku
+
+                <i
+                    class="fa-solid fa-arrow-up-right-from-square"
+                    aria-hidden="true"
+                ></i>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+
+        <span>
+            © <span id="year"></span> Michael Scofield McKenthayer
+        </span>
+
+        <span>
+            DESIGNED WITH INTENTION
+        </span>
+
+    </footer>
+
+
+    <!-- Lightbox -->
+    <div
+        id="lightbox"
+        class="lightbox"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-label="Pratinjau desain"
+    >
+
+        <button
+            id="closeLightbox"
+            class="lightbox-close hover-scale"
+            type="button"
+            aria-label="Tutup pratinjau"
+        >
+            <i
+                class="fa-solid fa-xmark"
+                aria-hidden="true"
+            ></i>
+        </button>
+
+
+        <button
+            id="lightboxPrev"
+            class="lightbox-arrow hover-scale"
+            type="button"
+            aria-label="Desain sebelumnya"
+        >
+            <i
+                class="fa-solid fa-chevron-left"
+                aria-hidden="true"
+            ></i>
+        </button>
+
+
+        <figure>
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
+
+            <figcaption>
+
+                <strong id="lightboxTitle"></strong>
+
+                <span id="lightboxCounter"></span>
+
+            </figcaption>
+
+        </figure>
+
+
+        <button
+            id="lightboxNext"
+            class="lightbox-arrow hover-scale"
+            type="button"
+            aria-label="Desain berikutnya"
+        >
+            <i
+                class="fa-solid fa-chevron-right"
+                aria-hidden="true"
+            ></i>
+        </button>
+
+    </div>
+
+
+    <!-- Gallery JavaScript -->
+    <script src="js/gallery.js"></script>
+
+    <!-- Animation JavaScript -->
+    <script src="js/animations.js" defer></script>
+
+</body>
+</html>
